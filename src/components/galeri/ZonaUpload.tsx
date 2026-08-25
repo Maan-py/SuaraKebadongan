@@ -161,7 +161,7 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
                 item.status === 'done'
                   ? 'bg-tape-hijau/20 text-tape-hijau'
                   : item.status === 'error'
-                    ? 'bg-stiker-merah/20 text-stiker-merah'
+                    ? 'bg-maroon-300/20 text-maroon-300'
                     : 'bg-sepia-gelap/20 text-tinta-lembut'
               }`}
             >

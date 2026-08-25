@@ -113,7 +113,7 @@ export default function GateCard() {
           {/* ── Stiker bintang merah pojok ────────────────── */}
           <div
             className="absolute -right-2 -top-2 text-2xl"
-            style={{ color: "var(--stiker-merah)" }}
+            style={{ color: "var(--marker-kuning)" }}
             aria-hidden="true"
           >
             ★
@@ -143,7 +143,7 @@ export default function GateCard() {
               onChange={(e) => setPasscode(e.target.value)}
               placeholder="psst… ketik suara pintunya"
               disabled={state === "loading" || state === "lockout"}
-              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta placeholder:text-tinta-lembut focus:border-tape-hijau focus:outline-none focus:ring-2 focus:ring-tape-hijau/30 disabled:opacity-50"
+              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-tape-hijau focus:outline-none focus:ring-2 focus:ring-tape-hijau/30 disabled:opacity-50"
               autoComplete="off"
               aria-describedby={message ? "gate-message" : undefined}
             />
@@ -152,7 +152,7 @@ export default function GateCard() {
             <button
               type="submit"
               disabled={state === "loading" || state === "lockout"}
-              className="mt-3 w-full rounded-pill bg-tape-hijau px-6 py-3 font-body text-base font-semibold text-tinta transition-colors hover:opacity-90 disabled:opacity-50"
+              className="mt-3 w-full rounded-pill bg-marker-kuning px-6 py-3 font-body text-base font-semibold text-tinta-gelap transition-colors hover:bg-kuning-300 disabled:opacity-50"
             >
               {state === "loading" ? "Mengetuk-ngetuk…" : "Ketuk Pintu"}
             </button>
@@ -164,7 +164,7 @@ export default function GateCard() {
               id="gate-message"
               aria-live="polite"
               className={`mt-4 font-body text-sm ${
-                state === "lockout" ? "text-stiker-merah" : "text-tinta-lembut"
+                state === "lockout" ? "text-maroon-300" : "text-tinta-lembut"
               }`}
             >
               {message}

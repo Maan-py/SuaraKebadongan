@@ -161,7 +161,7 @@ export default function Lightbox({
         animate={{ opacity: 1 }}
         exit={gerakDiizinkan ? { opacity: 0 } : { opacity: 0 }}
         transition={{ duration: 0.2, ease: 'easeOut' }}
-        className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/90 p-4"
+        className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-900/90 p-4"
         role="dialog"
         aria-modal="true"
         aria-label="Lihat foto"
@@ -205,7 +205,7 @@ export default function Lightbox({
             {/* Tombol tutup */}
             <button
               onClick={onClose}
-              className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-tinta/50 text-polaroid hover:bg-tinta/70 transition-colors"
+              className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-maroon-900/50 text-polaroid hover:bg-maroon-900/70 transition-colors"
               aria-label="Tutup lightbox"
             >
               ✕
@@ -229,7 +229,7 @@ export default function Lightbox({
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
                 placeholder="Ketik cerita di sini..."
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta placeholder:text-tinta-lembut/50 focus:border-pulpen-biru focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-marker-kuning focus:outline-none"
               />
             </div>
 
@@ -239,7 +239,7 @@ export default function Lightbox({
                 type="date"
                 value={takenOn}
                 onChange={(e) => setTakenOn(e.target.value)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta focus:border-pulpen-biru focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-marker-kuning focus:outline-none"
               />
             </div>
 
@@ -248,7 +248,7 @@ export default function Lightbox({
               <select
                 value={albumId || ''}
                 onChange={(e) => setAlbumId(e.target.value || null)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta focus:border-pulpen-biru focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-marker-kuning focus:outline-none"
               >
                 <option value="">Tanpa album</option>
                 {albums.map((a) => (
@@ -263,13 +263,13 @@ export default function Lightbox({
               <button
                 onClick={handleSave}
                 disabled={isSaving}
-                className="flex-1 rounded-radius-pill bg-stiker-merah px-4 py-2 text-sm font-medium text-polaroid hover:bg-maroon-600 transition-colors disabled:opacity-50"
+                className="flex-1 rounded-radius-pill bg-marker-kuning px-4 py-2 text-sm font-medium text-tinta-gelap hover:bg-kuning-300 transition-colors disabled:opacity-50"
               >
                 {isSaving ? '...' : 'Simpan'}
               </button>
               <button
                 onClick={() => setShowConfirm(true)}
-                className="rounded-radius-pill border border-stiker-merah px-4 py-2 text-sm text-stiker-merah hover:bg-stiker-merah/10 transition-colors"
+                className="rounded-radius-pill border border-maroon-300 px-4 py-2 text-sm text-maroon-300 hover:bg-maroon-300/10 transition-colors"
               >
                 Hapus
               </button>
@@ -289,8 +289,8 @@ export default function Lightbox({
 
         {/* Konfirmasi hapus */}
         {showConfirm && (
-          <div className="fixed inset-0 z-[70] flex items-center justify-center bg-tinta/60 p-4">
-            <div className="w-full max-w-xs rounded-radius-modal bg-kertas p-6 text-center shadow-lg">
+          <div className="fixed inset-0 z-[70] flex items-center justify-center bg-maroon-900/70 p-4">
+            <div className="w-full max-w-xs rounded-radius-modal bg-karton border border-garis-kertas p-6 text-center shadow-lg">
               <p className="font-tulis text-lg text-tinta">
                 Yakin cabut foto ini dari album?
               </p>
@@ -303,7 +303,7 @@ export default function Lightbox({
                 </button>
                 <button
                   onClick={handleDelete}
-                  className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-stiker-merah/90 transition-colors"
+                  className="rounded-radius-pill bg-maroon-400 px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-300 transition-colors"
                 >
                   Ya, Cabut
                 </button>

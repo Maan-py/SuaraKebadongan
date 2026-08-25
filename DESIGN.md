@@ -61,34 +61,35 @@ Lima prinsip berikut adalah pagar agar desain kita tidak jatuh ke jebakan templa
 
 ### Palet Warna
 
-Palet kita terdiri dari 14 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon** dan **kuning** — adalah identitas visual IG @suarakebadongan. Sisa warna dipilih supaya harmonis, kontras, dan enak dilihat bersama keduanya.
+Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon** dan **kuning** — adalah identitas visual IG @suarakebadongan, dan keduanya jadi **protagonis tema**: maroon gelap adalah kanvas utama seluruh halaman, kuning adalah warna aksi & highlight.
 
-#### Kelompok Dasar — Kertas & Tinta
+#### Kelompok Dasar — Kanvas Maroon & Teks Gading
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--kertas` | `#FFFDF7` | Latar utama seluruh halaman — putih gading bersih |
-| `--karton` | `#F5EDE0` | Latar kartu/kotak sekunder — karton hangat |
-| `--garis-kertas` | `#E8DCC8` | Garis pemisah halus, tepi kertas sobek |
-| `--tinta` | `#3D2B1F` | Teks utama & judul — coklat gelap, hangat bukan hitam pekat |
-| `--tinta-lembut` | `#7A6655` | Teks sekunder: tanggal, meta, teks bantu |
+| `--kertas` | `#420210` | Latar utama seluruh halaman — kanvas maroon pekat |
+| `--karton` | `#58041A` | Permukaan terangkat — nav, kartu, bubble chat, modal |
+| `--garis-kertas` | `#7D1B35` | Garis pemisah, border input di permukaan gelap |
+| `--tinta` | `#FFF3DC` | Teks utama di kanvas gelap — gading hangat |
+| `--tinta-lembut` | `#D8A9B6` | Teks sekunder — mawar debu |
+| `--tinta-gelap` | `#3D2B1F` | Teks gelap khusus permukaan terang (polaroid, input putih) |
 
 > **Kenapa begini?**
-> Kertas putih gading (`#FFFDF7`) netral — tidak bentrok dengan maroon atau kuning, dan memberi kesan album tua. Tinta `#3D2B1F` sengaja coklat gelap (bukan hitam) supaya hangat dan senada dengan nuansa maroon. Kombinasi `#3D2B1F` di atas `#FFFDF7` punya rasio kontras ~11:1 — jauh melampaui syarat WCAG AAA (7:1), jadi teks tetap terbaca di bawah sinar matahari.
+> Maroon #6E0521 adalah warna identitas IG, jadi kita angkat jadi kanvas: seluruh halaman bernuansa maroon pekat `#420210`, sedikit lebih gelap dari maroon IG supaya foto dan kartu polaroid putih "menonjol" seperti foto yang menempel di album gelap. Teks memakai gading hangat `#FFF3DC` (kontras ~13:1, lolos WCAG AAA). Karena ada permukaan terang (bingkai polaroid, input), kita punya dua tinta: `--tinta` gading untuk latar gelap, `--tinta-gelap` coklat untuk latar terang — aturan sederhananya: *di atas putih pakai tinta-gelap, di atas maroon pakai tinta*.
 
 #### Kelompok Aksen — Maroon & Kuning (Hero Colors)
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--stiker-merah` | `#6E0521` | **Maroon IG** — aksen utama, tombol aktif, judul |
-| `--marker-kuning` | `#FED92E` | **Kuning IG** — stabilo, highlight, badge |
-| `--tape-hijau` | `#4A8C5C` | Hijau natural — komplementer maroon, memberi "nafas" segar |
-| `--pulpen-biru` | `#2E5090` | Navy warm — tautan/link, kontras cukup tanpa mencolok |
-| `--stiker-pink` | `#C9879E` | Dusty rose — turunan maroon, elegan bukan bubblegum |
-| `--spidol-ungu` | `#6B4E8F` | Ungu gelap — royal, melengkapi kuning sebagai komplementer |
+| `--stiker-merah` | `#6E0521` | **Maroon IG** — isi/border di permukaan TERANG (chip, stiker, pin) |
+| `--marker-kuning` | `#FED92E` | **Kuning IG** — AKSI UTAMA di kanvas gelap: tombol, tab aktif, link |
+| `--tape-hijau` | `#4A8C5C` | Hijau natural — sukses, online |
+| `--pulpen-biru` | `#8FB3E8` | Biru langit lembut — link sekunder, terbaca di gelap |
+| `--stiker-pink` | `#C9879E` | Dusty rose — turunan maroon, elegan |
+| `--spidol-ungu` | `#9B7FC4` | Ungu lembut — doodle, terbaca di gelap |
 
 > **Kenapa begini?**
-> Maroon `#6E0521` adalah warna identitas — mendominasi sebagai aksen utama. Kuning `#FED92E` adalah highlight yang langsung menarik mata. Empat aksen lain dipilih dari sudut pandang *color theory*: hijau komplementer alami merah (memberi kontras segar), biru navy warm (tidak "dingin" seperti biru muda), pink dusty rose (turunan natural maroon), dan ungu gelap (komplementer kuning). Semua warm-toned supaya satu keluarga dengan kertas dan maroon. Aturan pakai: aksen untuk elemen dekoratif; teks kecil penting tetap `--tinta`. `--marker-kuning` hanya sebagai latar stabilo dengan teks `--tinta` di atasnya — kuning sebagai warna teks tidak akan terbaca.
+> Di kanvas maroon gelap, warna yang paling "menyala" adalah kuning — jadi kuning #FED92E naik jabatan jadi warna aksi utama (tombol simpan, tab aktif, tombol kejutan) dengan teks `--tinta-gelap` di atasnya (kontras ~8:1). Sebaliknya maroon #6E0521 hampir sama warnanya dengan kanvas, jadi maroon dipakai sebagai *isi/border di permukaan terang* (stiker bintang, tape, pin catatan) atau versi terangnya `maroon-300/400` untuk aksen merah di area gelap. Biru navy diganti biru langit `#8FB3E8` dan ungu dinaikkan ke `#9B7FC4` karena warna gelap tidak terbaca di kanvas gelap.
 
 #### Kelompok Sepia — Warna Foto Lama
 
@@ -571,20 +572,21 @@ Bagian ini fotokopi resmi dari Token Visual dalam bentuk siap-tempel — nilainy
 
 ```css
 :root {
-  /* Kelompok Dasar — Kertas & Tinta */
-  --kertas: #FFFDF7;
-  --karton: #F5EDE0;
-  --garis-kertas: #E8DCC8;
-  --tinta: #3D2B1F;
-  --tinta-lembut: #7A6655;
+  /* Kelompok Dasar — Kanvas Maroon & Teks Gading */
+  --kertas: #420210;
+  --karton: #58041A;
+  --garis-kertas: #7D1B35;
+  --tinta: #FFF3DC;
+  --tinta-lembut: #D8A9B6;
+  --tinta-gelap: #3D2B1F;
 
   /* Aksen — Maroon & Kuning (Hero Colors) */
   --stiker-merah: #6E0521;
   --marker-kuning: #FED92E;
   --tape-hijau: #4A8C5C;
-  --pulpen-biru: #2E5090;
+  --pulpen-biru: #8FB3E8;
   --stiker-pink: #C9879E;
-  --spidol-ungu: #6B4E8F;
+  --spidol-ungu: #9B7FC4;
 
   /* Sepia & Polaroid */
   --sepia-terang: #C8A165;

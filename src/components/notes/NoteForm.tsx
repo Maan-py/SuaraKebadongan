@@ -76,7 +76,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         style={{ backgroundColor: selectedColor.bg }}
       >
         {/* Label */}
-        <p className="mb-2 text-xs text-tinta-lembut">
+        <p className="mb-2 text-xs text-tinta-gelap/70">
           Catatan paling baru (milikmu)
         </p>
 
@@ -88,13 +88,13 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
           onKeyDown={handleKeyDown}
           placeholder="Tulis pesan, doa, atau kejadian konyol hari ini…"
           rows={3}
-          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta placeholder:text-tinta-lembut/50 focus:outline-none"
+          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta-gelap placeholder:text-tinta-gelap/50 focus:outline-none"
           style={{ backgroundColor: 'transparent' }}
         />
 
         {/* Error / Counter */}
         <div className="flex justify-between px-1">
-          <span className="text-[10px] text-tinta-lembut/50">
+          <span className="text-[10px] text-tinta-gelap/50">
             {body.length > 0 && `sisa ${remaining} huruf`}
           </span>
           {error && (
@@ -108,14 +108,13 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         <div className="mt-3 flex items-center justify-between">
           {/* Swatch warna */}
           <div className="flex items-center gap-1.5">
-            <span className="text-[10px] text-tinta-lembut mr-1">Pilih warna:</span>
-            {COLORS.map((c) => (
+            <span className="text-[10px] text-tinta-lembut mr-1">Pilih warna:</span>            {COLORS.map((c) => (
               <button
                 key={c.id}
                 onClick={() => setColor(c.id)}
                 aria-label={c.label}
                 className={`h-6 w-6 rounded-full border-2 transition-transform ${
-                  color === c.id ? 'scale-110 border-tinta' : 'border-transparent'
+                  color === c.id ? 'scale-110 border-tinta-gelap' : 'border-transparent'
                 }`}
                 style={{ backgroundColor: c.bg }}
               />
@@ -136,7 +135,6 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
       {/* Petunjuk keyboard */}
       <p className="mt-2 text-center text-[10px] text-tinta-lembut/40">
         Ctrl+Enter untuk tempel cepat
-      </p>
-    </div>
+      </p>    </div>
   )
 }

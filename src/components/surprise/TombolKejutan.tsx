@@ -119,12 +119,12 @@ export default function TombolKejutan() {
       <button
         ref={triggerRef}
         onClick={handleOpen}
-        className={`fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-stiker-merah text-polaroid shadow-lg transition-transform hover:scale-105 md:bottom-6 md:right-6 md:h-16 md:w-16 ${
+        className={`fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-marker-kuning text-stiker-merah shadow-lg transition-transform hover:scale-105 md:bottom-6 md:right-6 md:h-16 md:w-16 ${
           gerakDiizinkan ? 'hover:scale-105' : ''
         }`}
         aria-label="Kejutan foto kenangan — Inget ga sih?"
         style={{
-          boxShadow: '0 4px 12px rgba(110,5,33,.3)',
+          boxShadow: '0 4px 12px rgba(254,217,46,.25)',
         }}
       >
         {/* Bintang meledak SVG */}
@@ -138,7 +138,7 @@ export default function TombolKejutan() {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="absolute -bottom-5 whitespace-nowrap text-[10px] font-bold text-stiker-merah">
+        <span className="absolute -bottom-5 whitespace-nowrap text-[10px] font-bold text-marker-kuning">
           Inget ga sih?
         </span>
       </button>
@@ -151,7 +151,7 @@ export default function TombolKejutan() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/85 p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-900/85 p-4"
             role="dialog"
             aria-modal="true"
             aria-label="Kejutan foto kenangan"

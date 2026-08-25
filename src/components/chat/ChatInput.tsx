@@ -87,7 +87,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
             onKeyDown={handleKeyDown}
             placeholder="Tulis apa saja… tidak ada yang tahu ini kamu kok"
             rows={1}
-            className="flex-1 resize-none rounded-radius-tape border border-garis-kertas bg-polaroid px-4 py-2.5 text-sm text-tinta placeholder:text-tinta-lembut/50 focus:border-pulpen-biru focus:outline-none"
+            className="flex-1 resize-none rounded-radius-tape border border-garis-kertas bg-polaroid px-4 py-2.5 text-sm text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-marker-kuning focus:outline-none"
             style={{ minHeight: '44px', maxHeight: '120px' }}
           />
 
@@ -111,7 +111,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
           </span>
           {charWarning && (
             <span
-              className="text-[10px] text-stiker-merah"
+              className="text-[10px] text-marker-kuning"
               aria-live="polite"
             >
               Sisa {remaining} huruf

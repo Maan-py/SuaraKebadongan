@@ -26,7 +26,7 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
       {/* Avatar */}
       <AvatarHewan
         hewan={message.avatar}
-        warna={isOwn ? '#4A8C5C' : '#7A6655'}
+        warna={isOwn ? '#4A8C5C' : '#D8A9B6'}
         className="flex-shrink-0"
       />
 

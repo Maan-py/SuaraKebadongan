@@ -89,7 +89,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
   const selectedColor = COLORS.find((c) => c.id === color) || COLORS[0]
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/40 p-4">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-900/60 p-4">
       <div
         ref={popoverRef}
         className="w-full max-w-sm rounded-radius-kartu p-4 shadow-lg"
@@ -100,10 +100,10 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
       >
         {/* Header */}
         <div className="mb-3 flex items-center justify-between">
-          <span className="text-xs text-tinta-lembut">Edit catatan</span>
+          <span className="text-xs text-tinta-gelap/70">Edit catatan</span>
           <button
             onClick={onClose}
-            className="h-6 w-6 flex items-center justify-center rounded-full text-tinta-lembut hover:text-tinta"
+            className="h-6 w-6 flex items-center justify-center rounded-full text-tinta-gelap/70 hover:text-tinta-gelap"
             aria-label="Tutup"
           >
             ✕
@@ -116,25 +116,25 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
           value={body}
           onChange={(e) => setBody(e.target.value.slice(0, MAX_CHARS))}
           rows={3}
-          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta placeholder:text-tinta-lembut/50 focus:outline-none"
+          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta-gelap placeholder:text-tinta-gelap/50 focus:outline-none"
           style={{ backgroundColor: 'transparent' }}
         />
 
         {/* Counter */}
-        <p className="mt-1 text-[10px] text-tinta-lembut/50">
+        <p className="mt-1 text-[10px] text-tinta-gelap/50">
           {body.length}/{MAX_CHARS}
         </p>
 
         {/* Warna */}
         <div className="mt-3 flex items-center gap-1.5">
-          <span className="text-[10px] text-tinta-lembut mr-1">Warna:</span>
+          <span className="text-[10px] text-tinta-gelap/70 mr-1">Warna:</span>
           {COLORS.map((c) => (
             <button
               key={c.id}
               onClick={() => setColor(c.id)}
               aria-label={c.label}
               className={`h-5 w-5 rounded-full border-2 transition-transform ${
-                color === c.id ? 'scale-110 border-tinta' : 'border-transparent'
+                color === c.id ? 'scale-110 border-tinta-gelap' : 'border-transparent'
               }`}
               style={{ backgroundColor: c.bg }}
             />
@@ -153,14 +153,14 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
           <div className="flex gap-2">
             <button
               onClick={onClose}
-              className="rounded-radius-pill px-3 py-1.5 text-xs text-tinta-lembut hover:text-tinta transition-colors"
+              className="rounded-radius-pill px-3 py-1.5 text-xs text-tinta-gelap/70 hover:text-tinta-gelap transition-colors"
             >
               Batal
             </button>
             <button
               onClick={handleSave}
               disabled={!body.trim() || body.length > MAX_CHARS || isSaving}
-              className="rounded-radius-pill bg-spidol-ungu px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-spidol-ungu/90 transition-colors disabled:opacity-50"
+              className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-maroon-400 transition-colors disabled:opacity-50"
             >
               {isSaving ? '...' : 'Simpan'}
             </button>
@@ -170,8 +170,8 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
 
       {/* Konfirmasi hapus */}
       {showConfirm && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-tinta/60 p-4">
-          <div className="w-full max-w-xs rounded-radius-modal bg-kertas p-6 text-center shadow-lg">
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-maroon-900/70 p-4">
+          <div className="w-full max-w-xs rounded-radius-modal bg-karton border border-garis-kertas p-6 text-center shadow-lg">
             <p className="font-tulis text-lg text-tinta">
               Cabut catatan ini dari papan?
             </p>
@@ -184,7 +184,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
               </button>
               <button
                 onClick={handleDelete}
-                className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-stiker-merah/90 transition-colors"
+                className="rounded-radius-pill bg-maroon-400 px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-300 transition-colors"
               >
                 Ya, Cabut
               </button>

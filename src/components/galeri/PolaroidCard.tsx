@@ -85,7 +85,7 @@ export default function PolaroidCard({ photo, onSelect, index }: PolaroidCardPro
 
         {/* Caption (jika ada) */}
         {photo.caption && (
-          <p className="mt-2 text-center font-tulis text-sm text-tinta-lembut">
+          <p className="mt-2 text-center font-tulis text-sm text-tinta-gelap/80">
             {photo.caption}
           </p>
         )}
