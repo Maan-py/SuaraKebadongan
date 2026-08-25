@@ -11,7 +11,7 @@ const COLORS = [
   { id: 'hijau', label: 'Hijau', bg: '#E3F2E8' },
   { id: 'ungu', label: 'Ungu', bg: '#EEE8F6' },
   { id: 'merah', label: 'Merah', bg: '#FBE3DA' },
-  { id: 'karton', label: 'Karton', bg: '#F1E6CC' },
+  { id: 'karton', label: 'Karton', bg: '#F5EDE0' },
 ]
 
 interface NoteFormProps {

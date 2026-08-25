@@ -11,16 +11,16 @@
   --kertas:          #FFFDF7;  /* latar utama — putih gading bersih                */
   --karton:          #F5EDE0;  /* latar kartu/kotak sekunder — karton manila hangat */
   --garis-kertas:    #E8DCC8;  /* garis pemisah halus, tepi kertas sobek            */
-  --tinta:           #2E2118;  /* teks utama — coklat kehitaman tinta botol         */
-  --tinta-lembut:    #6B5844;  /* teks sekunder: tanggal, meta, teks bantu          */
+  --tinta:           #3D2B1F;  /* teks utama — coklat gelap hangat, bukan hitam     */
+  --tinta-lembut:    #7A6655;  /* teks sekunder: tanggal, meta, teks bantu          */
 
-  /* ── Kelompok Aksen: Maroon & Kuning IG ────────────────── */
-  --stiker-merah:    #6E0521;  /* merah maroon IG — aksen utama, tombol, aktif     */
-  --marker-kuning:   #FED92E;  /* kuning IG — stabilo, highlight, badge             */
-  --tape-hijau:      #57A773;  /* washi tape hijau — sukses, online                 */
-  --pulpen-biru:     #1E56C8;  /* tulisan ballpoint, tautan/link                    */
-  --stiker-pink:     #D4A0B0;  /* pink lembut — turunan maroon, reaksi              */
-  --spidol-ungu:     #7B5EA7;  /* doodle tambahan, label album                       */
+  /* ── Kelompok Aksen: Maroon & Kuning (Hero Colors) ──────── */
+  --stiker-merah:    #6E0521;  /* MAROON IG — aksen utama, tombol, aktif           */
+  --marker-kuning:   #FED92E;  /* KUNING IG — stabilo, highlight, badge            */
+  --tape-hijau:      #4A8C5C;  /* hijau natural — komplementer maroon               */
+  --pulpen-biru:     #2E5090;  /* navy warm — tautan/link, kontras tanpa mencolok  */
+  --stiker-pink:     #C9879E;  /* dusty rose — turunan maroon, elegan               */
+  --spidol-ungu:     #6B4E8F;  /* ungu gelap — royal, komplementer kuning           */
 
   /* ── Kelompok Maroon: Nuansa #6E0521 ──────────────────── */
   --maroon-50:       #FDF2F4;  /* background sangat light                            */

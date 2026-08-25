@@ -23,7 +23,7 @@ npm melarang project name dengan huruf kapital (aturan npm, bukan Next.js). Solu
 File ini di-auto-generate oleh Next.js saat pertama kali build/dev. Kalau hilang, `LayoutProps` type tidak dikenal → tsc error. Solusi: jalankan `next build` sekali untuk generate.
 
 ### Tailwind v4 `@theme inline` — bagaimana cara kerjanya?
-- `:root { --kertas: #FAF3E3 }` → CSS custom property biasa
+- `:root { --kertas: #FFFDF7 }` → CSS custom property biasa
 - `@theme inline { --color-kertas: var(--kertas) }` → menghubungkan ke Tailwind engine
 - Setelah itu `bg-kertas` jadi utility class yang valid
 - Tanpa mapping ini, Tailwind tidak tahu warna `--kertas` artinya apa

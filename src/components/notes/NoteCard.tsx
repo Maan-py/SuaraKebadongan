@@ -25,7 +25,7 @@ const COLOR_MAP: Record<string, string> = {
   hijau: '#E3F2E8',
   ungu: '#EEE8F6',
   merah: '#FBE3DA',
-  karton: '#F1E6CC',
+  karton: '#F5EDE0',
 }
 
 // Pola rotasi bergantian: [-1.5°, +1°, -0.5°, +1.5°]

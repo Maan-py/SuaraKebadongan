@@ -45,7 +45,7 @@ Keyboard shortcut = produktivitas tanpa friction.
 | Hijau | `#E3F2E8` | Washi tape hijau |
 | Ungu | `#EEE8F6` | Spidol ungu |
 | Merah | `#FBE3DA` | Stiker merah |
-| Karton | `#F1E6CC` | Karton manila |
+| Karton | `#F5EDE0` | Karton manila |
 
 **Kenapa pale, bukan saturated?**
 Teks `--tinta` (coklat kehitaman) harus kontras tinggi di atas warna catatan.

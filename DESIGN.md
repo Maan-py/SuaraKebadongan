@@ -61,34 +61,34 @@ Lima prinsip berikut adalah pagar agar desain kita tidak jatuh ke jebakan templa
 
 ### Palet Warna
 
-Palet kita terdiri dari 14 warna dalam tiga kelompok peran. Anggap saja ini kotak crayon resmi proyek: jumlahnya dibatasi supaya hasilnya harmonis, tapi cukup banyak untuk bercerita.
+Palet kita terdiri dari 14 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon** dan **kuning** — adalah identitas visual IG @suarakebadongan. Sisa warna dipilih supaya harmonis, kontras, dan enak dilihat bersama keduanya.
 
 #### Kelompok Dasar — Kertas & Tinta
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--kertas` | `#FAF3E3` | Latar utama seluruh halaman — kertas gading hangat |
-| `--karton` | `#F1E6CC` | Latar kartu/kotak sekunder — karton manila |
-| `--garis-kertas` | `#E3D2AC` | Garis pemisah halus, tepi kertas sobek |
-| `--tinta` | `#2E2118` | Teks utama & judul — coklat kehitaman seperti tinta botol |
-| `--tinta-lembut` | `#6B5844` | Teks sekunder: tanggal, meta, teks bantu |
+| `--kertas` | `#FFFDF7` | Latar utama seluruh halaman — putih gading bersih |
+| `--karton` | `#F5EDE0` | Latar kartu/kotak sekunder — karton hangat |
+| `--garis-kertas` | `#E8DCC8` | Garis pemisah halus, tepi kertas sobek |
+| `--tinta` | `#3D2B1F` | Teks utama & judul — coklat gelap, hangat bukan hitam pekat |
+| `--tinta-lembut` | `#7A6655` | Teks sekunder: tanggal, meta, teks bantu |
 
 > **Kenapa begini?**
-> Kertas putih bersih (`#FFFFFF`) terasa seperti dokumen kantor; gading hangat langsung memberi kesan album tua tanpa perlu ornamen apa-apa. Tinta juga sengaja bukan hitam pekat — coklat kehitaman lebih lembut di mata dan cocok dengan nuansa pulpen tinta lama. Secara teknis, kombinasi `#2E2118` di atas `#FAF3E3` memiliki rasio kontras sekitar 14:1 — jauh melampaui syarat minimum aksesibilitas WCAG AA (4.5:1), jadi teks tetap terbaca di HP kelas bawah di bawah sinar matahari.
+> Kertas putih gading (`#FFFDF7`) netral — tidak bentrok dengan maroon atau kuning, dan memberi kesan album tua. Tinta `#3D2B1F` sengaja coklat gelap (bukan hitam) supaya hangat dan senada dengan nuansa maroon. Kombinasi `#3D2B1F` di atas `#FFFDF7` punya rasio kontras ~11:1 — jauh melampaui syarat WCAG AAA (7:1), jadi teks tetap terbaca di bawah sinar matahari.
 
-#### Kelompok Aksen Stiker — Cerah & Ceria
+#### Kelompok Aksen — Maroon & Kuning (Hero Colors)
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--stiker-merah` | `#6E0521` | Merah maroon IG @suarakebadongan |
-| `--marker-kuning` | `#FED92E` | Kuning IG @suarakebadongan |
-| `--tape-hijau` | `#57A773` | Washi tape hijau polos/garis |
-| `--pulpen-biru` | `#1E56C8` | Tulisan ballpoint, tautan/link yang bisa diklik |
-| `--stiker-pink` | `#EF8FB2` | Stiker hati, badge lucu, reaksi |
-| `--spidol-ungu` | `#7B5EA7` | Doodle tambahan, label album |
+| `--stiker-merah` | `#6E0521` | **Maroon IG** — aksen utama, tombol aktif, judul |
+| `--marker-kuning` | `#FED92E` | **Kuning IG** — stabilo, highlight, badge |
+| `--tape-hijau` | `#4A8C5C` | Hijau natural — komplementer maroon, memberi "nafas" segar |
+| `--pulpen-biru` | `#2E5090` | Navy warm — tautan/link, kontras cukup tanpa mencolok |
+| `--stiker-pink` | `#C9879E` | Dusty rose — turunan maroon, elegan bukan bubblegum |
+| `--spidol-ungu` | `#6B4E8F` | Ungu gelap — royal, melengkapi kuning sebagai komplementer |
 
 > **Kenapa begini?**
-> PRD meminta suasana "playful seperti buku tahunan sekolah" — dan buku tahunan identik dengan stiker warna-warni. Enam aksen ini dipilih cerah tapi *tidak neon*: tetap satu keluarga hangat dengan kertasnya. Aturan pakainya: aksen untuk elemen dekoratif dan teks besar; teks kecil yang penting tetap memakai `--tinta`. Contoh teknisnya: `--pulpen-biru` sengaja digelapkan ke `#1E56C8` agar sebagai warna link kontrasnya sekitar 6:1 (lolos AA), sementara `--marker-kuning` hanya dipakai sebagai *latar* stabilo dengan teks `--tinta` di atasnya (kontras sekitar 10:1) — kuning sebagai warna teks pasti tidak akan terbaca.
+> Maroon `#6E0521` adalah warna identitas — mendominasi sebagai aksen utama. Kuning `#FED92E` adalah highlight yang langsung menarik mata. Empat aksen lain dipilih dari sudut pandang *color theory*: hijau komplementer alami merah (memberi kontras segar), biru navy warm (tidak "dingin" seperti biru muda), pink dusty rose (turunan natural maroon), dan ungu gelap (komplementer kuning). Semua warm-toned supaya satu keluarga dengan kertas dan maroon. Aturan pakai: aksen untuk elemen dekoratif; teks kecil penting tetap `--tinta`. `--marker-kuning` hanya sebagai latar stabilo dengan teks `--tinta` di atasnya — kuning sebagai warna teks tidak akan terbaca.
 
 #### Kelompok Sepia — Warna Foto Lama
 
@@ -572,19 +572,19 @@ Bagian ini fotokopi resmi dari Token Visual dalam bentuk siap-tempel — nilainy
 ```css
 :root {
   /* Kelompok Dasar — Kertas & Tinta */
-  --kertas: #FAF3E3;
-  --karton: #F1E6CC;
-  --garis-kertas: #E3D2AC;
-  --tinta: #2E2118;
-  --tinta-lembut: #6B5844;
+  --kertas: #FFFDF7;
+  --karton: #F5EDE0;
+  --garis-kertas: #E8DCC8;
+  --tinta: #3D2B1F;
+  --tinta-lembut: #7A6655;
 
-  /* Aksen Stiker */
+  /* Aksen — Maroon & Kuning (Hero Colors) */
   --stiker-merah: #6E0521;
   --marker-kuning: #FED92E;
-  --tape-hijau: #57A773;
-  --pulpen-biru: #1E56C8;
-  --stiker-pink: #EF8FB2;
-  --spidol-ungu: #7B5EA7;
+  --tape-hijau: #4A8C5C;
+  --pulpen-biru: #2E5090;
+  --stiker-pink: #C9879E;
+  --spidol-ungu: #6B4E8F;
 
   /* Sepia & Polaroid */
   --sepia-terang: #C8A165;
