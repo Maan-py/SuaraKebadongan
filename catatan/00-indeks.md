@@ -11,6 +11,6 @@
 | 04 | [Gelombang 3: App Shell — TabBar, Lenis, Crossfade, Offline](./04-gelombang-3.md) | ✅ Selesai |
 | 05 | [Gelombang 4: Galeri Foto — Upload, Album, Masonry, Lightbox](./05-gelombang-4.md) | ✅ Selesai |
 | 06 | [Gelombang 5: Chat "Suara" — Anonim, Realtime, Typing](./06-gelombang-5.md) | ✅ Selesai |
-| 07 | Gelombang 6: Catatan (F4) | ⏳ Belum |
-| 08 | Gelombang 7: Admin (F5) | ⏳ Belum |
-| 09 | Gelombang 8: Finalisasi + Deploy | ⏳ Belum |
+| 07 | [Gelombang 6: Catatan Tempel — Papan Kolektif, 6 Warna, Realtime](./07-gelombang-6.md) | ✅ Selesai |
+| 08 | Gelombang 7: Tombol Kejutan + Finalisasi | ⏳ Belum |
+| 09 | Gelombang 8: Deploy | ⏳ Belum |
