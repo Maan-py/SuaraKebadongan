@@ -12,5 +12,5 @@
 | 05 | [Gelombang 4: Galeri Foto — Upload, Album, Masonry, Lightbox](./05-gelombang-4.md) | ✅ Selesai |
 | 06 | [Gelombang 5: Chat "Suara" — Anonim, Realtime, Typing](./06-gelombang-5.md) | ✅ Selesai |
 | 07 | [Gelombang 6: Catatan Tempel — Papan Kolektif, 6 Warna, Realtime](./07-gelombang-6.md) | ✅ Selesai |
-| 08 | Gelombang 7: Tombol Kejutan + Finalisasi | ⏳ Belum |
+| 08 | [Gelombang 7: Tombol Kejutan — "Inget ga sih?" + Modal Foto Acak](./08-gelombang-7.md) | ✅ Selesai |
 | 09 | Gelombang 8: Deploy | ⏳ Belum |
