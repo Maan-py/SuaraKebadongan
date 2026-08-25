@@ -80,8 +80,8 @@ Palet kita terdiri dari 14 warna dalam tiga kelompok peran. Anggap saja ini kota
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--stiker-merah` | `#E4572E` | Stiker bintang/panah, sorotan momen penting |
-| `--marker-kuning` | `#FFC914` | Blok stabilo di belakang kata kunci |
+| `--stiker-merah` | `#6E0521` | Merah maroon IG @suarakebadongan |
+| `--marker-kuning` | `#FED92E` | Kuning IG @suarakebadongan |
 | `--tape-hijau` | `#57A773` | Washi tape hijau polos/garis |
 | `--pulpen-biru` | `#1E56C8` | Tulisan ballpoint, tautan/link yang bisa diklik |
 | `--stiker-pink` | `#EF8FB2` | Stiker hati, badge lucu, reaksi |
@@ -579,8 +579,8 @@ Bagian ini fotokopi resmi dari Token Visual dalam bentuk siap-tempel — nilainy
   --tinta-lembut: #6B5844;
 
   /* Aksen Stiker */
-  --stiker-merah: #E4572E;
-  --marker-kuning: #FFC914;
+  --stiker-merah: #6E0521;
+  --marker-kuning: #FED92E;
   --tape-hijau: #57A773;
   --pulpen-biru: #1E56C8;
   --stiker-pink: #EF8FB2;

@@ -17,8 +17,8 @@ export function generateAlias(): string {
 }
 
 const warnaAvatar = [
-  '#E4572E', // stiker-merah
-  '#FFC914', // marker-kuning
+  '#6E0521', // stiker-merah (maroon IG)
+  '#FED92E', // marker-kuning (kuning IG)
   '#57A773', // tape-hijau
   '#1E56C8', // pulpen-biru
   '#EF8FB2', // stiker-pink
