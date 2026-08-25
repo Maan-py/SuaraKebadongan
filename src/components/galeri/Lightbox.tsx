@@ -263,7 +263,7 @@ export default function Lightbox({
               <button
                 onClick={handleSave}
                 disabled={isSaving}
-                className="flex-1 rounded-radius-pill bg-spidol-ungu px-4 py-2 text-sm font-medium text-polaroid hover:bg-spidol-ungu/90 transition-colors disabled:opacity-50"
+                className="flex-1 rounded-radius-pill bg-stiker-merah px-4 py-2 text-sm font-medium text-polaroid hover:bg-maroon-600 transition-colors disabled:opacity-50"
               >
                 {isSaving ? '...' : 'Simpan'}
               </button>

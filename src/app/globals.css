@@ -2,39 +2,58 @@
 
 /* ============================================================
  * DESAIN TOKEN — SuaraKebadongan
+ * Tema: Maroon #6E0521 + Kuning #FED92E (IG @suarakebadongan)
  * Sumber kebenaran: DESIGN.md §Token Visual
- * Semua nilai di sini harus SYNC dengan DESIGN.md.
- * Kalau ingin mengubah warna/ukuran, ubah di DUA tempat:
- *   1. DESIGN.md (sumber desain)
- *   2. File ini (sumber kode)
  * ============================================================ */
 
 :root {
   /* ── Kelompok Dasar: Kertas & Tinta ────────────────────── */
-  --kertas:          #FAF3E3;  /* latar utama — kertas gading hangat              */
-  --karton:          #F1E6CC;  /* latar kartu/kotak sekunder — karton manila      */
-  --garis-kertas:    #E3D2AC;  /* garis pemisah halus, tepi kertas sobek          */
-  --tinta:           #2E2118;  /* teks utama & judul — coklat kehitaman tinta botol */
-  --tinta-lembut:    #6B5844;  /* teks sekunder: tanggal, meta, teks bantu        */
+  --kertas:          #FFFDF7;  /* latar utama — putih gading bersih                */
+  --karton:          #F5EDE0;  /* latar kartu/kotak sekunder — karton manila hangat */
+  --garis-kertas:    #E8DCC8;  /* garis pemisah halus, tepi kertas sobek            */
+  --tinta:           #2E2118;  /* teks utama — coklat kehitaman tinta botol         */
+  --tinta-lembut:    #6B5844;  /* teks sekunder: tanggal, meta, teks bantu          */
 
-  /* ── Kelompok Aksen: Stiker Cerah ──────────────────────── */
-  --stiker-merah:    #6E0521;  /* merah maroon IG @suarakebadongan                */
-  --marker-kuning:   #FED92E;  /* kuning IG @suarakebadongan                      */
-  --tape-hijau:      #57A773;  /* washi tape hijau polos/garis                     */
-  --pulpen-biru:     #1E56C8;  /* tulisan ballpoint, tautan/link                  */
-  --stiker-pink:     #EF8FB2;  /* stiker hati, badge lucu, reaksi                 */
-  --spidol-ungu:     #7B5EA7;  /* doodle tambahan, label album                     */
+  /* ── Kelompok Aksen: Maroon & Kuning IG ────────────────── */
+  --stiker-merah:    #6E0521;  /* merah maroon IG — aksen utama, tombol, aktif     */
+  --marker-kuning:   #FED92E;  /* kuning IG — stabilo, highlight, badge             */
+  --tape-hijau:      #57A773;  /* washi tape hijau — sukses, online                 */
+  --pulpen-biru:     #1E56C8;  /* tulisan ballpoint, tautan/link                    */
+  --stiker-pink:     #D4A0B0;  /* pink lembut — turunan maroon, reaksi              */
+  --spidol-ungu:     #7B5EA7;  /* doodle tambahan, label album                       */
+
+  /* ── Kelompok Maroon: Nuansa #6E0521 ──────────────────── */
+  --maroon-50:       #FDF2F4;  /* background sangat light                            */
+  --maroon-100:      #F9D5DC;  /* background light                                   */
+  --maroon-200:      #F0A3B3;  /* border, divider                                    */
+  --maroon-300:      #D96B85;  /* hover state                                        */
+  --maroon-400:      #B83A5A;  /* active state                                       */
+  --maroon-500:      #6E0521;  /* utama = --stiker-merah                             */
+  --maroon-600:      #5A041B;  /* hover gelap                                        */
+  --maroon-700:      #460315;  /* pressed                                            */
+  --maroon-800:      #32020F;  /* very dark                                          */
+  --maroon-900:      #1E0109;  /* hampir hitam                                       */
+
+  /* ── Kelompok Kuning: Nuansa #FED92E ──────────────────── */
+  --kuning-50:       #FFFEF5;  /* background sangat light                            */
+  --kuning-100:      #FFFCE0;  /* background light                                   */
+  --kuning-200:      #FFF7B0;  /* border, divider                                    */
+  --kuning-300:      #FFEE7A;  /* hover state                                        */
+  --kuning-400:      #FEE44D;  /* active state                                       */
+  --kuning-500:      #FED92E;  /* utama = --marker-kuning                            */
+  --kuning-600:      #DFBA0A;  /* hover gelap                                        */
+  --kuning-700:      #B08F06;  /* pressed                                            */
+  --kuning-800:      #806704;  /* very dark                                          */
+  --kuning-900:      #4D3D02;  /* hampir hitam                                       */
 
   /* ── Kelompok Sepia: Foto Lama ─────────────────────────── */
-  --sepia-terang:    #C8A165;  /* nuansa terang filter film lama                   */
-  --sepia-gelap:     #8A6642;  /* bingkai foto pudar, area gelap                   */
-  --polaroid:        #FFFDF7;  /* putih gading bingkai polaroid                    */
+  --sepia-terang:    #C8A165;  /* nuansa terang filter film lama                     */
+  --sepia-gelap:     #8A6642;  /* bingkai foto pudar, area gelap                     */
+  --polaroid:        #FFFDF7;  /* putih gading bingkai polaroid                      */
 }
 
 /* ============================================================
  * Tailwind v4 Theme Mapping
- * Menghubungkan CSS custom properties di atas ke utility class Tailwind.
- * Contoh: bg-kertas, text-tinta, border-tape-hijau, dll.
  * ============================================================ */
 
 @theme inline {
@@ -51,6 +70,28 @@
   --color-pulpen-biru:    var(--pulpen-biru);
   --color-stiker-pink:    var(--stiker-pink);
   --color-spidol-ungu:    var(--spidol-ungu);
+
+  --color-maroon-50:      var(--maroon-50);
+  --color-maroon-100:     var(--maroon-100);
+  --color-maroon-200:     var(--maroon-200);
+  --color-maroon-300:     var(--maroon-300);
+  --color-maroon-400:     var(--maroon-400);
+  --color-maroon-500:     var(--maroon-500);
+  --color-maroon-600:     var(--maroon-600);
+  --color-maroon-700:     var(--maroon-700);
+  --color-maroon-800:     var(--maroon-800);
+  --color-maroon-900:     var(--maroon-900);
+
+  --color-kuning-50:      var(--kuning-50);
+  --color-kuning-100:     var(--kuning-100);
+  --color-kuning-200:     var(--kuning-200);
+  --color-kuning-300:     var(--kuning-300);
+  --color-kuning-400:     var(--kuning-400);
+  --color-kuning-500:     var(--kuning-500);
+  --color-kuning-600:     var(--kuning-600);
+  --color-kuning-700:     var(--kuning-700);
+  --color-kuning-800:     var(--kuning-800);
+  --color-kuning-900:     var(--kuning-900);
 
   --color-sepia-terang:   var(--sepia-terang);
   --color-sepia-gelap:    var(--sepia-gelap);
@@ -91,26 +132,60 @@
  * Base Styles
  * ============================================================ */
 
-/* Tekstur kertas: noise halus dari SVG feTurbulence + gradasi radial.
- * Descriptor: "kertas gading hangat dengan serat samar" — DESIGN.md §Sistem Tekstur */
 body {
   background-color: var(--kertas);
   color: var(--tinta);
   font-family: var(--font-body), system-ui, sans-serif;
+  /* gradasi halus nuansa maroon + kuning */
   background-image:
-    /* gradasi radial hangat — kesan lampu kuning posko */
-    radial-gradient(ellipse at 20% 50%, rgba(200,161,101,.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(200,161,101,.05) 0%, transparent 50%);
-  /* noise texture ditambahkan via className di layout.tsx karena
-   * SVG data-URI lebih cocok di inline style daripada CSS @layer */
+    radial-gradient(ellipse at 15% 30%, rgba(110,5,33,.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 70%, rgba(254,217,46,.04) 0%, transparent 50%);
 }
 
-/* Heading otomatis pakai display font */
 h1, h2, h3 {
   font-family: var(--font-display), system-ui, sans-serif;
 }
 
-/* Link pakai warna pulpen biru */
 a {
   color: var(--pulpen-biru);
+}
+
+/* ============================================================
+ * Custom Utilities
+ * ============================================================ */
+
+/* Tombol maroon utama */
+.btn-maroon {
+  background-color: var(--stiker-merah);
+  color: var(--polaroid);
+  transition: background-color 0.2s;
+}
+.btn-maroon:hover {
+  background-color: var(--maroon-600);
+}
+.btn-maroon:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Tombol kuning */
+.btn-kuning {
+  background-color: var(--marker-kuning);
+  color: var(--tinta);
+  transition: background-color 0.2s;
+}
+.btn-kuning:hover {
+  background-color: var(--kuning-600);
+}
+
+/* Badge maroon */
+.badge-maroon {
+  background-color: var(--maroon-100);
+  color: var(--stiker-merah);
+}
+
+/* Badge kuning */
+.badge-kuning {
+  background-color: var(--kuning-100);
+  color: var(--kuning-700);
 }

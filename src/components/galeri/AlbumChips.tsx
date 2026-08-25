@@ -58,8 +58,8 @@ export default function AlbumChips({
           onClick={() => onSelectAlbum(null)}
           className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
             selectedAlbumId === null
-              ? 'border-spidol-ungu bg-spidol-ungu text-polaroid'
-              : 'border-spidol-ungu text-spidol-ungu hover:bg-spidol-ungu/10'
+              ? 'border-stiker-merah bg-stiker-merah text-polaroid'
+              : 'border-maroon-200 text-stiker-merah hover:bg-maroon-100'
           }`}
         >
           Semua
@@ -72,8 +72,8 @@ export default function AlbumChips({
             onClick={() => onSelectAlbum(album.id)}
             className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
               selectedAlbumId === album.id
-                ? 'border-spidol-ungu bg-spidol-ungu text-polaroid'
-                : 'border-spidol-ungu text-spidol-ungu hover:bg-spidol-ungu/10'
+                ? 'border-stiker-merah bg-stiker-merah text-polaroid'
+                : 'border-maroon-200 text-stiker-merah hover:bg-maroon-100'
             }`}
           >
             {album.name}
@@ -83,7 +83,7 @@ export default function AlbumChips({
         {/* Tombol tambah album */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="rounded-radius-pill border border-dashed border-garis-kertas px-4 py-1.5 text-sm text-tinta-lembut hover:border-spidol-ungu hover:text-spidol-ungu transition-colors"
+          className="rounded-radius-pill border border-dashed border-maroon-200 px-4 py-1.5 text-sm text-tinta-lembut hover:border-stiker-merah hover:text-stiker-merah transition-colors"
         >
           + Album Baru
         </button>
@@ -93,7 +93,7 @@ export default function AlbumChips({
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-tinta/40 p-4">
           <div className="w-full max-w-sm rounded-radius-modal bg-kertas p-6 shadow-lg">
-            <h3 className="font-display text-md font-semibold text-tinta mb-4">
+            <h3 className="font-display text-md font-semibold text-stiker-merah mb-4">
               Album Baru
             </h3>
 
@@ -105,7 +105,7 @@ export default function AlbumChips({
                   value={newAlbumName}
                   onChange={(e) => setNewAlbumName(e.target.value)}
                   placeholder="Contoh: Bersih Desa"
-                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta placeholder:text-tinta-lembut/50 focus:border-spidol-ungu focus:outline-none"
+                  className="w-full rounded-radius-tape border border-maroon-200 bg-polaroid px-3 py-2 text-tinta placeholder:text-tinta-lembut/50 focus:border-stiker-merah focus:outline-none"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export default function AlbumChips({
                   value={newAlbumDesc}
                   onChange={(e) => setNewAlbumDesc(e.target.value)}
                   placeholder="Cerita singkat tentang album ini..."
-                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta placeholder:text-tinta-lembut/50 focus:border-spidol-ungu focus:outline-none"
+                  className="w-full rounded-radius-tape border border-maroon-200 bg-polaroid px-3 py-2 text-tinta placeholder:text-tinta-lembut/50 focus:border-stiker-merah focus:outline-none"
                 />
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function AlbumChips({
               <button
                 onClick={handleCreateAlbum}
                 disabled={!newAlbumName.trim() || isCreating}
-                className="rounded-radius-pill bg-spidol-ungu px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-spidol-ungu/90 transition-colors disabled:opacity-50"
+                className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-600 transition-colors disabled:opacity-50"
               >
                 {isCreating ? '...' : 'Buat Album'}
               </button>

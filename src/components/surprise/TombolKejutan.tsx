@@ -124,7 +124,7 @@ export default function TombolKejutan() {
         }`}
         aria-label="Kejutan foto kenangan — Inget ga sih?"
         style={{
-          boxShadow: '0 4px 12px rgba(228,87,46,.3)',
+          boxShadow: '0 4px 12px rgba(110,5,33,.3)',
         }}
       >
         {/* Bintang meledak SVG */}
