@@ -26,14 +26,14 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
       {/* Avatar */}
       <AvatarHewan
         hewan={message.avatar}
-        warna={isOwn ? '#4A8C5C' : '#7A6655'}
+        warna={isOwn ? '#FED92E' : '#D96B85'}
         className="flex-shrink-0"
       />
 
       {/* Bubble */}
       <div className={`max-w-[80%] ${isOwn ? 'items-end' : 'items-start'} flex flex-col`}>
         {/* Nama samaran */}
-        <span className="mb-1 text-xs text-tinta-lembut">
+        <span className="mb-1 text-xs text-polaroid/60">
           {message.alias}
         </span>
 
@@ -41,8 +41,8 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
         <div
           className={`rounded-radius-kartu px-4 py-2.5 ${
             isOwn
-              ? 'bg-tape-hijau/20 text-tinta'
-              : 'bg-karton text-tinta'
+              ? 'bg-marker-kuning text-maroon-900'
+              : 'bg-polaroid text-tinta-gelap'
           }`}
           style={{ wordBreak: 'break-word' }}
         >
@@ -50,7 +50,7 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
         </div>
 
         {/* Waktu */}
-        <span className="mt-1 text-[10px] text-tinta-lembut/60">
+        <span className="mt-1 text-[10px] text-polaroid/40">
           {time}
         </span>
       </div>

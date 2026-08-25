@@ -99,20 +99,17 @@ export default function ChatPage() {
 
   if (loading) {
     return (
-      <div className="px-4 py-8 md:px-6">
-        <div className="mb-6">
-          <h1 className="font-display text-xl font-semibold text-tinta">Suara</h1>
-          <p className="font-tulis text-base text-tinta-lembut">
-            kata-kata yang dilempar tanpa nama — biar saja mengambang
-          </p>
+      <div className="min-h-dvh">
+        <div className="blok-kuning px-4 py-4 md:px-6">
+          <div className="h-7 w-32 animate-pulse rounded bg-stiker-merah/20" />
         </div>
-        <div className="space-y-3">
+        <div className="blok-maroon min-h-dvh space-y-3 px-4 py-6 md:px-6">
           {[1, 2, 3].map((i) => (
             <div key={i} className="flex gap-2">
-              <div className="h-9 w-9 flex-shrink-0 animate-pulse rounded-full bg-garis-kertas" />
+              <div className="h-9 w-9 flex-shrink-0 animate-pulse rounded-full bg-polaroid/20" />
               <div className="flex-1 space-y-1">
-                <div className="h-3 w-24 animate-pulse rounded bg-garis-kertas" />
-                <div className="h-10 w-3/4 animate-pulse rounded-radius-kartu bg-garis-kertas" />
+                <div className="h-3 w-24 animate-pulse rounded bg-polaroid/15" />
+                <div className="h-10 w-3/4 animate-pulse rounded-radius-kartu bg-polaroid/15" />
               </div>
             </div>
           ))}
@@ -123,19 +120,19 @@ export default function ChatPage() {
 
   return (
     <div className="flex h-dvh flex-col">
-      {/* Header */}
-      <div className="flex-shrink-0 px-4 py-4 md:px-6">
-        <h1 className="font-display text-xl font-semibold text-tinta">Suara</h1>
-        <p className="font-tulis text-base text-tinta-lembut">
+      {/* ── BLOK KUNING: header ── */}
+      <header className="blok-kuning flex-shrink-0 px-4 py-4 md:px-6">
+        <h1 className="font-display text-xl font-semibold text-stiker-merah">Suara</h1>
+        <p className="font-tulis text-base text-maroon-900/70">
           kata-kata yang dilempar tanpa nama — biar saja mengambang
         </p>
-      </div>
+      </header>
 
-      {/* Area pesan */}
+      {/* ── BLOK MAROON: area pesan ── */}
       <div
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="flex-1 overflow-y-auto px-4 md:px-6"
+        className="blok-maroon flex-1 overflow-y-auto px-4 md:px-6"
         role="log"
         aria-live="polite"
         aria-label="Riwayat pesan"
@@ -151,20 +148,20 @@ export default function ChatPage() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-4 text-tinta-lembut/30"
+              className="mb-4 text-polaroid/30"
             >
               <path d="M12 48c0 4 4 8 8 8h24c4 0 8-4 8-8V24c0-4-4-8-8-8H20c-4 0-8 4-8 8v24z" />
               <path d="M24 32h16" />
               <path d="M32 24v16" />
             </svg>
-            <p className="font-tulis text-lg text-tinta-lembut">
+            <p className="font-tulis text-lg text-polaroid/80">
               Belum ada suara sama sekali. Kasih salam pertama buat yang lain yuk!
             </p>
           </div>
         ) : (
           <>
             {/* Teks informatif */}
-            <p className="mb-4 text-center text-[10px] text-tinta-lembut/40">
+            <p className="mb-4 text-center text-[10px] text-polaroid/50">
               cuma {LIMIT} suara terakhir yang tersimpan — yang lewat ya sudah lewat
             </p>
 
@@ -189,13 +186,13 @@ export default function ChatPage() {
       {newCount > 0 && !isAtBottom && (
         <button
           onClick={scrollToBottom}
-          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-tinta px-4 py-1.5 text-xs text-polaroid shadow-lg transition-transform hover:scale-105 md:bottom-20"
+          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-marker-kuning px-4 py-1.5 text-xs font-semibold text-maroon-900 shadow-lg transition-transform hover:scale-105 md:bottom-20"
         >
           {newCount} pesan baru ↓
         </button>
       )}
 
-      {/* Input */}
+      {/* ── BLOK KUNING: input bar ── */}
       <div className="flex-shrink-0">
         <ChatInput onMessageSent={scrollToBottom} />
       </div>

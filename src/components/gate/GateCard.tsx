@@ -81,24 +81,24 @@ export default function GateCard() {
 
   return (
     <motion.main
-      className="flex min-h-screen items-center justify-center bg-stiker-merah p-6"
+      className="blok-maroon flex min-h-screen items-center justify-center p-6"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={shouldReduceMotion ? undefined : { duration: 0.4, ease: "easeOut" }}
     >
       <div className="relative w-full max-w-[420px]">
-        {/* ── Tape hijau miring -2° di tepi atas ──────────── */}
+        {/* ── Tape kuning miring -2° di tepi atas ──────────── */}
         <div
-          className="absolute -top-3 left-1/2 z-10 h-6 w-32 -translate-x-1/2 -rotate-2 rounded-sm opacity-80"
+          className="absolute -top-3 left-1/2 z-10 h-6 w-32 -translate-x-1/2 -rotate-2 rounded-sm opacity-90"
           style={{
-            background: "linear-gradient(90deg, var(--tape-hijau) 0%, var(--tape-hijau) 100%)",
+            background: "linear-gradient(90deg, var(--marker-kuning) 0%, var(--marker-kuning) 100%)",
           }}
           aria-hidden="true"
         />
 
         {/* ── Kartu utama ─────────────────────────────────── */}
         <motion.div
-          className="relative rounded-modal bg-karton p-8 shadow-[0_2px_4px_rgba(0,0,0,.15),0_12px_32px_rgba(0,0,0,.25)]"
+          className="relative rounded-modal bg-polaroid p-8 shadow-[0_2px_4px_rgba(0,0,0,.15),0_12px_32px_rgba(0,0,0,.25)]"
           animate={
             !shouldReduceMotion && state === "error"
               ? { x: [0, -4, 4, -4, 4, 0] }
@@ -120,7 +120,7 @@ export default function GateCard() {
           </div>
 
           {/* ── Judul ──────────────────────────────────────── */}
-          <h1 className="font-display text-xl text-tinta">
+          <h1 className="font-display text-xl text-stiker-merah">
             Selamat datang di Badongan.
           </h1>
 
@@ -143,7 +143,7 @@ export default function GateCard() {
               onChange={(e) => setPasscode(e.target.value)}
               placeholder="psst… ketik suara pintunya"
               disabled={state === "loading" || state === "lockout"}
-              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-tape-hijau focus:outline-none focus:ring-2 focus:ring-tape-hijau/30 disabled:opacity-50"
+              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-marker-kuning focus:outline-none focus:ring-2 focus:ring-marker-kuning/40 disabled:opacity-50"
               autoComplete="off"
               aria-describedby={message ? "gate-message" : undefined}
             />

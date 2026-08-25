@@ -81,80 +81,87 @@ export default function NotesPage() {
 
   if (loading) {
     return (
-      <div className="px-4 py-8 md:px-6">
-        <div className="mb-6 space-y-3">
-          <div className="h-8 w-48 animate-pulse rounded bg-garis-kertas" />
-          <div className="h-4 w-64 animate-pulse rounded bg-garis-kertas" />
+      <div className="min-h-dvh">
+        <div className="blok-kuning px-4 py-8 md:px-6">
+          <div className="mb-3 h-8 w-40 animate-pulse rounded bg-stiker-merah/20" />
+          <div className="h-32 animate-pulse rounded-radius-kartu bg-polaroid/60" />
         </div>
-        <div className="mb-8 h-32 animate-pulse rounded-radius-kartu bg-garis-kertas" />
-        <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div
-              key={i}
-              className="mb-4 break-inside-avoid animate-pulse rounded bg-garis-kertas"
-              style={{ height: 80 + (i % 3) * 30 }}
-            />
-          ))}
+        <div className="blok-maroon min-h-dvh px-4 py-8 md:px-6">
+          <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div
+                key={i}
+                className="mb-4 break-inside-avoid animate-pulse rounded bg-polaroid/15"
+                style={{ height: 80 + (i % 3) * 30 }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="px-4 py-8 md:px-6">
-      {/* Header */}
-      <div className="mb-6">
-        <h1 className="font-display text-xl font-semibold text-tinta">
-          Cat Tempel
-        </h1>
-        <p className="font-tulis text-base text-tinta-lembut">
-          tempel di sini, biar yang lain baca juga
-        </p>
-      </div>
-
-      {/* Formulis */}
-      <NoteForm onNoteCreated={loadNotes} />
-
-      {/* Papan catatan */}
-      {notes.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          {/* Hantu garis putus-putus */}
-          <svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mb-4 text-tinta-lembut/30"
-            strokeDasharray="4 4"
-          >
-            <rect x="16" y="12" width="48" height="56" rx="4" />
-            <line x1="24" y1="24" x2="56" y2="24" />
-            <line x1="24" y1="32" x2="48" y2="32" />
-            <line x1="24" y1="40" x2="52" y2="40" />
-          </svg>
-          <p className="font-tulis text-lg text-tinta-lembut">
-            Papan masih kosong nih. Jadi orang pertama yang naruh tempel di dinding!
+    <div>
+      {/* ── BLOK KUNING: judul + formulir ── */}
+      <section className="blok-kuning px-4 pb-10 pt-8 md:px-6">
+        {/* Header */}
+        <div className="mb-6">
+          <h1 className="font-display text-xl font-semibold text-stiker-merah">
+            Cat Tempel
+          </h1>
+          <p className="font-tulis text-base text-maroon-900/70">
+            tempel di sini, biar yang lain baca juga
           </p>
         </div>
-      ) : (
-        <div className="columns-2 gap-3 sm:columns-3 lg:columns-4 max-w-[1100px] mx-auto">
-          <AnimatePresence>
-            {notes.map((note, i) => (
-              <NoteCard
-                key={note.id}
-                note={note}
-                index={i}
-                onNoteUpdated={loadNotes}
-                onNoteDeleted={handleNoteDeleted}
-              />
-            ))}
-          </AnimatePresence>
-        </div>
-      )}
+
+        {/* Formulis */}
+        <NoteForm onNoteCreated={loadNotes} />
+      </section>
+
+      {/* ── BLOK MAROON: papan catatan ── */}
+      <section className="blok-maroon px-4 py-8 md:px-6">
+        {/* Papan catatan */}
+        {notes.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            {/* Hantu garis putus-putus */}
+            <svg
+              width="80"
+              height="80"
+              viewBox="0 0 80 80"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="mb-4 text-polaroid/30"
+              strokeDasharray="4 4"
+            >
+              <rect x="16" y="12" width="48" height="56" rx="4" />
+              <line x1="24" y1="24" x2="56" y2="24" />
+              <line x1="24" y1="32" x2="48" y2="32" />
+              <line x1="24" y1="40" x2="52" y2="40" />
+            </svg>
+            <p className="font-tulis text-lg text-polaroid/80">
+              Papan masih kosong nih. Jadi orang pertama yang naruh tempel di dinding!
+            </p>
+          </div>
+        ) : (
+          <div className="columns-2 gap-3 sm:columns-3 lg:columns-4 max-w-[1100px] mx-auto">
+            <AnimatePresence>
+              {notes.map((note, i) => (
+                <NoteCard
+                  key={note.id}
+                  note={note}
+                  index={i}
+                  onNoteUpdated={loadNotes}
+                  onNoteDeleted={handleNoteDeleted}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
+      </section>
     </div>
   )
 }

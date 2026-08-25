@@ -97,15 +97,15 @@ export default function GaleriPage() {
 
   if (loading) {
     return (
-      <div className="px-4 py-8 md:px-6">
+      <div className="blok-maroon min-h-dvh px-4 py-8 md:px-6">
         <div className="mb-6 space-y-3">
-          <div className="h-8 w-48 animate-pulse rounded bg-garis-kertas" />
-          <div className="h-4 w-64 animate-pulse rounded bg-garis-kertas" />
+          <div className="h-8 w-48 animate-pulse rounded bg-polaroid/20" />
+          <div className="h-4 w-64 animate-pulse rounded bg-polaroid/15" />
         </div>
-        <div className="mb-6 h-20 animate-pulse rounded-radius-kartu bg-garis-kertas" />
+        <div className="mb-6 h-20 animate-pulse rounded-radius-kartu bg-polaroid/15" />
         <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="mb-4 break-inside-avoid animate-pulse rounded bg-sepia-gelap/20" style={{ height: 150 + (i % 3) * 60 }} />
+            <div key={i} className="mb-4 break-inside-avoid animate-pulse rounded bg-polaroid/10" style={{ height: 150 + (i % 3) * 60 }} />
           ))}
         </div>
       </div>
@@ -113,33 +113,41 @@ export default function GaleriPage() {
   }
 
   return (
-    <div className="px-4 py-8 md:px-6">
-      {/* Header */}
-      <div className="mb-6">
-        <h1 className="font-display text-xl font-semibold text-tinta">
-          Album Kenangan
-        </h1>
-        <p className="font-tulis text-base text-tinta-lembut">
-          ditempel pelan-pelan, biar kenangannya awet
-        </p>
-      </div>
+    <div>
+      {/* ── BLOK 1: MAROON — judul + zona upload ── */}
+      <section className="blok-maroon px-4 pb-10 pt-8 md:px-6">
+        {/* Header */}
+        <div className="mb-6">
+          <h1 className="font-display text-xl font-semibold text-marker-kuning">
+            Album Kenangan
+          </h1>
+          <p className="font-tulis text-base text-polaroid/70">
+            ditempel pelan-pelan, biar kenangannya awet
+          </p>
+        </div>
 
-      {/* Zona upload */}
-      <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
+        {/* Zona upload */}
+        <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
+      </section>
 
-      {/* Album chips */}
-      <AlbumChips
-        albums={albums}
-        selectedAlbumId={selectedAlbumId}
-        onSelectAlbum={setSelectedAlbumId}
-        onAlbumCreated={loadData}
-      />
+      {/* ── BLOK 2: KUNING — chip album ── */}
+      <section className="blok-kuning px-4 py-5 md:px-6">
+        <AlbumChips
+          albums={albums}
+          selectedAlbumId={selectedAlbumId}
+          onSelectAlbum={setSelectedAlbumId}
+          onAlbumCreated={loadData}
+        />
+      </section>
 
-      {/* Grid masonry polaroid */}
-      <MasonryGrid
-        photos={filteredPhotos}
-        onSelectPhoto={handleSelectPhoto}
-      />
+      {/* ── BLOK 3: MAROON — masonry polaroid ── */}
+      <section className="blok-maroon px-4 py-8 md:px-6">
+        {/* Grid masonry polaroid */}
+        <MasonryGrid
+          photos={filteredPhotos}
+          onSelectPhoto={handleSelectPhoto}
+        />
+      </section>
 
       {/* Lightbox */}
       {selectedPhotoIndex !== null && (

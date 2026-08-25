@@ -176,7 +176,7 @@ export default function TombolKejutan() {
                   <p className="font-tulis text-lg text-polaroid">{error}</p>
                   <button
                     onClick={handleLagi}
-                    className="mt-4 rounded-radius-pill bg-tape-hijau px-6 py-2 text-sm font-medium text-polaroid hover:bg-tape-hijau/90"
+                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 hover:bg-kuning-300"
                   >
                     Coba Lagi
                   </button>
@@ -207,7 +207,7 @@ export default function TombolKejutan() {
                       handleClose()
                       router.push('/galeri')
                     }}
-                    className="mt-4 rounded-radius-pill bg-tape-hijau px-6 py-2 text-sm font-medium text-polaroid hover:bg-tape-hijau/90"
+                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 hover:bg-kuning-300"
                   >
                     ke Galeri
                   </button>
@@ -252,7 +252,7 @@ export default function TombolKejutan() {
                   {/* Tombol Lagi! */}
                   <button
                     onClick={handleLagi}
-                    className="mt-4 rounded-radius-pill bg-tape-hijau px-6 py-2 text-sm font-medium text-polaroid transition-colors hover:bg-tape-hijau/90"
+                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 transition-colors hover:bg-kuning-300"
                   >
                     Lagi!
                   </button>

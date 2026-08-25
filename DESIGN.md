@@ -61,13 +61,15 @@ Lima prinsip berikut adalah pagar agar desain kita tidak jatuh ke jebakan templa
 
 ### Palet Warna
 
-Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon #6E0521** dan **kuning #FED92E** (identitas IG @suarakebadongan) — tampil sebagai **blok besar yang nyata**: maroon jadi permukaan navigasi & gerbang, kuning jadi warna aksi & highlight.
+Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon #6E0521** dan **kuning #FED92E** (identitas IG @suarakebadongan) — tampil sebagai **pita blok besar yang bergantian** di setiap halaman, seperti poster pameran.
 
-#### Aturan Blok Besar
+#### Aturan Blok Bergantian (Sistem Poster)
 
-1. **Maroon = permukaan.** Header desktop, tab bar mobile, dan halaman gerbang memakai maroon penuh `#6E0521` dengan teks gading/kuning. Ini "band" identitas yang langsung dikenali.
-2. **Kuning = aksi & perhatian.** Tab aktif (pill kuning di nav maroon), tombol utama, banner offline, tombol kejutan. Teks di atas kuning selalu `--tinta-gelap`.
-3. **Kanvas = gading netral.** Area konten tetap terang supaya foto & catatan jadi bintangnya.
+1. **`.blok-maroon`** — gradasi `#6E0521 → #32020F`, teks gading `--polaroid`, aksen kuning. Dipakai untuk: header+upload galeri, masonry galeri, area pesan chat, papan cat tempel, layar gerbang, nav.
+2. **`.blok-kuning`** — kuning penuh `#FED92E`, teks maroon gelap `--maroon-900`. Dipakai untuk: band chip album, header chat, bar input chat, judul+formulir cat tempel.
+3. **Ritme A-B-A**: tiap halaman berselang-seling (contoh Galeri: maroon → kuning → maroon) supaya kedua warna sama-sama jadi latar utama.
+4. **Aturan tombol**: di blok maroon → tombol kuning + teks gelap; di blok kuning/permukaan terang → tombol maroon + teks gading.
+5. **Kanvas gading** hanya tampak di dalam kartu (polaroid, modal, input) — konten foto & catatan tetap bintangnya.
 
 #### Kelompok Dasar — Kertas & Tinta
 
@@ -623,6 +625,16 @@ Bagian ini fotokopi resmi dari Token Visual dalam bentuk siap-tempel — nilainy
 
   /* Spasi — grid dasar 4px, langkah 4/8/12/16/24/32/48/64 */
   --spasi-dasar: 4px;
+}
+
+/* Sistem Blok — pita maroon × kuning bergantian */
+.blok-maroon {
+  background-image: linear-gradient(180deg, var(--stiker-merah) 0%, var(--maroon-800) 100%);
+  color: var(--polaroid);
+}
+.blok-kuning {
+  background-color: var(--marker-kuning);
+  color: var(--maroon-900);
 }
 ```
 

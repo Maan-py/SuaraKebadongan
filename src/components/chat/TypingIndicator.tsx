@@ -30,7 +30,7 @@ export default function TypingIndicator() {
 
   return (
     <div className="px-4 py-2" aria-live="polite" aria-atomic="true">
-      <p className="text-xs text-tinta-lembut italic">
+      <p className="text-xs text-polaroid/60 italic">
         Seseorang sedang mengetik
         <span className="inline-flex w-6 justify-between">
           <span className="animate-[typing-dots_900ms_linear_infinite]">.</span>

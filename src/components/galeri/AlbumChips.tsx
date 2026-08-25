@@ -51,15 +51,15 @@ export default function AlbumChips({
   }
 
   return (
-    <div className="mb-6">
+    <div>
       <div className="flex flex-wrap items-center gap-2">
         {/* Chip "Semua" */}
         <button
           onClick={() => onSelectAlbum(null)}
           className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
             selectedAlbumId === null
-              ? 'border-marker-kuning bg-marker-kuning text-tinta-gelap'
-              : 'border-garis-kertas text-tinta-lembut hover:border-stiker-merah/50 hover:text-stiker-merah'
+              ? 'border-stiker-merah bg-stiker-merah text-polaroid'
+              : 'border-stiker-merah/40 text-stiker-merah hover:bg-stiker-merah/10'
           }`}
         >
           Semua
@@ -72,8 +72,8 @@ export default function AlbumChips({
             onClick={() => onSelectAlbum(album.id)}
             className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
               selectedAlbumId === album.id
-                ? 'border-marker-kuning bg-marker-kuning text-tinta-gelap'
-                : 'border-garis-kertas text-tinta-lembut hover:border-stiker-merah/50 hover:text-stiker-merah'
+                ? 'border-stiker-merah bg-stiker-merah text-polaroid'
+                : 'border-stiker-merah/40 text-stiker-merah hover:bg-stiker-merah/10'
             }`}
           >
             {album.name}
@@ -83,7 +83,7 @@ export default function AlbumChips({
         {/* Tombol tambah album */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="rounded-radius-pill border border-dashed border-garis-kertas px-4 py-1.5 text-sm text-tinta-lembut hover:border-stiker-merah hover:text-stiker-merah transition-colors"
+          className="rounded-radius-pill border border-dashed border-stiker-merah/50 px-4 py-1.5 text-sm text-stiker-merah hover:border-stiker-merah hover:bg-stiker-merah/10 transition-colors"
         >
           + Album Baru
         </button>
@@ -91,8 +91,8 @@ export default function AlbumChips({
 
       {/* Modal buat album */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-tinta/40 p-4">
-          <div className="w-full max-w-sm rounded-radius-modal bg-karton border border-garis-kertas p-6 shadow-lg">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-maroon-900/70 p-4">
+          <div className="w-full max-w-sm rounded-radius-modal bg-polaroid p-6 shadow-lg">
             <h3 className="font-display text-md font-semibold text-stiker-merah mb-4">
               Album Baru
             </h3>
@@ -131,7 +131,7 @@ export default function AlbumChips({
               <button
                 onClick={handleCreateAlbum}
                 disabled={!newAlbumName.trim() || isCreating}
-                className="rounded-radius-pill bg-marker-kuning px-4 py-1.5 text-sm font-medium text-tinta-gelap hover:bg-kuning-300 transition-colors disabled:opacity-50"
+                className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-600 transition-colors disabled:opacity-50"
               >
                 {isCreating ? '...' : 'Buat Album'}
               </button>

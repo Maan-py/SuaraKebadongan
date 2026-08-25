@@ -67,13 +67,10 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
     }
   }
 
-  const selectedColor = COLORS.find((c) => c.id === color) || COLORS[0]
-
   return (
     <div className="mb-8">
       <div
-        className="rounded-radius-kartu p-4 shadow-sm"
-        style={{ backgroundColor: selectedColor.bg }}
+        className="rounded-radius-kartu bg-polaroid p-4 shadow-sm"
       >
         {/* Label */}
         <p className="mb-2 text-xs text-tinta-gelap/70">
@@ -108,7 +105,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         <div className="mt-3 flex items-center justify-between">
           {/* Swatch warna */}
           <div className="flex items-center gap-1.5">
-            <span className="text-[10px] text-tinta-lembut mr-1">Pilih warna:</span>            {COLORS.map((c) => (
+            <span className="text-[10px] text-tinta-gelap/60 mr-1">Pilih warna:</span>            {COLORS.map((c) => (
               <button
                 key={c.id}
                 onClick={() => setColor(c.id)}
@@ -133,7 +130,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
       </div>
 
       {/* Petunjuk keyboard */}
-      <p className="mt-2 text-center text-[10px] text-tinta-lembut/40">
+      <p className="mt-2 text-center text-[10px] text-maroon-900/60">
         Ctrl+Enter untuk tempel cepat
       </p>    </div>
   )
