@@ -8,7 +8,7 @@ import TypingIndicator from '@/components/chat/TypingIndicator'
 
 interface Message {
   id: string
-  text: string
+  body: string
   alias: string
   avatar: string
   created_at: string

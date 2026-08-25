@@ -42,7 +42,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
       const warna = getRandomWarna()
 
       const { error } = await supabase.from('messages').insert({
-        text: trimmed,
+        body: trimmed,
         alias,
         avatar,
       })

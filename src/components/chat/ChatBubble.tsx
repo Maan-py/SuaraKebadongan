@@ -4,7 +4,7 @@ import AvatarHewan from './AvatarHewan'
 
 interface Message {
   id: string
-  text: string
+  body: string
   alias: string
   avatar: string
   created_at: string
@@ -46,7 +46,7 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
           }`}
           style={{ wordBreak: 'break-word' }}
         >
-          <p className="text-sm leading-relaxed">{message.text}</p>
+          <p className="text-sm leading-relaxed">{message.body}</p>
         </div>
 
         {/* Waktu */}
