@@ -89,7 +89,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
   const selectedColor = COLORS.find((c) => c.id === color) || COLORS[0]
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-900/60 p-4">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/40 p-4">
       <div
         ref={popoverRef}
         className="w-full max-w-sm rounded-radius-kartu p-4 shadow-lg"
@@ -160,7 +160,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
             <button
               onClick={handleSave}
               disabled={!body.trim() || body.length > MAX_CHARS || isSaving}
-              className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-maroon-400 transition-colors disabled:opacity-50"
+              className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-maroon-700 transition-colors disabled:opacity-50"
             >
               {isSaving ? '...' : 'Simpan'}
             </button>
@@ -170,8 +170,8 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
 
       {/* Konfirmasi hapus */}
       {showConfirm && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-maroon-900/70 p-4">
-          <div className="w-full max-w-xs rounded-radius-modal bg-karton border border-garis-kertas p-6 text-center shadow-lg">
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-tinta/60 p-4">
+          <div className="w-full max-w-xs rounded-radius-modal bg-kertas p-6 text-center shadow-lg">
             <p className="font-tulis text-lg text-tinta">
               Cabut catatan ini dari papan?
             </p>
@@ -184,7 +184,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
               </button>
               <button
                 onClick={handleDelete}
-                className="rounded-radius-pill bg-maroon-400 px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-300 transition-colors"
+                className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-700 transition-colors"
               >
                 Ya, Cabut
               </button>

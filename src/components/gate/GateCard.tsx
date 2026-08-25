@@ -81,7 +81,7 @@ export default function GateCard() {
 
   return (
     <motion.main
-      className="flex min-h-screen items-center justify-center bg-kertas p-6"
+      className="flex min-h-screen items-center justify-center bg-stiker-merah p-6"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={shouldReduceMotion ? undefined : { duration: 0.4, ease: "easeOut" }}
@@ -98,7 +98,7 @@ export default function GateCard() {
 
         {/* ── Kartu utama ─────────────────────────────────── */}
         <motion.div
-          className="relative rounded-modal bg-karton p-8 shadow-[0_1px_2px_rgba(46,33,24,.08),0_6px_16px_rgba(46,33,24,.12)]"
+          className="relative rounded-modal bg-karton p-8 shadow-[0_2px_4px_rgba(0,0,0,.15),0_12px_32px_rgba(0,0,0,.25)]"
           animate={
             !shouldReduceMotion && state === "error"
               ? { x: [0, -4, 4, -4, 4, 0] }
@@ -164,7 +164,7 @@ export default function GateCard() {
               id="gate-message"
               aria-live="polite"
               className={`mt-4 font-body text-sm ${
-                state === "lockout" ? "text-maroon-300" : "text-tinta-lembut"
+                state === "lockout" ? "text-stiker-merah" : "text-tinta-lembut"
               }`}
             >
               {message}

@@ -111,7 +111,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
           </span>
           {charWarning && (
             <span
-              className="text-[10px] text-marker-kuning"
+              className="text-[10px] text-stiker-merah"
               aria-live="polite"
             >
               Sisa {remaining} huruf

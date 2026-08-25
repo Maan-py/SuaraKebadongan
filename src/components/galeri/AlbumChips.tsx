@@ -59,7 +59,7 @@ export default function AlbumChips({
           className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
             selectedAlbumId === null
               ? 'border-marker-kuning bg-marker-kuning text-tinta-gelap'
-              : 'border-garis-kertas text-tinta-lembut hover:border-marker-kuning/60 hover:text-marker-kuning'
+              : 'border-garis-kertas text-tinta-lembut hover:border-stiker-merah/50 hover:text-stiker-merah'
           }`}
         >
           Semua
@@ -73,7 +73,7 @@ export default function AlbumChips({
             className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
               selectedAlbumId === album.id
                 ? 'border-marker-kuning bg-marker-kuning text-tinta-gelap'
-                : 'border-garis-kertas text-tinta-lembut hover:border-marker-kuning/60 hover:text-marker-kuning'
+                : 'border-garis-kertas text-tinta-lembut hover:border-stiker-merah/50 hover:text-stiker-merah'
             }`}
           >
             {album.name}
@@ -83,7 +83,7 @@ export default function AlbumChips({
         {/* Tombol tambah album */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="rounded-radius-pill border border-dashed border-garis-kertas px-4 py-1.5 text-sm text-tinta-lembut hover:border-marker-kuning hover:text-marker-kuning transition-colors"
+          className="rounded-radius-pill border border-dashed border-garis-kertas px-4 py-1.5 text-sm text-tinta-lembut hover:border-stiker-merah hover:text-stiker-merah transition-colors"
         >
           + Album Baru
         </button>
@@ -91,9 +91,9 @@ export default function AlbumChips({
 
       {/* Modal buat album */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-maroon-900/70 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-tinta/40 p-4">
           <div className="w-full max-w-sm rounded-radius-modal bg-karton border border-garis-kertas p-6 shadow-lg">
-            <h3 className="font-display text-md font-semibold text-marker-kuning mb-4">
+            <h3 className="font-display text-md font-semibold text-stiker-merah mb-4">
               Album Baru
             </h3>
 

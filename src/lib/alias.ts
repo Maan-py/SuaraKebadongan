@@ -17,12 +17,12 @@ export function generateAlias(): string {
 }
 
 const warnaAvatar = [
-  '#D96B85', // maroon-300 — terang agar terlihat di kanvas gelap
+  '#6E0521', // stiker-merah (maroon IG)
   '#FED92E', // marker-kuning (kuning IG)
-  '#7FBF95', // tape-hijau terang
-  '#8FB3E8', // pulpen-biru langit
-  '#DFA3B4', // stiker-pink terang
-  '#9B7FC4', // spidol-ungu lembut
+  '#4A8C5C', // tape-hijau
+  '#2E5090', // pulpen-biru
+  '#C9879E', // stiker-pink
+  '#6B4E8F', // spidol-ungu
 ]
 
 export function getRandomWarna(): string {

@@ -138,7 +138,7 @@ export default function TombolKejutan() {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="absolute -bottom-5 whitespace-nowrap text-[10px] font-bold text-marker-kuning">
+        <span className="absolute -bottom-5 whitespace-nowrap text-[10px] font-bold text-stiker-merah">
           Inget ga sih?
         </span>
       </button>
@@ -151,7 +151,7 @@ export default function TombolKejutan() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-900/85 p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/85 p-4"
             role="dialog"
             aria-modal="true"
             aria-label="Kejutan foto kenangan"

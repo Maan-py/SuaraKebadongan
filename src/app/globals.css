@@ -7,21 +7,21 @@
  * ============================================================ */
 
 :root {
-  /* ── Kelompok Dasar: Kanvas Maroon & Teks Gading ───────── */
-  --kertas:          #420210;  /* latar utama — kanvas maroon pekat               */
-  --karton:          #58041A;  /* permukaan terangkat — nav, kartu, bubble, modal */
-  --garis-kertas:    #7D1B35;  /* garis pemisah — maroon terlihat di kanvas gelap */
-  --tinta:           #FFF3DC;  /* teks utama — gading hangat di atas maroon       */
-  --tinta-lembut:    #D8A9B6;  /* teks sekunder — mawar debu                      */
-  --tinta-gelap:     #3D2B1F;  /* teks gelap khusus permukaan terang (polaroid)   */
+  /* ── Kelompok Dasar: Kertas & Tinta (kanvas terang) ────── */
+  --kertas:          #FFFDF7;  /* latar utama — putih gading bersih                */
+  --karton:          #F5EDE0;  /* permukaan terangkat — panel, modal, kartu        */
+  --garis-kertas:    #E8DCC8;  /* garis pemisah halus                              */
+  --tinta:           #3D2B1F;  /* teks utama di kanvas terang                      */
+  --tinta-lembut:    #7A6655;  /* teks sekunder                                    */
+  --tinta-gelap:     #3D2B1F;  /* teks gelap di blok kuning / polaroid             */
 
   /* ── Kelompok Aksen: Maroon & Kuning (Hero Colors) ──────── */
-  --stiker-merah:    #6E0521;  /* MAROON IG — isi/border di permukaan terang      */
-  --marker-kuning:   #FED92E;  /* KUNING IG — AKSI UTAMA di kanvas gelap           */
-  --tape-hijau:      #4A8C5C;  /* hijau natural — sukses, online                   */
-  --pulpen-biru:     #8FB3E8;  /* biru langit lembut — link terbaca di gelap      */
-  --stiker-pink:     #C9879E;  /* dusty rose — turunan maroon, elegan              */
-  --spidol-ungu:     #9B7FC4;  /* ungu lembut — doodle, terbaca di gelap           */
+  --stiker-merah:    #6E0521;  /* MAROON IG — BLOK BESAR: nav, gerbang, primer     */
+  --marker-kuning:   #FED92E;  /* KUNING IG — AKSI: tab aktif, tombol highlight     */
+  --tape-hijau:      #4A8C5C;  /* hijau natural — sukses, online                    */
+  --pulpen-biru:     #2E5090;  /* biru navy — tautan/link di kanvas terang         */
+  --stiker-pink:     #C9879E;  /* dusty rose — turunan maroon                       */
+  --spidol-ungu:     #6B4E8F;  /* ungu — doodle, label                              */
 
   /* ── Kelompok Maroon: Nuansa #6E0521 ──────────────────── */
   --maroon-50:       #FDF2F4;  /* background sangat light                            */
@@ -138,10 +138,10 @@ body {
   background-color: var(--kertas);
   color: var(--tinta);
   font-family: var(--font-body), system-ui, sans-serif;
-  /* pendar kuning halus + vignette maroon di kanvas gelap */
+  /* pendar maroon + kuning halus di kanvas terang */
   background-image:
-    radial-gradient(ellipse at 15% 15%, rgba(254,217,46,.07) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 85%, rgba(184,58,90,.18) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 20%, rgba(110,5,33,.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(254,217,46,.08) 0%, transparent 50%);
 }
 
 h1, h2, h3 {
@@ -149,28 +149,28 @@ h1, h2, h3 {
 }
 
 a {
-  color: var(--marker-kuning);
+  color: var(--pulpen-biru);
 }
 
 /* ============================================================
  * Custom Utilities
  * ============================================================ */
 
-/* Tombol maroon — isi maroon + teks gading (untuk permukaan terang) */
+/* Tombol maroon — BLOK PRIMER di kanvas terang */
 .btn-maroon {
   background-color: var(--stiker-merah);
   color: var(--polaroid);
   transition: background-color 0.2s;
 }
 .btn-maroon:hover {
-  background-color: var(--maroon-400);
+  background-color: var(--maroon-700);
 }
 .btn-maroon:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-/* Tombol kuning — AKSI UTAMA di kanvas gelap */
+/* Tombol kuning — AKSI/HIGHLIGHT, kontras di blok maroon maupun terang */
 .btn-kuning {
   background-color: var(--marker-kuning);
   color: var(--tinta-gelap);
@@ -180,14 +180,14 @@ a {
   background-color: var(--kuning-300);
 }
 
-/* Badge kuning — highlight di kanvas gelap */
+/* Badge maroon */
 .badge-maroon {
-  background-color: var(--maroon-400);
+  background-color: var(--stiker-merah);
   color: var(--polaroid);
 }
 
 /* Badge kuning */
 .badge-kuning {
-  background-color: var(--kuning-100);
+  background-color: var(--marker-kuning);
   color: var(--tinta-gelap);
 }
