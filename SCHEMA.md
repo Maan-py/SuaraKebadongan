@@ -70,7 +70,7 @@ Indeks: `idx_messages_created_at (created_at DESC)` untuk memuat riwayat N pesan
 |---|---|---|---|
 | `id` | VARCHAR(36) | PRIMARY KEY | UUID v4. |
 | `body` | VARCHAR(280) | NOT NULL, CHECK (CHAR_LENGTH(body) BETWEEN 1 AND 280) | Isi catatan; batas ±280 karakter sesuai PRD F4. |
-| `color` | ENUM('kuning','pink','hijau','ungu','merah','karton') | NOT NULL | Warna pale catatan. Nilai hex (#FFF3C4, #FDE7EF, …) dipetakan di frontend agar makna tidak bergantung warna. |
+| `color` | ENUM('kuning','pink','hijau','ungu','merah','karton') | NOT NULL | Warna pale catatan. Nilai hex (#FFF6C8, #F8DEE5, …) dipetakan di frontend agar makna tidak bergantung warna. |
 | `created_at` | TIMESTAMP | NOT NULL DEFAULT CURRENT_TIMESTAMP | Dasar urutan papan (terbaru di depan). |
 | `updated_at` | TIMESTAMP | NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP | Waktu edit terakhir (semua orang boleh edit). |
 | `deleted_at` | TIMESTAMP | NULL | Soft delete; catatan "dicabut" masih bisa dipulihkan. |

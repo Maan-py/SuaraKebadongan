@@ -19,12 +19,12 @@ interface NotePopoverProps {
 }
 
 const COLORS = [
-  { id: 'kuning', label: 'Kuning', bg: '#FFF3C4' },
-  { id: 'pink', label: 'Pink', bg: '#FDE7EF' },
-  { id: 'hijau', label: 'Hijau', bg: '#E3F2E8' },
-  { id: 'ungu', label: 'Ungu', bg: '#EEE8F6' },
-  { id: 'merah', label: 'Merah', bg: '#FBE3DA' },
-  { id: 'karton', label: 'Karton', bg: '#F5EDE0' },
+  { id: 'kuning', label: 'Kuning', bg: '#FFF6C8' },
+  { id: 'pink', label: 'Pink', bg: '#F8DEE5' },
+  { id: 'hijau', label: 'Hijau', bg: '#E1EFE5' },
+  { id: 'ungu', label: 'Ungu', bg: '#EEE8F7' },
+  { id: 'merah', label: 'Merah', bg: '#FBE7D9' },
+  { id: 'karton', label: 'Karton', bg: '#FAF1DF' },
 ]
 
 const MAX_CHARS = 280

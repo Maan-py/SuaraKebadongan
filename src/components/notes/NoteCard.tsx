@@ -20,12 +20,12 @@ interface NoteCardProps {
 }
 
 const COLOR_MAP: Record<string, string> = {
-  kuning: '#FFF3C4',
-  pink: '#FDE7EF',
-  hijau: '#E3F2E8',
-  ungu: '#EEE8F6',
-  merah: '#FBE3DA',
-  karton: '#F5EDE0',
+  kuning: '#FFF6C8', // tint marker-kuning #FED92E
+  pink: '#F8DEE5',   // rose — tint stiker-merah #6E0521
+  hijau: '#E1EFE5',  // sage — tint tape-hijau #4A8C5C
+  ungu: '#EEE8F7',   // lavender — tint spidol-ungu #9B7FC4
+  merah: '#FBE7D9',  // peach hangat — keluarga sepia
+  karton: '#FAF1DF', // krim manila hangat
 }
 
 // Pola rotasi bergantian: [-1.5°, +1°, -0.5°, +1.5°]

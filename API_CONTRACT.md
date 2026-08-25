@@ -181,7 +181,7 @@ keputusan produk yang didokumentasikan, bukan kelalaian keamanan.
 { "body": "teks revisi", "color": "pink", "updated_at": "2026-08-25T09:00:00Z" }
 
 // color ∈ ENUM('kuning','pink','hijau','ungu','merah','karton')
-// hex pale (#FFF3C4, #FDE7EF, …) dipetakan di frontend
+// hex pale (#FFF6C8, #F8DEE5, …) dipetakan di frontend
 ```
 
 ### 3.4 Aturan Bucket Storage `foto` (publik)
