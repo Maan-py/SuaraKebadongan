@@ -32,6 +32,9 @@ Thumbs.db
 # Omo (local tooling config)
 .omo/
 
+# Supabase CLI temp files
+supabase/.temp/
+
 # Misc
 *.tsbuildinfo
 next-env.d.ts
