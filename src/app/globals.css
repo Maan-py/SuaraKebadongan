@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
+/* ============================================================
+ * DESAIN TOKEN — SuaraKebadongan
+ * Sumber kebenaran: DESIGN.md §Token Visual
+ * Semua nilai di sini harus SYNC dengan DESIGN.md.
+ * Kalau ingin mengubah warna/ukuran, ubah di DUA tempat:
+ *   1. DESIGN.md (sumber desain)
+ *   2. File ini (sumber kode)
+ * ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Kelompok Dasar: Kertas & Tinta ────────────────────── */
+  --kertas:          #FAF3E3;  /* latar utama — kertas gading hangat              */
+  --karton:          #F1E6CC;  /* latar kartu/kotak sekunder — karton manila      */
+  --garis-kertas:    #E3D2AC;  /* garis pemisah halus, tepi kertas sobek          */
+  --tinta:           #2E2118;  /* teks utama & judul — coklat kehitaman tinta botol */
+  --tinta-lembut:    #6B5844;  /* teks sekunder: tanggal, meta, teks bantu        */
+
+  /* ── Kelompok Aksen: Stiker Cerah ──────────────────────── */
+  --stiker-merah:    #E4572E;  /* stiker bintang/panah, sorotan momen penting     */
+  --marker-kuning:   #FFC914;  /* blok stabilo di belakang kata kunci              */
+  --tape-hijau:      #57A773;  /* washi tape hijau polos/garis                     */
+  --pulpen-biru:     #1E56C8;  /* tulisan ballpoint, tautan/link                  */
+  --stiker-pink:     #EF8FB2;  /* stiker hati, badge lucu, reaksi                 */
+  --spidol-ungu:     #7B5EA7;  /* doodle tambahan, label album                     */
+
+  /* ── Kelompok Sepia: Foto Lama ─────────────────────────── */
+  --sepia-terang:    #C8A165;  /* nuansa terang filter film lama                   */
+  --sepia-gelap:     #8A6642;  /* bingkai foto pudar, area gelap                   */
+  --polaroid:        #FFFDF7;  /* putih gading bingkai polaroid                    */
 }
+
+/* ============================================================
+ * Tailwind v4 Theme Mapping
+ * Menghubungkan CSS custom properties di atas ke utility class Tailwind.
+ * Contoh: bg-kertas, text-tinta, border-tape-hijau, dll.
+ * ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Warna → Tailwind color scale ──────────────────────── */
+  --color-kertas:         var(--kertas);
+  --color-karton:         var(--karton);
+  --color-garis-kertas:   var(--garis-kertas);
+  --color-tinta:          var(--tinta);
+  --color-tinta-lembut:   var(--tinta-lembut);
+
+  --color-stiker-merah:   var(--stiker-merah);
+  --color-marker-kuning:  var(--marker-kuning);
+  --color-tape-hijau:     var(--tape-hijau);
+  --color-pulpen-biru:    var(--pulpen-biru);
+  --color-stiker-pink:    var(--stiker-pink);
+  --color-spidol-ungu:    var(--spidol-ungu);
+
+  --color-sepia-terang:   var(--sepia-terang);
+  --color-sepia-gelap:    var(--sepia-gelap);
+  --color-polaroid:       var(--polaroid);
+
+  /* ── Font → Tailwind font-family scale ─────────────────── */
+  --font-display:  var(--font-shantell);
+  --font-body:     var(--font-nunito);
+  --font-tulis:    var(--font-caveat);
+
+  /* ── Spasi (grid 4px) ─────────────────────────────────── */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* ── Radius sudut ──────────────────────────────────────── */
+  --radius-tape:   4px;   /* input, tape                              */
+  --radius-kartu:  8px;   /* kartu, tombol sekunder                    */
+  --radius-modal:  16px;  /* modal, tumpukan polaroid                  */
+  --radius-pill:   999px; /* pill/badge                               */
+
+  /* ── Font size (mobile-first) ──────────────────────────── */
+  --text-xs:  12px;  /* label kecil, tanggal di stiker               */
+  --text-sm:  14px;  /* meta, teks bantu                             */
+  --text-base: 16px; /* paragraf utama (jangan lebih kecil!)          */
+  --text-md:  20px;  /* subjudul, judul kartu                         */
+  --text-lg:  24px;  /* judul seksi (H3)                              */
+  --text-xl:  32px;  /* judul halaman (H2)                            */
+  --text-2xl: 48px;  /* judul hero/display (H1)                       */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ============================================================
+ * Base Styles
+ * ============================================================ */
 
+/* Tekstur kertas: noise halus dari SVG feTurbulence + gradasi radial.
+ * Descriptor: "kertas gading hangat dengan serat samar" — DESIGN.md §Sistem Tekstur */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--kertas);
+  color: var(--tinta);
+  font-family: var(--font-body), system-ui, sans-serif;
+  background-image:
+    /* gradasi radial hangat — kesan lampu kuning posko */
+    radial-gradient(ellipse at 20% 50%, rgba(200,161,101,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(200,161,101,.05) 0%, transparent 50%);
+  /* noise texture ditambahkan via className di layout.tsx karena
+   * SVG data-URI lebih cocok di inline style daripada CSS @layer */
+}
+
+/* Heading otomatis pakai display font */
+h1, h2, h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+/* Link pakai warna pulpen biru */
+a {
+  color: var(--pulpen-biru);
 }
