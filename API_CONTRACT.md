@@ -141,7 +141,7 @@ UI lalu menampilkan: *"Albummu masih kosong nih — unggah foto dulu yuk, biar a
 ## 3. Kontrak Supabase (Akses Data Langsung)
 
 Fitur F2–F4 tidak melewati server Next.js — klien memanggil Supabase langsung
-(`@supabase/supabase-js`) menggunakan `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+(`@supabase/supabase-js`) menggunakan `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`.
 Postur RLS: **anon permisif** (semua orang yang lolos gerbang dipercaya sama) —
 keputusan produk yang didokumentasikan, bukan kelalaian keamanan.
 

@@ -157,7 +157,7 @@ route handler hanya untuk operasi berkunci rahasia (gate, surprise RPC server-si
 ## 8. Keamanan & Privasi
 
 1. **Sesi stateless** — cookie bernilai HMAC yang selalu bisa dihitung ulang server; tidak ada tabel sesi. Trade-off diterima: tak bisa mencabut satu perangkat spesifik; cukup logout global + kedaluwarsa 7 hari.
-2. **Kebersihan secret** — `GATE_PASSCODE`, `GATE_SECRET` TANPA prefix `NEXT_PUBLIC_` sehingga mustahil masuk bundle browser. Sebaliknya `NEXT_PUBLIC_SUPABASE_ANON_KEY` memang dirancang publik; penjaganya RLS, bukan kerahasiaan key.
+2. **Kebersihan secret** — `GATE_PASSCODE`, `GATE_SECRET` TANPA prefix `NEXT_PUBLIC_` sehingga mustahil masuk bundle browser. Sebaliknya `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` memang dirancang publik; penjaganya RLS, bukan kerahasiaan key.
 3. **Anti brute-force** — rate-limit per `ip_hash` salt harian: jejak tak bisa dibalik jadi alamat dan otomatis hangus saat ganti hari; IP mentah tidak pernah disimpan.
 4. **Anonimitas by schema** — `messages` tanpa kolom identitas apa pun (PRD janji produk); nama samaran/avatar hanyalah dekorasi acak per pesan.
 5. **Postur RLS anon permisif** — semua yang lolos gerbang dipercaya sama ("prinsip saling percaya"); keputusan sadar dan didokumentasikan, cocok untuk grup tertutup ±10–30 orang.
