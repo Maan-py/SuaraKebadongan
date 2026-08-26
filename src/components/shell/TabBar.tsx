@@ -73,10 +73,10 @@ export default function TabBar() {
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="relative flex h-16 items-center justify-around">
-          {/* Indikator sliding — putih gading tembus pandang */}
+          {/* Indikator sliding — kuning IG */}
           {mounted && (
             <motion.div
-              className="absolute top-2 h-10 w-16 rounded-radius-kartu bg-polaroid/25"
+              className="absolute top-2 h-10 w-16 rounded-radius-kartu bg-marker-kuning"
               initial={false}
               animate={gerakDiizinkan ? { x: activeIndex * 64 + 16 } : { x: activeIndex * 64 + 16 }}
               transition={gerakDiizinkan ? { type: 'tween', duration: 0.25, ease: 'easeInOut' } : { duration: 0 }}
@@ -91,7 +91,7 @@ export default function TabBar() {
                 key={tab.href}
                 onClick={() => router.push(tab.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-polaroid font-semibold' : 'text-polaroid/70'}`}
+                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-maroon-900 font-semibold' : 'text-polaroid/70'}`}
               >
                 {tab.icon(isActive)}
                 <span className={`text-xs font-medium ${isActive ? 'font-semibold' : ''}`}>
@@ -123,8 +123,8 @@ export default function TabBar() {
                 aria-current={isActive ? 'page' : undefined}
                 className={`flex h-10 items-center gap-2 rounded-radius-pill px-4 text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-polaroid text-stiker-merah'
-                    : 'text-polaroid/70 hover:text-polaroid'
+                    ? 'bg-marker-kuning text-maroon-900'
+                    : 'text-polaroid/70 hover:text-marker-kuning'
                 }`}
               >
                 {tab.icon(isActive)}
@@ -136,7 +136,7 @@ export default function TabBar() {
 
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-sm text-polaroid/70 hover:text-polaroid transition-colors"
+          className="flex items-center gap-2 text-sm text-polaroid/70 hover:text-marker-kuning transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />

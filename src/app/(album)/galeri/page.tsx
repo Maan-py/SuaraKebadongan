@@ -121,7 +121,7 @@ export default function GaleriPage() {
           <h1 className="font-display text-xl font-semibold text-marker-kuning">
             Album Kenangan
           </h1>
-          <p className="font-tulis text-base text-polaroid/70">
+          <p className="font-tulis text-base text-marker-kuning/70">
             ditempel pelan-pelan, biar kenangannya awet
           </p>
         </div>

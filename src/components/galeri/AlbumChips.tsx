@@ -58,8 +58,8 @@ export default function AlbumChips({
           onClick={() => onSelectAlbum(null)}
           className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
             selectedAlbumId === null
-              ? 'border-polaroid bg-polaroid text-stiker-merah'
-              : 'border-polaroid/40 text-polaroid hover:bg-polaroid/10'
+              ? 'border-marker-kuning bg-marker-kuning text-maroon-900'
+              : 'border-marker-kuning/40 text-marker-kuning hover:bg-marker-kuning/10'
           }`}
         >
           Semua
@@ -72,8 +72,8 @@ export default function AlbumChips({
             onClick={() => onSelectAlbum(album.id)}
             className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
               selectedAlbumId === album.id
-                ? 'border-polaroid bg-polaroid text-stiker-merah'
-                : 'border-polaroid/40 text-polaroid hover:bg-polaroid/10'
+                ? 'border-marker-kuning bg-marker-kuning text-maroon-900'
+                : 'border-marker-kuning/40 text-marker-kuning hover:bg-marker-kuning/10'
             }`}
           >
             {album.name}
@@ -83,7 +83,7 @@ export default function AlbumChips({
         {/* Tombol tambah album */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="rounded-radius-pill border border-dashed border-polaroid/50 px-4 py-1.5 text-sm text-polaroid/80 hover:border-polaroid hover:bg-polaroid/10 transition-colors"
+          className="rounded-radius-pill border border-dashed border-marker-kuning/50 px-4 py-1.5 text-sm text-marker-kuning/80 hover:border-marker-kuning hover:bg-marker-kuning/10 transition-colors"
         >
           + Album Baru
         </button>
