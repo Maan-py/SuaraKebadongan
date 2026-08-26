@@ -118,7 +118,7 @@ export default function GaleriPage() {
       <section className="blok-maroon px-4 pb-10 pt-8 md:px-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="font-display text-xl font-semibold text-marker-kuning">
+          <h1 className="font-display text-xl font-semibold text-polaroid">
             Album Kenangan
           </h1>
           <p className="font-tulis text-base text-polaroid/70">
@@ -130,8 +130,8 @@ export default function GaleriPage() {
         <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
       </section>
 
-      {/* ── BLOK 2: KUNING — chip album ── */}
-      <section className="blok-kuning px-4 py-5 md:px-6">
+      {/* ── BLOK 2: MAROON — chip album ── */}
+      <section className="blok-maroon px-4 py-5 md:px-6">
         <AlbumChips
           albums={albums}
           selectedAlbumId={selectedAlbumId}

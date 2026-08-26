@@ -58,8 +58,8 @@ export default function AlbumChips({
           onClick={() => onSelectAlbum(null)}
           className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
             selectedAlbumId === null
-              ? 'border-stiker-merah bg-stiker-merah text-polaroid'
-              : 'border-stiker-merah/40 text-stiker-merah hover:bg-stiker-merah/10'
+              ? 'border-polaroid bg-polaroid text-stiker-merah'
+              : 'border-polaroid/40 text-polaroid hover:bg-polaroid/10'
           }`}
         >
           Semua
@@ -72,8 +72,8 @@ export default function AlbumChips({
             onClick={() => onSelectAlbum(album.id)}
             className={`rounded-radius-pill border px-4 py-1.5 text-sm font-medium transition-colors ${
               selectedAlbumId === album.id
-                ? 'border-stiker-merah bg-stiker-merah text-polaroid'
-                : 'border-stiker-merah/40 text-stiker-merah hover:bg-stiker-merah/10'
+                ? 'border-polaroid bg-polaroid text-stiker-merah'
+                : 'border-polaroid/40 text-polaroid hover:bg-polaroid/10'
             }`}
           >
             {album.name}
@@ -83,7 +83,7 @@ export default function AlbumChips({
         {/* Tombol tambah album */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="rounded-radius-pill border border-dashed border-stiker-merah/50 px-4 py-1.5 text-sm text-stiker-merah hover:border-stiker-merah hover:bg-stiker-merah/10 transition-colors"
+          className="rounded-radius-pill border border-dashed border-polaroid/50 px-4 py-1.5 text-sm text-polaroid/80 hover:border-polaroid hover:bg-polaroid/10 transition-colors"
         >
           + Album Baru
         </button>
@@ -105,7 +105,7 @@ export default function AlbumChips({
                   value={newAlbumName}
                   onChange={(e) => setNewAlbumName(e.target.value)}
                   placeholder="Contoh: Bersih Desa"
-                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-marker-kuning focus:outline-none"
+                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-stiker-merah focus:outline-none"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export default function AlbumChips({
                   value={newAlbumDesc}
                   onChange={(e) => setNewAlbumDesc(e.target.value)}
                   placeholder="Cerita singkat tentang album ini..."
-                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-marker-kuning focus:outline-none"
+                  className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-stiker-merah focus:outline-none"
                 />
               </div>
             </div>

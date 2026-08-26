@@ -23,7 +23,7 @@ const ROTATIONS = [-1.5, 1, 0.5]
 // Warna aksen untuk tape
 const TAPE_COLORS = [
   'bg-stiker-merah/40',
-  'bg-marker-kuning/50',
+  'bg-maroon-400/50',
   'bg-tape-hijau/40',
   'bg-pulpen-biru/40',
   'bg-stiker-pink/40',

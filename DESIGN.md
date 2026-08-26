@@ -61,15 +61,16 @@ Lima prinsip berikut adalah pagar agar desain kita tidak jatuh ke jebakan templa
 
 ### Palet Warna
 
-Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Dua warna utama — **merah maroon #6E0521** dan **kuning #FED92E** (identitas IG @suarakebadongan) — tampil sebagai **pita blok besar yang bergantian** di setiap halaman, seperti poster pameran.
+Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Warna utama — **merah maroon #6E0521** (identitas IG @suarakebadongan) — tampil sebagai **blok gradasi besar** di seluruh halaman, seperti dinding galeri yang didompet warna maroon menyeluruh.
 
-#### Aturan Blok Bergantian (Sistem Poster)
+#### Aturan Blok Maroon Gradasi
 
-1. **`.blok-maroon`** — gradasi `#6E0521 → #32020F`, teks gading `--polaroid`, aksen kuning. Dipakai untuk: header+upload galeri, masonry galeri, area pesan chat, papan cat tempel, layar gerbang, nav.
-2. **`.blok-kuning`** — kuning penuh `#FED92E`, teks maroon gelap `--maroon-900`. Dipakai untuk: band chip album, header chat, bar input chat, judul+formulir cat tempel.
-3. **Ritme A-B-A**: tiap halaman berselang-seling (contoh Galeri: maroon → kuning → maroon) supaya kedua warna sama-sama jadi latar utama.
-4. **Aturan tombol**: di blok maroon → tombol kuning + teks gelap; di blok kuning/permukaan terang → tombol maroon + teks gading.
-5. **Kanvas gading** hanya tampak di dalam kartu (polaroid, modal, input) — konten foto & catatan tetap bintangnya.
+1. **`.blok-maroon`** — gradasi `#6E0521 → #32020F`, teks gading `--polaroid`. Dipakai untuk semua band halaman: header+upload galeri, chip album, masonry galeri, header & area pesan chat, bar input chat, judul+formulir cat tempel, papan cat, layar gerbang, nav.
+2. **Teks di maroon**: gading `--polaroid` (judul penuh, meta memakai opasitas 50–80%).
+3. **Aturan tombol**: tombol aksi utama = `bg-polaroid text-stiker-merah` (putih di atas maroon). Tombol di permukaan terang = `bg-stiker-merah text-polaroid`.
+4. **Border/fokus**: `border-polaroid/40` untuk elemen outline di maroon; `focus:border-stiker-merah` untuk input di kartu terang.
+5. **Kuning `--marker-kuning`** kini hanya aksen kecil opsional — bukan lagi latar blok maupun tombol.
+6. **Kanvas gading** hanya tampak di dalam kartu (polaroid, modal, input) — konten foto & catatan tetap bintangnya.
 
 #### Kelompok Dasar — Kertas & Tinta
 
@@ -627,14 +628,10 @@ Bagian ini fotokopi resmi dari Token Visual dalam bentuk siap-tempel — nilainy
   --spasi-dasar: 4px;
 }
 
-/* Sistem Blok — pita maroon × kuning bergantian */
+/* Sistem Blok — maroon gradasi menyeluruh */
 .blok-maroon {
   background-image: linear-gradient(180deg, var(--stiker-merah) 0%, var(--maroon-800) 100%);
   color: var(--polaroid);
-}
-.blok-kuning {
-  background-color: var(--marker-kuning);
-  color: var(--maroon-900);
 }
 ```
 

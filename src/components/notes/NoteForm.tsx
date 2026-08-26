@@ -130,7 +130,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
       </div>
 
       {/* Petunjuk keyboard */}
-      <p className="mt-2 text-center text-[10px] text-maroon-900/60">
+      <p className="mt-2 text-center text-[10px] text-polaroid/50">
         Ctrl+Enter untuk tempel cepat
       </p>    </div>
   )

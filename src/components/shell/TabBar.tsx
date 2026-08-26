@@ -73,10 +73,10 @@ export default function TabBar() {
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="relative flex h-16 items-center justify-around">
-          {/* Indikator stabilo sliding — kuning IG */}
+          {/* Indikator sliding — putih gading tembus pandang */}
           {mounted && (
             <motion.div
-              className="absolute top-2 h-10 w-16 rounded-radius-kartu bg-marker-kuning"
+              className="absolute top-2 h-10 w-16 rounded-radius-kartu bg-polaroid/25"
               initial={false}
               animate={gerakDiizinkan ? { x: activeIndex * 64 + 16 } : { x: activeIndex * 64 + 16 }}
               transition={gerakDiizinkan ? { type: 'tween', duration: 0.25, ease: 'easeInOut' } : { duration: 0 }}
@@ -91,7 +91,7 @@ export default function TabBar() {
                 key={tab.href}
                 onClick={() => router.push(tab.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-tinta-gelap' : 'text-polaroid/70'}`}
+                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-polaroid font-semibold' : 'text-polaroid/70'}`}
               >
                 {tab.icon(isActive)}
                 <span className={`text-xs font-medium ${isActive ? 'font-semibold' : ''}`}>
@@ -109,7 +109,7 @@ export default function TabBar() {
         className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-14 items-center justify-between border-b border-maroon-700 bg-stiker-merah px-6"
       >
         <div className="flex items-center gap-2">
-          <span className="font-display text-lg font-semibold text-marker-kuning">Badongan</span>
+          <span className="font-display text-lg font-semibold text-polaroid">Badongan</span>
           <span className="text-xs text-polaroid/60 tracking-wide">✦ Kenangan KKN</span>
         </div>
 
@@ -123,8 +123,8 @@ export default function TabBar() {
                 aria-current={isActive ? 'page' : undefined}
                 className={`flex h-10 items-center gap-2 rounded-radius-pill px-4 text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-marker-kuning text-tinta-gelap'
-                    : 'text-polaroid/70 hover:text-marker-kuning'
+                    ? 'bg-polaroid text-stiker-merah'
+                    : 'text-polaroid/70 hover:text-polaroid'
                 }`}
               >
                 {tab.icon(isActive)}
@@ -136,7 +136,7 @@ export default function TabBar() {
 
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-sm text-polaroid/70 hover:text-marker-kuning transition-colors"
+          className="flex items-center gap-2 text-sm text-polaroid/70 hover:text-polaroid transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />

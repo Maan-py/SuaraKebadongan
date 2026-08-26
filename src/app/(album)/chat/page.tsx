@@ -100,8 +100,8 @@ export default function ChatPage() {
   if (loading) {
     return (
       <div className="min-h-dvh">
-        <div className="blok-kuning px-4 py-4 md:px-6">
-          <div className="h-7 w-32 animate-pulse rounded bg-stiker-merah/20" />
+        <div className="blok-maroon px-4 py-4 md:px-6">
+          <div className="mb-1 h-7 w-32 animate-pulse rounded bg-polaroid/20" />
         </div>
         <div className="blok-maroon min-h-dvh space-y-3 px-4 py-6 md:px-6">
           {[1, 2, 3].map((i) => (
@@ -120,10 +120,10 @@ export default function ChatPage() {
 
   return (
     <div className="flex h-dvh flex-col">
-      {/* ── BLOK KUNING: header ── */}
-      <header className="blok-kuning flex-shrink-0 px-4 py-4 md:px-6">
-        <h1 className="font-display text-xl font-semibold text-stiker-merah">Suara</h1>
-        <p className="font-tulis text-base text-maroon-900/70">
+      {/* ── BLOK MAROON: header ── */}
+      <header className="blok-maroon flex-shrink-0 px-4 pb-3 pt-4 md:px-6">
+        <h1 className="font-display text-xl font-semibold text-polaroid">Suara</h1>
+        <p className="font-tulis text-base text-polaroid/70">
           kata-kata yang dilempar tanpa nama — biar saja mengambang
         </p>
       </header>
@@ -186,7 +186,7 @@ export default function ChatPage() {
       {newCount > 0 && !isAtBottom && (
         <button
           onClick={scrollToBottom}
-          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-marker-kuning px-4 py-1.5 text-xs font-semibold text-maroon-900 shadow-lg transition-transform hover:scale-105 md:bottom-20"
+          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-polaroid px-4 py-1.5 text-xs font-semibold text-stiker-merah shadow-lg transition-transform hover:scale-105 md:bottom-20"
         >
           {newCount} pesan baru ↓
         </button>

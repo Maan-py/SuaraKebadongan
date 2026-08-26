@@ -82,9 +82,9 @@ export default function NotesPage() {
   if (loading) {
     return (
       <div className="min-h-dvh">
-        <div className="blok-kuning px-4 py-8 md:px-6">
-          <div className="mb-3 h-8 w-40 animate-pulse rounded bg-stiker-merah/20" />
-          <div className="h-32 animate-pulse rounded-radius-kartu bg-polaroid/60" />
+        <div className="blok-maroon px-4 py-8 md:px-6">
+          <div className="mb-3 h-8 w-40 animate-pulse rounded bg-polaroid/20" />
+          <div className="h-32 animate-pulse rounded-radius-kartu bg-polaroid/15" />
         </div>
         <div className="blok-maroon min-h-dvh px-4 py-8 md:px-6">
           <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
@@ -103,14 +103,14 @@ export default function NotesPage() {
 
   return (
     <div>
-      {/* ── BLOK KUNING: judul + formulir ── */}
-      <section className="blok-kuning px-4 pb-10 pt-8 md:px-6">
+      {/* ── BLOK MAROON: judul + formulir ── */}
+      <section className="blok-maroon px-4 pb-10 pt-8 md:px-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="font-display text-xl font-semibold text-stiker-merah">
+          <h1 className="font-display text-xl font-semibold text-polaroid">
             Cat Tempel
           </h1>
-          <p className="font-tulis text-base text-maroon-900/70">
+          <p className="font-tulis text-base text-polaroid/70">
             tempel di sini, biar yang lain baca juga
           </p>
         </div>
@@ -119,8 +119,8 @@ export default function NotesPage() {
         <NoteForm onNoteCreated={loadNotes} />
       </section>
 
-      {/* ── BLOK MAROON: papan catatan ── */}
-      <section className="blok-maroon px-4 py-8 md:px-6">
+      {/* ── BLOK MAROON GELAP: papan catatan ── */}
+      <section className="bg-maroon-900 px-4 py-8 md:px-6">
         {/* Papan catatan */}
         {notes.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">

@@ -20,7 +20,7 @@ interface NoteCardProps {
 }
 
 const COLOR_MAP: Record<string, string> = {
-  kuning: '#FFF6C8', // tint marker-kuning #FED92E
+  kuning: '#FFF6C8', // krem lemon lembut — warna kertas catatan
   pink: '#F8DEE5',   // rose — tint stiker-merah #6E0521
   hijau: '#E1EFE5',  // sage — tint tape-hijau #4A8C5C
   ungu: '#EEE8F7',   // lavender — tint spidol-ungu #9B7FC4
@@ -69,7 +69,7 @@ export default function NoteCard({ note, index, onNoteUpdated, onNoteDeleted }: 
             />
           ) : (
             <div
-              className="absolute -top-2 left-1/4 h-5 w-10 -translate-x-1/2 rounded-sm bg-marker-kuning/50"
+              className="absolute -top-2 left-1/4 h-5 w-10 -translate-x-1/2 rounded-sm bg-stiker-merah/25"
               style={{ transform: 'rotate(-5deg)' }}
               aria-hidden="true"
             />

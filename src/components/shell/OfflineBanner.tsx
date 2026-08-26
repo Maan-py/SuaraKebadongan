@@ -31,7 +31,7 @@ export default function OfflineBanner() {
           animate={{ opacity: 1, y: 0 }}
           exit={gerakDiizinkan ? { opacity: 0, y: -10 } : { opacity: 0, y: 0 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="fixed top-14 left-0 right-0 z-40 bg-marker-kuning/90 px-4 py-2 text-center text-sm text-tinta-gelap md:top-14"
+          className="fixed top-14 left-0 right-0 z-40 bg-maroon-800/95 px-4 py-2 text-center text-sm text-polaroid md:top-14"
           role="status"
           aria-live="polite"
         >

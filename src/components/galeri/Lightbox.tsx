@@ -229,7 +229,7 @@ export default function Lightbox({
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
                 placeholder="Ketik cerita di sini..."
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-marker-kuning focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-stiker-merah focus:outline-none"
               />
             </div>
 
@@ -239,7 +239,7 @@ export default function Lightbox({
                 type="date"
                 value={takenOn}
                 onChange={(e) => setTakenOn(e.target.value)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-marker-kuning focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-stiker-merah focus:outline-none"
               />
             </div>
 
@@ -248,7 +248,7 @@ export default function Lightbox({
               <select
                 value={albumId || ''}
                 onChange={(e) => setAlbumId(e.target.value || null)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-marker-kuning focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-stiker-merah focus:outline-none"
               >
                 <option value="">Tanpa album</option>
                 {albums.map((a) => (
@@ -263,7 +263,7 @@ export default function Lightbox({
               <button
                 onClick={handleSave}
                 disabled={isSaving}
-                className="flex-1 rounded-radius-pill bg-marker-kuning px-4 py-2 text-sm font-medium text-tinta-gelap hover:bg-kuning-300 transition-colors disabled:opacity-50"
+                className="flex-1 rounded-radius-pill bg-stiker-merah px-4 py-2 text-sm font-medium text-polaroid hover:bg-maroon-700 transition-colors disabled:opacity-50"
               >
                 {isSaving ? '...' : 'Simpan'}
               </button>

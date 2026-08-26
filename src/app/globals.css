@@ -153,19 +153,13 @@ a {
 }
 
 /* ============================================================
- * Sistem Blok — pita maroon × kuning bergantian (gaya poster)
- * Aturan: di blok maroon → teks gading, tombol kuning.
- *         Di blok kuning → teks maroon gelap, tombol maroon.
+ * Sistem Blok — maroon gradasi menyeluruh
+ * Aturan: teks gading di atas maroon, tombol aksi putih polaroid.
  * ============================================================ */
 
 .blok-maroon {
   background-image: linear-gradient(180deg, var(--stiker-merah) 0%, var(--maroon-800) 100%);
   color: var(--polaroid);
-}
-
-.blok-kuning {
-  background-color: var(--marker-kuning);
-  color: var(--maroon-900);
 }
 
 /* ============================================================

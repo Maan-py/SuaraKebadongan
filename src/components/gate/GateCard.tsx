@@ -87,12 +87,9 @@ export default function GateCard() {
       transition={shouldReduceMotion ? undefined : { duration: 0.4, ease: "easeOut" }}
     >
       <div className="relative w-full max-w-[420px]">
-        {/* ── Tape kuning miring -2° di tepi atas ──────────── */}
+        {/* ── Tape putih miring -2° di tepi atas ────────────── */}
         <div
-          className="absolute -top-3 left-1/2 z-10 h-6 w-32 -translate-x-1/2 -rotate-2 rounded-sm opacity-90"
-          style={{
-            background: "linear-gradient(90deg, var(--marker-kuning) 0%, var(--marker-kuning) 100%)",
-          }}
+          className="absolute -top-3 left-1/2 z-10 h-6 w-32 -translate-x-1/2 -rotate-2 rounded-sm bg-polaroid opacity-90"
           aria-hidden="true"
         />
 
@@ -113,7 +110,7 @@ export default function GateCard() {
           {/* ── Stiker bintang merah pojok ────────────────── */}
           <div
             className="absolute -right-2 -top-2 text-2xl"
-            style={{ color: "var(--marker-kuning)" }}
+            style={{ color: "var(--stiker-merah)" }}
             aria-hidden="true"
           >
             ★
@@ -143,7 +140,7 @@ export default function GateCard() {
               onChange={(e) => setPasscode(e.target.value)}
               placeholder="psst… ketik suara pintunya"
               disabled={state === "loading" || state === "lockout"}
-              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-marker-kuning focus:outline-none focus:ring-2 focus:ring-marker-kuning/40 disabled:opacity-50"
+              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-stiker-merah focus:outline-none focus:ring-2 focus:ring-stiker-merah/30 disabled:opacity-50"
               autoComplete="off"
               aria-describedby={message ? "gate-message" : undefined}
             />
@@ -152,7 +149,7 @@ export default function GateCard() {
             <button
               type="submit"
               disabled={state === "loading" || state === "lockout"}
-              className="mt-3 w-full rounded-pill bg-marker-kuning px-6 py-3 font-body text-base font-semibold text-tinta-gelap transition-colors hover:bg-kuning-300 disabled:opacity-50"
+              className="mt-3 w-full rounded-pill bg-stiker-merah px-6 py-3 font-body text-base font-semibold text-polaroid transition-colors hover:bg-maroon-700 disabled:opacity-50"
             >
               {state === "loading" ? "Mengetuk-ngetuk…" : "Ketuk Pintu"}
             </button>

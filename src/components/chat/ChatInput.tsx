@@ -76,7 +76,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
   const canSend = text.trim().length > 0 && !isSending
 
   return (
-    <div className="blok-kuning p-3 pb-20 md:pb-3">
+    <div className="blok-maroon p-3 pb-20 md:pb-3">
       <div className="mx-auto max-w-2xl">
         {/* Input area */}
         <div className="flex items-end gap-2">

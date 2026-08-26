@@ -119,12 +119,12 @@ export default function TombolKejutan() {
       <button
         ref={triggerRef}
         onClick={handleOpen}
-        className={`fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-marker-kuning text-stiker-merah shadow-lg transition-transform hover:scale-105 md:bottom-6 md:right-6 md:h-16 md:w-16 ${
+        className={`fixed bottom-20 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-polaroid text-stiker-merah shadow-lg transition-transform hover:scale-105 md:bottom-6 md:right-6 md:h-16 md:w-16 ${
           gerakDiizinkan ? 'hover:scale-105' : ''
         }`}
         aria-label="Kejutan foto kenangan — Inget ga sih?"
         style={{
-          boxShadow: '0 4px 12px rgba(254,217,46,.25)',
+          boxShadow: '0 4px 12px rgba(255,253,247,.25)',
         }}
       >
         {/* Bintang meledak SVG */}
@@ -176,7 +176,7 @@ export default function TombolKejutan() {
                   <p className="font-tulis text-lg text-polaroid">{error}</p>
                   <button
                     onClick={handleLagi}
-                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 hover:bg-kuning-300"
+                    className="mt-4 rounded-radius-pill bg-polaroid px-6 py-2 text-sm font-semibold text-stiker-merah hover:bg-polaroid/90"
                   >
                     Coba Lagi
                   </button>
@@ -207,7 +207,7 @@ export default function TombolKejutan() {
                       handleClose()
                       router.push('/galeri')
                     }}
-                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 hover:bg-kuning-300"
+                    className="mt-4 rounded-radius-pill bg-polaroid px-6 py-2 text-sm font-semibold text-stiker-merah hover:bg-polaroid/90"
                   >
                     ke Galeri
                   </button>
@@ -252,7 +252,7 @@ export default function TombolKejutan() {
                   {/* Tombol Lagi! */}
                   <button
                     onClick={handleLagi}
-                    className="mt-4 rounded-radius-pill bg-marker-kuning px-6 py-2 text-sm font-semibold text-maroon-900 transition-colors hover:bg-kuning-300"
+                    className="mt-4 rounded-radius-pill bg-polaroid px-6 py-2 text-sm font-semibold text-stiker-merah transition-colors hover:bg-polaroid/90"
                   >
                     Lagi!
                   </button>

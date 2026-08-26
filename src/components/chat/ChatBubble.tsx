@@ -26,7 +26,7 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
       {/* Avatar */}
       <AvatarHewan
         hewan={message.avatar}
-        warna={isOwn ? '#FED92E' : '#D96B85'}
+        warna={isOwn ? '#FFFDF7' : '#D96B85'}
         className="flex-shrink-0"
       />
 
@@ -41,7 +41,7 @@ export default function ChatBubble({ message, isOwn }: ChatBubbleProps) {
         <div
           className={`rounded-radius-kartu px-4 py-2.5 ${
             isOwn
-              ? 'bg-marker-kuning text-maroon-900'
+              ? 'bg-polaroid text-stiker-merah'
               : 'bg-polaroid text-tinta-gelap'
           }`}
           style={{ wordBreak: 'break-word' }}

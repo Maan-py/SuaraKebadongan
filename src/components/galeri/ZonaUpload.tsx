@@ -134,8 +134,8 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
         onDrop={handleDrop}
         className={`w-full rounded-radius-kartu border-2 border-dashed p-8 text-center transition-colors ${
           isDragging
-            ? 'border-marker-kuning bg-marker-kuning/20'
-            : 'border-marker-kuning/50 hover:border-marker-kuning hover:bg-polaroid/10'
+            ? 'border-polaroid/70 bg-polaroid/15'
+            : 'border-polaroid/40 hover:border-polaroid/70 hover:bg-polaroid/10'
         }`}
       >
         <p className="font-tulis text-lg text-polaroid/90">
@@ -159,7 +159,7 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
               key={item.id}
               className={`flex items-center gap-2 rounded-radius-pill px-3 py-1.5 text-xs ${
                 item.status === 'done'
-                  ? 'bg-marker-kuning text-maroon-900'
+                  ? 'bg-polaroid text-stiker-merah'
                   : item.status === 'error'
                     ? 'bg-polaroid text-stiker-merah'
                     : 'bg-polaroid/20 text-polaroid'
