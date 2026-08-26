@@ -109,7 +109,7 @@ export default function TabBar() {
         className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-14 items-center justify-between border-b border-maroon-700 bg-stiker-merah px-6"
       >
         <div className="flex items-center gap-2">
-          <span className="font-display text-lg font-semibold text-polaroid">Badongan</span>
+          <span className="font-display text-lg font-semibold text-marker-kuning">Badongan</span>
           <span className="text-xs text-polaroid/60 tracking-wide">✦ Kenangan KKN</span>
         </div>
 

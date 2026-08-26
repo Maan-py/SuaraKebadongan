@@ -122,7 +122,7 @@ export default function ChatPage() {
     <div className="flex h-dvh flex-col">
       {/* ── BLOK MAROON: header ── */}
       <header className="blok-maroon flex-shrink-0 px-4 pb-3 pt-4 md:px-6">
-        <h1 className="font-display text-xl font-semibold text-polaroid">Suara</h1>
+        <h1 className="font-display text-xl font-semibold text-marker-kuning">Suara</h1>
         <p className="font-tulis text-base text-polaroid/70">
           kata-kata yang dilempar tanpa nama — biar saja mengambang
         </p>

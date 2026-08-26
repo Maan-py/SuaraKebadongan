@@ -107,7 +107,7 @@ export default function NotesPage() {
       <section className="blok-maroon px-4 pb-10 pt-8 md:px-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="font-display text-xl font-semibold text-polaroid">
+          <h1 className="font-display text-xl font-semibold text-marker-kuning">
             Cat Tempel
           </h1>
           <p className="font-tulis text-base text-polaroid/70">
