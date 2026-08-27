@@ -7,7 +7,7 @@
  * Tugas:
  * 1. Cek cookie `badongan_gate` di setiap request
  * 2. Kalau tidak ada/invalid → redirect 307 ke `/` (gerbang)
- * 3. Kalau valid dan path = `/` → redirect ke `/galeri` (sudah login)
+ * 3. Kalau valid dan path = `/` → redirect ke `/beranda` (sudah login)
  * 4. Kalau valid dan path ≠ `/` → lanjut ke halaman
  *
  * Referensi: ARCHITECTURE.md §5, §9 Keputusan #1
@@ -59,10 +59,10 @@ export function proxy(request: NextRequest) {
   const cookieValue = request.cookies.get("badongan_gate")?.value ?? "";
   const isValid = cookieValue ? verifyCookie(cookieValue) : false;
 
-  // ── Kasus 1: Path `/` dan cookie VALID → redirect ke galeri
+  // ── Kasus 1: Path `/` dan cookie VALID → redirect ke beranda
   // (Edge case: pengunjung yang sudah login membuka `/` langsung)
   if (pathname === "/" && isValid) {
-    return NextResponse.redirect(new URL("/galeri", request.url));
+    return NextResponse.redirect(new URL("/beranda", request.url));
   }
 
   // ── Kasus 2: Path `/` dan cookie TIDAK VALID → izinkan (halaman gerbang)

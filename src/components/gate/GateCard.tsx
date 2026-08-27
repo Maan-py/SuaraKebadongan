@@ -63,8 +63,8 @@ export default function GateCard() {
       }
 
       if (data.ok) {
-        // ✅ Passcode benar → redirect ke galeri
-        router.push("/galeri");
+        // ✅ Passcode benar → redirect ke beranda
+        router.push("/beranda");
         return;
       }
 
@@ -81,7 +81,7 @@ export default function GateCard() {
 
   return (
     <motion.main
-      className="blok-maroon flex min-h-screen items-center justify-center p-6"
+      className="blok-terracotta flex min-h-screen items-center justify-center p-6"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={shouldReduceMotion ? undefined : { duration: 0.4, ease: "easeOut" }}
@@ -110,15 +110,15 @@ export default function GateCard() {
           {/* ── Stiker bintang merah pojok ────────────────── */}
           <div
             className="absolute -right-2 -top-2 text-2xl"
-            style={{ color: "var(--stiker-merah)" }}
+            style={{ color: "var(--terracotta)" }}
             aria-hidden="true"
           >
             ★
           </div>
 
           {/* ── Judul ──────────────────────────────────────── */}
-          <h1 className="font-display text-xl text-stiker-merah">
-            Selamat datang di Badongan.
+          <h1 className="font-display text-xl text-terracotta">
+            Selamat datang di Kebadongan.
           </h1>
 
           {/* ── Subjudul ──────────────────────────────────── */}
@@ -140,7 +140,7 @@ export default function GateCard() {
               onChange={(e) => setPasscode(e.target.value)}
               placeholder="psst… ketik suara pintunya"
               disabled={state === "loading" || state === "lockout"}
-              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-stiker-merah focus:outline-none focus:ring-2 focus:ring-stiker-merah/30 disabled:opacity-50"
+              className="w-full rounded-tape border border-garis-kertas bg-polaroid px-4 py-3 font-body text-base text-tinta-gelap placeholder:text-tinta-gelap/60 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/30 disabled:opacity-50"
               autoComplete="off"
               aria-describedby={message ? "gate-message" : undefined}
             />
@@ -149,7 +149,7 @@ export default function GateCard() {
             <button
               type="submit"
               disabled={state === "loading" || state === "lockout"}
-              className="mt-3 w-full rounded-pill bg-stiker-merah px-6 py-3 font-body text-base font-semibold text-polaroid transition-colors hover:bg-maroon-700 disabled:opacity-50"
+              className="mt-3 w-full rounded-pill bg-terracotta px-6 py-3 font-body text-base font-semibold text-polaroid transition-colors hover:bg-terracotta-700 disabled:opacity-50"
             >
               {state === "loading" ? "Mengetuk-ngetuk…" : "Ketuk Pintu"}
             </button>
@@ -161,7 +161,7 @@ export default function GateCard() {
               id="gate-message"
               aria-live="polite"
               className={`mt-4 font-body text-sm ${
-                state === "lockout" ? "text-stiker-merah" : "text-tinta-lembut"
+                state === "lockout" ? "text-terracotta" : "text-tinta-lembut"
               }`}
             >
               {message}

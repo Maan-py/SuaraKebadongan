@@ -2,7 +2,7 @@
 
 /* ============================================================
  * DESAIN TOKEN — SuaraKebadongan
- * Tema: Maroon #6E0521 + Kuning #FED92E (IG @suarakebadongan)
+ * Tema: Terracotta #C05C3B + Teal #1E595D
  * Sumber kebenaran: DESIGN.md §Token Visual
  * ============================================================ */
 
@@ -15,25 +15,38 @@
   --tinta-lembut:    #7A6655;  /* teks sekunder                                    */
   --tinta-gelap:     #3D2B1F;  /* teks gelap di blok kuning / polaroid             */
 
-  /* ── Kelompok Aksen: Maroon & Kuning (Hero Colors) ──────── */
-  --stiker-merah:    #6E0521;  /* MAROON IG — BLOK BESAR: nav, gerbang, primer     */
+  /* ── Kelompok Aksen: Terracotta & Teal (Hero Colors) ────── */
+  --terracotta:      #C05C3B;  /* TERRACOTTA — BLOK BESAR: hero, nav, primer       */
+  --teal:            #1E595D;  /* TEAL — BLOK BESAR: sekunder penyeimbang          */
   --marker-kuning:   #FED92E;  /* KUNING IG — AKSI: tab aktif, tombol highlight     */
   --tape-hijau:      #4A8C5C;  /* hijau natural — sukses, online                    */
   --pulpen-biru:     #2E5090;  /* biru navy — tautan/link di kanvas terang         */
-  --stiker-pink:     #C9879E;  /* dusty rose — turunan maroon                       */
+  --stiker-pink:     #C9879E;  /* dusty rose — turunan hangat                       */
   --spidol-ungu:     #6B4E8F;  /* ungu — doodle, label                              */
 
-  /* ── Kelompok Maroon: Nuansa #6E0521 ──────────────────── */
-  --maroon-50:       #FDF2F4;  /* background sangat light                            */
-  --maroon-100:      #F9D5DC;  /* background light                                   */
-  --maroon-200:      #F0A3B3;  /* border, divider                                    */
-  --maroon-300:      #D96B85;  /* hover state                                        */
-  --maroon-400:      #B83A5A;  /* active state                                       */
-  --maroon-500:      #6E0521;  /* utama = --stiker-merah                             */
-  --maroon-600:      #5A041B;  /* hover gelap                                        */
-  --maroon-700:      #460315;  /* pressed                                            */
-  --maroon-800:      #32020F;  /* very dark                                          */
-  --maroon-900:      #1E0109;  /* hampir hitam                                       */
+  /* ── Kelompok Terracotta: Nuansa #C05C3B ──────────────── */
+  --terracotta-50:   #FCF4F1;  /* background sangat light                            */
+  --terracotta-100:  #F7E4DC;  /* background light                                   */
+  --terracotta-200:  #ECC2AF;  /* border, divider                                    */
+  --terracotta-300:  #E09A7D;  /* hover state                                        */
+  --terracotta-400:  #D16B45;  /* active state                                       */
+  --terracotta-500:  #C05C3B;  /* utama = --terracotta                               */
+  --terracotta-600:  #A54526;  /* hover gelap                                        */
+  --terracotta-700:  #89341B;  /* pressed                                            */
+  --terracotta-800:  #6F2C1A;  /* very dark                                          */
+  --terracotta-900:  #5C2618;  /* hampir hitam                                       */
+
+  /* ── Kelompok Teal: Nuansa #1E595D ────────────────────── */
+  --teal-50:         #F0F8F8;  /* background sangat light                            */
+  --teal-100:        #DBEEEE;  /* background light                                   */
+  --teal-200:        #BCE0E1;  /* border, divider                                    */
+  --teal-300:        #93C9CB;  /* hover state                                        */
+  --teal-400:        #62A6AA;  /* active state                                       */
+  --teal-500:        #42898D;  /* warna tengah                                       */
+  --teal-600:        #306D71;  /* hover gelap                                        */
+  --teal-700:        #29575C;  /* pressed                                            */
+  --teal-800:        #1E595D;  /* utama = --teal                                     */
+  --teal-900:        #224246;  /* hampir hitam                                       */
 
   /* ── Kelompok Kuning: Nuansa #FED92E ──────────────────── */
   --kuning-50:       #FFFEF5;  /* background sangat light                            */
@@ -66,23 +79,35 @@
   --color-tinta-lembut:   var(--tinta-lembut);
   --color-tinta-gelap:    var(--tinta-gelap);
 
-  --color-stiker-merah:   var(--stiker-merah);
+  --color-terracotta:     var(--terracotta);
+  --color-teal:           var(--teal);
   --color-marker-kuning:  var(--marker-kuning);
   --color-tape-hijau:     var(--tape-hijau);
   --color-pulpen-biru:    var(--pulpen-biru);
   --color-stiker-pink:    var(--stiker-pink);
   --color-spidol-ungu:    var(--spidol-ungu);
 
-  --color-maroon-50:      var(--maroon-50);
-  --color-maroon-100:     var(--maroon-100);
-  --color-maroon-200:     var(--maroon-200);
-  --color-maroon-300:     var(--maroon-300);
-  --color-maroon-400:     var(--maroon-400);
-  --color-maroon-500:     var(--maroon-500);
-  --color-maroon-600:     var(--maroon-600);
-  --color-maroon-700:     var(--maroon-700);
-  --color-maroon-800:     var(--maroon-800);
-  --color-maroon-900:     var(--maroon-900);
+  --color-terracotta-50:  var(--terracotta-50);
+  --color-terracotta-100: var(--terracotta-100);
+  --color-terracotta-200: var(--terracotta-200);
+  --color-terracotta-300: var(--terracotta-300);
+  --color-terracotta-400: var(--terracotta-400);
+  --color-terracotta-500: var(--terracotta-500);
+  --color-terracotta-600: var(--terracotta-600);
+  --color-terracotta-700: var(--terracotta-700);
+  --color-terracotta-800: var(--terracotta-800);
+  --color-terracotta-900: var(--terracotta-900);
+
+  --color-teal-50:        var(--teal-50);
+  --color-teal-100:       var(--teal-100);
+  --color-teal-200:       var(--teal-200);
+  --color-teal-300:       var(--teal-300);
+  --color-teal-400:       var(--teal-400);
+  --color-teal-500:       var(--teal-500);
+  --color-teal-600:       var(--teal-600);
+  --color-teal-700:       var(--teal-700);
+  --color-teal-800:       var(--teal-800);
+  --color-teal-900:       var(--teal-900);
 
   --color-kuning-50:      var(--kuning-50);
   --color-kuning-100:     var(--kuning-100);
@@ -138,10 +163,10 @@ body {
   background-color: var(--kertas);
   color: var(--tinta);
   font-family: var(--font-body), system-ui, sans-serif;
-  /* pendar maroon + kuning halus di kanvas terang */
+  /* pendar terracotta + teal halus di kanvas terang */
   background-image:
-    radial-gradient(ellipse at 15% 20%, rgba(110,5,33,.05) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 80%, rgba(254,217,46,.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 15% 20%, rgba(192,92,59,.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(30,89,93,.06) 0%, transparent 50%);
 }
 
 h1, h2, h3 {
@@ -153,12 +178,16 @@ a {
 }
 
 /* ============================================================
- * Sistem Blok — maroon gradasi menyeluruh
- * Aturan: teks gading di atas maroon, tombol aksi putih polaroid.
+ * Sistem Blok Utama
  * ============================================================ */
 
-.blok-maroon {
-  background-image: linear-gradient(180deg, var(--stiker-merah) 0%, var(--maroon-800) 100%);
+.blok-terracotta {
+  background-color: var(--terracotta);
+  color: var(--polaroid);
+}
+
+.blok-teal {
+  background-color: var(--teal);
   color: var(--polaroid);
 }
 
@@ -166,21 +195,21 @@ a {
  * Custom Utilities
  * ============================================================ */
 
-/* Tombol maroon — BLOK PRIMER di kanvas terang */
-.btn-maroon {
-  background-color: var(--stiker-merah);
+/* Tombol terracotta — BLOK PRIMER di kanvas terang */
+.btn-terracotta {
+  background-color: var(--terracotta);
   color: var(--polaroid);
   transition: background-color 0.2s;
 }
-.btn-maroon:hover {
-  background-color: var(--maroon-700);
+.btn-terracotta:hover {
+  background-color: var(--terracotta-700);
 }
-.btn-maroon:disabled {
+.btn-terracotta:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-/* Tombol kuning — AKSI/HIGHLIGHT, kontras di blok maroon maupun terang */
+/* Tombol kuning — AKSI/HIGHLIGHT */
 .btn-kuning {
   background-color: var(--marker-kuning);
   color: var(--tinta-gelap);
@@ -190,9 +219,9 @@ a {
   background-color: var(--kuning-300);
 }
 
-/* Badge maroon */
-.badge-maroon {
-  background-color: var(--stiker-merah);
+/* Badge terracotta */
+.badge-terracotta {
+  background-color: var(--terracotta);
   color: var(--polaroid);
 }
 

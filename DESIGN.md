@@ -61,16 +61,16 @@ Lima prinsip berikut adalah pagar agar desain kita tidak jatuh ke jebakan templa
 
 ### Palet Warna
 
-Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Warna utama — **merah maroon #6E0521** (identitas IG @suarakebadongan) — tampil sebagai **blok gradasi besar** di seluruh halaman, seperti dinding galeri yang didompet warna maroon menyeluruh.
+Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Warna utama — **terracotta (merah bata) #C05C3B** dan **teal (biru-hijau gelap) #1E595D** — tampil sebagai **blok aksen besar** di halaman utama (Beranda) dan elemen penting lainnya.
 
-#### Aturan Blok Maroon Gradasi
+#### Aturan Blok Warna Utama (Terracotta & Teal)
 
-1. **`.blok-maroon`** — gradasi `#6E0521 → #32020F`, teks gading `--polaroid`. Dipakai untuk semua band halaman: header+upload galeri, chip album, masonry galeri, header & area pesan chat, bar input chat, judul+formulir cat tempel, papan cat, layar gerbang, nav.
-2. **Teks di maroon**: gading `--polaroid` (judul penuh, meta memakai opasitas 50–80%).
-3. **Aturan tombol**: tombol aksi utama = `bg-polaroid text-stiker-merah` (putih di atas maroon). Tombol di permukaan terang = `bg-stiker-merah text-polaroid`.
-4. **Border/fokus**: `border-polaroid/40` untuk elemen outline di maroon; `focus:border-stiker-merah` untuk input di kartu terang.
-5. **Kuning `--marker-kuning`** kini hanya aksen kecil opsional — bukan lagi latar blok maupun tombol.
-6. **Kanvas gading** hanya tampak di dalam kartu (polaroid, modal, input) — konten foto & catatan tetap bintangnya.
+1. **`.blok-terracotta`** — warna bata `#C05C3B`, teks putih gading `--polaroid`. Dipakai untuk aksen hangat, tombol utama, dan blok hero halaman.
+2. **`.blok-teal`** — biru-hijau laut `#1E595D`, teks `--polaroid`. Dipakai untuk menyeimbangkan kehangatan terracotta, biasanya pada blok Lini Masa atau Papan Cat.
+3. **Teks di blok gelap**: gading `--polaroid` (judul penuh, meta memakai opasitas 50–80%).
+4. **Aturan tombol**: tombol aksi utama = `bg-terracotta text-polaroid`. Tombol di permukaan terang = `bg-terracotta text-polaroid`.
+5. **Kuning `--marker-kuning`** kini hanya aksen kecil opsional.
+6. **Kanvas gading** tetap mendominasi latar — warna-warna tebal ini hanya sebagai pita perekat visual.
 
 #### Kelompok Dasar — Kertas & Tinta
 
@@ -86,19 +86,20 @@ Palet kita terdiri dari 15 warna dalam tiga kelompok peran. Warna utama — **me
 > **Kenapa begini?**
 > Kertas gading `#FFFDF7` membuat foto dan catatan menonjol tanpa bersaing dengan blok maroon. Kontras `#3D2B1F` di atas `#FFFDF7` ~11:1 (WCAG AAA). Token `--tinta-gelap` sengaja bernilai sama dengan `--tinta` — namanya menjelaskan *tujuan pemakaian* (di atas permukaan kuning/putih), sehingga class seperti `.btn-kuning` self-documenting.
 
-#### Kelompok Aksen — Maroon & Kuning (Hero Colors)
+#### Kelompok Aksen — Terracotta & Teal (Hero Colors)
 
 | Token | Hex | Peran |
 |---|---|---|
-| `--stiker-merah` | `#6E0521` | **Maroon IG** — BLOK BESAR (nav, gerbang) + tombol primer + stiker/tape di permukaan terang |
-| `--marker-kuning` | `#FED92E` | **Kuning IG** — tab aktif, tombol highlight, banner, indikator |
-| `--tape-hijau` | `#4A8C5C` | Hijau natural — sukses, online |
+| `--terracotta` | `#C05C3B` | **Merah Bata** — BLOK BESAR (hero, nav) + tombol primer + stiker/tape di permukaan terang |
+| `--teal` | `#1E595D` | **Biru Laut Gelap** — BLOK BESAR sekunder penyeimbang terracotta |
+| `--marker-kuning` | `#FED92E` | Kuning — tab aktif, banner, highlight kecil |
+| `--tape-hijau` | `#4A8C5C` | Hijau natural — sukses, tape daun |
 | `--pulpen-biru` | `#2E5090` | Navy warm — tautan/link di kanvas terang (~6:1, lolos AA) |
-| `--stiker-pink` | `#C9879E` | Dusty rose — turunan maroon, elegan |
+| `--stiker-pink` | `#C9879E` | Dusty rose — turunan hangat, elegan |
 | `--spidol-ungu` | `#6B4E8F` | Ungu — doodle, label |
 
 > **Kenapa begini?**
-> Maroon `#6E0521` cukup gelap untuk jadi permukaan navigasi dengan teks gading (kontras ~10:1) sekaligus warna tombol primer berisi teks putih (~9:1). Kuning `#FED92E` hampir selalu dipasangkan dengan teks `--tinta-gelap` (~8:1) — sebagai warna teks kuning tidak akan terbaca. Aksen lain satu keluarga hangat; biru navy sengaja digelapkan agar lolos AA sebagai warna link di kanvas terang.
+> Terracotta `#C05C3B` dan Teal `#1E595D` memberikan nuansa membumi yang pas dengan tema KKN (tanah, dedaunan, desa). Keduanya cukup pekat untuk dijadikan blok dengan teks putih gading di atasnya. Kuning `#FED92E` hampir selalu dipasangkan dengan teks `--tinta-gelap`. Aksen lain satu keluarga hangat.
 
 #### Kelompok Sepia — Warna Foto Lama
 
@@ -191,7 +192,7 @@ Sekarang saatnya menempelkan semua bahan tadi ke halaman. Bagian ini membedah en
 - **Aksesibilitas** — jaminan bahwa semua orang bisa memakainya, termasuk pengguna pembaca layar dan navigasi keyboard.
 - **Do / Don't** — pagar anti-slop: apa yang boleh, apa yang haram.
 
-Aturan universal yang berlaku di SEMUA permukaan (tidak akan diulang terus): latar `--kertas` bertekstur, teks `--tinta`, judul Shantell Sans, isi Nunito, anotasi Caveat, target sentuh minimum 44×44px, dan prinsip "satu ide per permukaan". Yang TIDAK kita desain di versi ini (ikut PRD, out-of-scope): timeline, peta lokasi, profil anggota, video, tagging teman, dan notifikasi push.
+Aturan universal yang berlaku di SEMUA permukaan (tidak akan diulang terus): latar `--kertas` bertekstur, teks `--tinta`, judul Shantell Sans, isi Nunito, anotasi Caveat, target sentuh minimum 44×44px, dan prinsip "satu ide per permukaan". Yang TIDAK kita desain di versi ini (ikut PRD, out-of-scope): video, tagging teman, dan notifikasi push.
 
 ### 1. Gerbang Passcode `/` — Pintu Masuk yang Berbisik
 
@@ -234,9 +235,9 @@ Rangka yang menempel di semua halaman setelah gerbang: kepala halaman, menu pind
 
 **Tujuan emosional:** rasa memegang satu album utuh — pindah halaman terasa membuka lembar baru, bukan melompat antar-aplikasi.
 
-**Layout & responsive:** di 360–767px: tab bar tetap di bawah, tinggi 64px, tiga tab ikon+label (Galeri · Suara · Cat Tempel), tombol "Inget ga sih?" melayang di kanan-bawah DI ATAS tab bar. Di 768px: tab bar pindah menjadi header horizontal di atas. Di 1024px: konten maksimum 1100px di tengah, logo "Badongan" Shantell Sans + potongan tape di kiri atas, tombol keluar di kanan atas.
+**Layout & responsive:** di 360–767px: tab bar tetap di bawah, tinggi 64px, empat tab ikon+label (Beranda · Galeri · Suara · Cat Tempel), tombol "Inget ga sih?" melayang di kanan-bawah DI ATAS tab bar. Di 768px: tab bar pindah menjadi header horizontal di atas. Di 1024px: konten maksimum 1100px di tengah, navigasi Beranda, Galeri, Profil(dummy), dsb ala desain baru.
 
-**Konten & microcopy:** label tab satu kata: "Galeri", "Suara", "Cat Tempel" — chat dinamakan "Suara" sesuai nama produk, bukan generik "Chat". Tombol keluar: "Keluar Sebentar" (tanpa dialog konfirmasi menakutkan; sesi memang ringan). Banner offline: "Sinyal hilang — kenangan tidak kemana-mana kok, sabar sedikit."
+**Konten & microcopy:** label tab satu kata: "Beranda", "Galeri", "Suara", "Cat Tempel". Tombol keluar: "Keluar Sebentar" (tanpa dialog konfirmasi menakutkan; sesi memang ringan). Banner offline: "Sinyal hilang — kenangan tidak kemana-mana kok, sabar sedikit."
 
 **Interaksi & State:**
 - *Kosong* — shell sengaja tanpa badge/notifikasi/counter merah (produk anti-FOMO); kekosongan ditangani masing-masing halaman.
@@ -256,7 +257,32 @@ Rangka yang menempel di semua halaman setelah gerbang: kepala halaman, menu pind
 | Tiga tab besar, jempol-reach, label selalu terbaca | Hamburger menu + submenu bertingkat ala aplikasi korporat |
 | Tab bar warna kertas dengan garis `--garis-kertas` di atasnya | Tab bar gelap pekat / glassmorphism yang memecah dunia kertas |
 
-### 3. Galeri Foto `/galeri` — Halaman-Halaman Album
+### 3. Beranda `/beranda` — Halaman Sampul Cerita
+
+Intisari dari memori KKN (PRD F2) — rumah pertama setelah gerbang.
+
+> **Kenapa begini?**
+> Beranda ini adalah representasi "halaman sampul" dari buku scrapbook kita. Layout-nya dirancang persis seperti halaman pembuka buku kenangan fisik: ada foto utama (Hero) yang dibingkai balok warna kontras (terracotta & teal), ada timeline bergaya polaroid yang digantung/dihubungkan dengan garis, serta ada daftar "panitia" alias anggota KKN. Ini mengatur *tone* seketika.
+
+**Tujuan emosional:** Rasa haru nostalgia saat membuka lembar pertama album; disambut foto grup utama dan rentetan memori dari hari pertama hingga perpisahan.
+
+**Layout & responsive:** 
+- **Hero:** Foto grup utama besar di tengah, berbingkai putih tebal. Di belakangnya melintang balok/pita warna terracotta (kiri) dan teal (kanan). 
+- **Lini Masa:** Garis horizontal tipis `--tinta` dengan pin di atas polaroid kecil-kecil berjejer.
+- **Wajah-wajah Kita:** Grid avatar bundar dengan nama dan peran.
+- **Peta:** Balok teal di bawah memuat ilustrasi rute Sukamaju/Kebadongan dengan pin-pin merah.
+- Di 360px: stack vertikal semua; Lini masa di-scroll horizontal (overflow-x auto). Di 1024px: spread out yang cantik selebar maksimal 1100px.
+
+**Konten & microcopy:** Judul Hero: "KKN KITA: Desa Kebadongan 2024". Teks di profil: "Andi - Ketua", dll. 
+
+**Interaksi & State:**
+- *Scroll horizontal* pada lini masa di perangkat mobile agar tidak menghabiskan tinggi vertikal.
+
+**Animasi ringkas:** GSAP ScrollTrigger — polaroid di timeline pop-in satu per satu saat di-scroll. 
+
+**Aksesibilitas:** Swipe horizontal pada lini masa mulus; alt-text untuk foto pahlawan utama.
+
+### 4. Galeri Foto `/galeri` — Halaman-Halaman Album
 
 Jantung kenangan (PRD F2): unggah banyak foto, kelompokkan per album, jelajahi masonry rasio asli, buka lightbox lengkap.
 
@@ -288,7 +314,7 @@ Jantung kenangan (PRD F2): unggah banyak foto, kelompokkan per album, jelajahi m
 | Rotasi & tape bervariasi per kartu (prinsip "tak ada dua kartu kembar") | Grid kotak seragam sempurna dengan crop paksa 1:1 |
 | Skeleton placeholder sepia saat memuat | Spinner bundar generik di tengah halaman kosong |
 
-### 4. Chat Anonim `/chat` — "Suara" Posko
+### 5. Chat Anonim `/chat` — "Suara" Posko
 
 Obrolan grup waktu-nyata tanpa identitas (PRD F3) — inti dari nama SuaraKebadongan. Nama samaran bergaya kampung + avatar hewan digenerate ULANG untuk setiap pesan.
 
@@ -321,7 +347,7 @@ Obrolan grup waktu-nyata tanpa identitas (PRD F3) — inti dari nama SuaraKebado
 | Nama samaran + avatar baru untuk SETIAP pesan, gaya kampung yang hangat | Username tetap, warna bubble per-user, atau fitur "profil" siapa pun |
 | Indikator mengetik anonim "Seseorang…" | Indikator mengetik yang menyebut nama samaran (membuat orang bisa dikenali) |
 
-### 5. Papan Cat Tempel `/notes` — Dinding Pesan Warna-Warni
+### 6. Papan Cat Tempel `/notes` — Dinding Pesan Warna-Warni
 
 Papan cat kolektif (PRD F4): pesan singkat, doa, atau kejadian konyol — maksimal ±280 karakter, sinkron real-time.
 
@@ -353,7 +379,7 @@ Papan cat kolektif (PRD F4): pesan singkat, doa, atau kejadian konyol — maksim
 | Warna catatan pucat-keluarga-palet, teks selalu `--tinta` | Catatan neon full-saturasi dengan teks putih (kontras hancur) |
 | Edit/hapus terbuka untuk semua, tanpa hierarki admin | Sistem moderasi/laporan kompleks — produk ini lahir dari saling percaya |
 
-### 6. Tombol "Inget ga sih?" — Kejutan Pengenalan
+### 7. Tombol "Inget ga sih?" — Kejutan Pengenalan
 
 Tombol sticker-style yang menempel di SEMUA halaman setelah gerbang (PRD F5): satu ketukan, satu foto acak, satu serangan rindu dadakan.
 

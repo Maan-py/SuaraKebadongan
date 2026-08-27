@@ -6,6 +6,16 @@ import { useState, useEffect, useCallback } from 'react'
 
 const tabs = [
   {
+    href: '/beranda',
+    label: 'Beranda',
+    icon: (active: boolean) => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+  {
     href: '/galeri',
     label: 'Galeri',
     icon: (active: boolean) => (
@@ -44,9 +54,14 @@ export default function TabBar() {
   const router = useRouter()
   const gerakDiizinkan = !useReducedMotion()
   const [mounted, setMounted] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleLogout = useCallback(async () => {
@@ -69,7 +84,7 @@ export default function TabBar() {
       {/* ── Mobile: tab bar fixed bottom ── */}
       <nav
         aria-label="Navigasi utama"
-        className="fixed bottom-0 left-0 right-0 z-50 bg-stiker-merah border-t border-maroon-700 md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-terracotta border-t border-terracotta-700 md:hidden"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="relative flex h-16 items-center justify-around">
@@ -91,7 +106,7 @@ export default function TabBar() {
                 key={tab.href}
                 onClick={() => router.push(tab.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-maroon-900 font-semibold' : 'text-polaroid/70'}`}
+                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-terracotta-900 font-semibold' : 'text-polaroid/70'}`}
               >
                 {tab.icon(isActive)}
                 <span className={`text-xs font-medium ${isActive ? 'font-semibold' : ''}`}>
@@ -106,11 +121,18 @@ export default function TabBar() {
       {/* ── Desktop: header horizontal ── */}
       <nav
         aria-label="Navigasi utama"
-        className="hidden md:flex fixed top-0 left-0 right-0 z-50 h-14 items-center justify-between border-b border-maroon-700 bg-stiker-merah px-6"
+        className={`hidden md:flex fixed top-0 left-0 right-0 z-50 h-14 items-center justify-between px-6 transition-all duration-300 ${
+          scrolled ? 'bg-kertas/95 backdrop-blur-sm border-b border-garis-kertas' : 'bg-transparent border-b border-transparent'
+        }`}
       >
-        <div className="flex items-center gap-2">
-          <span className="font-display text-lg font-semibold text-marker-kuning">Badongan</span>
-          <span className="text-xs text-polaroid/60 tracking-wide">✦ Kenangan KKN</span>
+        <div className="flex items-center gap-2 relative">
+          {/* Efek gradien/glow di belakang logo agar selalu terlihat */}
+          <div className="absolute h-10 inset-0 bg-[radial-gradient(ellipse,var(--tw-gradient-stops))] from-tinta/60 via-tinta/10 to-transparent scale-[2.5] blur-md -z-10 rounded-full"></div>
+          <img 
+            src="/logo-suara.png" 
+            alt="Suara Kebadongan" 
+            className="h-8 md:h-10 w-auto object-contain drop-shadow-[15px_10px_12px_rgba(0,0,0,0.6)] relative z-10"
+          />
         </div>
 
         <div className="flex items-center gap-1">
@@ -123,8 +145,8 @@ export default function TabBar() {
                 aria-current={isActive ? 'page' : undefined}
                 className={`flex h-10 items-center gap-2 rounded-radius-pill px-4 text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-marker-kuning text-maroon-900'
-                    : 'text-polaroid/70 hover:text-marker-kuning'
+                    ? 'bg-terracotta text-polaroid shadow-sm'
+                    : 'text-tinta-lembut hover:text-terracotta hover:bg-karton'
                 }`}
               >
                 {tab.icon(isActive)}
@@ -136,7 +158,7 @@ export default function TabBar() {
 
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-sm text-polaroid/70 hover:text-marker-kuning transition-colors"
+          className="flex items-center gap-2 text-sm text-tinta-lembut hover:text-terracotta transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
@@ -153,7 +175,7 @@ export default function TabBar() {
         className="fixed top-3 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-karton border border-garis-kertas shadow-sm md:hidden"
         aria-label="Keluar sebentar"
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-stiker-merah">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-terracotta">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
           <polyline points="16,17 21,12 16,7" />
           <line x1="21" y1="12" x2="9" y2="12" />

@@ -5,7 +5,7 @@
 
 ## 1. Deskripsi Produk
 
-**SuaraKebadongan** adalah website galeri kenangan digital untuk satu grup KKN (Kuliah Kerja Nyata) di Desa Kebadongan, Kebumen. Setelah program berakhir, website ini menjadi "posko virtual" tempat para anggota kembali berkumpul untuk: melihat dan berbagi dokumentasi foto, mengobrol secara anonim secara *real-time*, serta meninggalkan catatan singkat berupa *sticky notes* — ditambah tombol kejutan untuk mengenang momen acak.
+**SuaraKebadongan** adalah website kenangan digital untuk satu grup KKN (Kuliah Kerja Nyata) di Desa Kebadongan, Kebumen. Setelah program berakhir, website ini menjadi "posko virtual" tempat para anggota kembali berkumpul untuk: bernostalgia di halaman Beranda (lini masa & profil), melihat dan berbagi dokumentasi foto (Galeri), mengobrol secara anonim secara *real-time* (Chat), serta meninggalkan catatan singkat berupa *sticky notes* (Notes) — ditambah tombol kejutan untuk mengenang momen acak.
 
 **Untuk siapa:** Anggota KKN Desa Kebadongan (±10–30 orang). Akses dibatasi menggunakan satu *passcode* bersama — tanpa akun, tanpa email, tanpa identitas. Konsepnya sederhana: *"kalau kamu pernah tinggal di Badongan, kamu tahu suara pintu masuknya."*
 
@@ -25,13 +25,22 @@ Halaman pembuka dengan input passcode bersama sebagai satu-satunya gerbang akses
 
 **Kriteria penerimaan (acceptance criteria):**
 - [ ] Pengunjung tanpa sesi yang membuka URL mana pun dialihkan ke halaman gerbang (`/`).
-- [ ] Memasukkan passcode yang benar akan membuat cookie `httpOnly` dan mengarahkan pengunjung ke halaman utama.
+- [ ] Memasukkan passcode yang benar akan membuat cookie `httpOnly` dan mengarahkan pengunjung ke halaman utama (`/beranda`).
 - [ ] Passcode salah → menampilkan pesan galat yang jelas, tidak ada detail teknis yang bocor.
-- [ ] Semua halaman (`/galeri`, `/chat`, `/notes`) dan endpoint API menolak akses tanpa sesi valid.
+- [ ] Semua halaman (`/beranda`, `/galeri`, `/chat`, `/notes`) dan endpoint API menolak akses tanpa sesi valid.
 - [ ] Tersedia tombol keluar untuk menghapus sesi.
 - [ ] Rate-limit sederhana pada percobaan passcode untuk mencegah tebakan paksa (*brute force*).
 
-### F2. Galeri Foto
+### F2. Beranda Kenangan
+Halaman utama (*landing page* setelah masuk) yang menampilkan rangkuman perjalanan KKN.
+
+**Kriteria penerimaan:**
+- [ ] Terdapat **Hero Section** berupa foto memori utama (seperti foto grup/posko) dengan blok aksen warna terracotta/teal ala halaman scrapbook.
+- [ ] Terdapat **Lini Masa Kenangan** (Timeline) yang menampilkan jepretan polaroid perjalanan per minggu/acara yang saling terhubung garis.
+- [ ] Terdapat seksi **Wajah-wajah Kita** (Profil) yang merangkum anggota-anggota dalam bentuk avatar bundar beserta perannya.
+- [ ] Terdapat ilustrasi grafis **Peta Lokasi** desa.
+
+### F3. Galeri Foto
 Tempat mengunggah, mengelola, dan menjelajahi dokumentasi foto yang dikelompokkan per acara (album).
 
 **Kriteria penerimaan:**
@@ -44,7 +53,7 @@ Tempat mengunggah, mengelola, dan menjelajahi dokumentasi foto yang dikelompokka
 - [ ] Foto dapat dihapus oleh anggota mana pun (prinsip saling percaya).
 - [ ] Unggahan gagal (format tidak didukung / ukuran melebihi batas) menampilkan pesan galat yang ramah.
 
-### F3. Obrolan Anonim Waktu-Nyata
+### F4. Obrolan Anonim Waktu-Nyata
 Papan obrolan grup tanpa identitas — inti dari "Suara".
 
 **Kriteria penerimaan:**
@@ -57,7 +66,7 @@ Papan obrolan grup tanpa identitas — inti dari "Suara".
 - [ ] Gulir otomatis (*scroll*) ke bawah saat pesan baru masuk, kecuali pengguna sedang membaca riwayat di atas.
 - [ ] Pesan tidak dapat diedit/dihapus setelah terkirim (sifat obrolan anonim).
 
-### F4. Catatan Tempel (Notes)
+### F5. Catatan Tempel (Notes)
 Papan cat tempel kolektif untuk meninggalkan pesan singkat, doa, atau kejadian konyol.
 
 **Kriteria penerimaan:**
@@ -68,7 +77,7 @@ Papan cat tempel kolektif untuk meninggalkan pesan singkat, doa, atau kejadian k
 - [ ] Perubahan (tambah/edit/hapus) tersinkron antar pengguna secara real-time.
 - [ ] Papan tetap terbaca dan rapi di layar HP.
 
-### F5. Tombol "Inget ga sih?"
+### F6. Tombol "Inget ga sih?"
 Tombol seru yang menampilkan satu foto/momen acak dari galeri — cara cepat kena rindu dadakan.
 
 **Kriteria penerimaan:**
@@ -87,9 +96,6 @@ Fitur berikut **tidak** dibangun pada versi 1.0, namun menjadi calon pengembanga
 
 | Fitur | Catatan |
 |---|---|
-| Timeline kegiatan | Kronologi hari-hari KKN dari awal sampai perpisahan — prioritas tertinggi v1.1 |
-| Peta lokasi | Pin posko, rumah warga, spot favorit |
-| Profil anggota | Direktori anggota + divisi |
 | Arsip dokumen | Proposal, laporan, LPJ, surat resmi |
 | Reaksi emoji di obrolan | Sementara cukup teks polos |
 | Unggah video | v1 hanya foto (efisiensi penyimpanan free tier) |
