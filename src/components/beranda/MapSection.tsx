@@ -46,20 +46,24 @@ export default function MapSection() {
           {/* ── Map Illustration (Polaroid) ── */}
           <div className="w-full md:w-1/2 z-10 relative">
              <motion.div
-               className="bg-polaroid p-3 md:p-4 md:pb-12 pb-12 shadow-kertas rotate-[2deg] rounded-sm relative"
+               className="group bg-polaroid p-3 md:p-4 md:pb-12 pb-12 shadow-kertas rotate-[2deg] rounded-sm relative cursor-pointer"
                initial={{ opacity: 0, scale: 0.9, rotate: 10 }}
                whileInView={{ opacity: 1, scale: 1, rotate: 2 }}
+               whileHover={{ 
+                 scale: 1.05, 
+                 rotate: 0, 
+                 zIndex: 30,
+                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+               }}
                viewport={{ once: true }}
-               transition={{ duration: 0.6, ease: "backOut" }}
+               transition={{ duration: 0.4, ease: "easeOut" }}
              >
-                {/* Washi Tape
-                <div className="absolute -top-3 right-8 w-16 h-5 bg-tape-hijau shadow-tape rotate-[4deg] opacity-90" /> */}
                 {/* Pin Image */}
-                    <img 
-                      src="/push-pin.png" 
-                      alt="Pin" 
-                      className="absolute -top-2 left-1/2 -translate-x-1/2 w-15 h-15 object-contain drop-shadow-sm z-20 hover:scale-110 transition-transform"
-                    />
+                <img 
+                  src="/push-pin.png" 
+                  alt="Pin" 
+                  className="absolute -top-2 left-1/2 -translate-x-1/2 w-15 h-15 object-contain drop-shadow-sm z-20 group-hover:scale-110 transition-transform duration-300"
+                />
                 {/* Map Area */}
                  <div className="w-full aspect-[4/3] relative overflow-hidden">
                    <iframe
@@ -72,7 +76,7 @@ export default function MapSection() {
                    />
                  </div>
 
-                <p className="absolute bottom-3 left-0 right-0 text-center font-tulis text-lg text-tinta">
+                <p className="absolute bottom-3 left-0 right-0 text-center font-tulis text-lg text-tinta group-hover:text-terracotta transition-colors">
                   Posko Sejuta Cerita
                 </p>
              </motion.div>
