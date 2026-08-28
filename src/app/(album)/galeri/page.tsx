@@ -6,6 +6,7 @@ import ZonaUpload from '@/components/galeri/ZonaUpload'
 import AlbumChips from '@/components/galeri/AlbumChips'
 import MasonryGrid from '@/components/galeri/MasonryGrid'
 import Lightbox from '@/components/galeri/Lightbox'
+import VideoSection from '@/components/beranda/VideoSection'
 
 interface Photo {
   id: string
@@ -128,6 +129,11 @@ export default function GaleriPage() {
 
         {/* Zona upload */}
         <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
+      </section>
+
+      {/* ── BLOK After Movie ── */}
+      <section className="px-4 py-4 md:px-6">
+        <VideoSection />
       </section>
 
       {/* ── BLOK 2: KARTON — chip album ── */}
