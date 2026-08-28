@@ -1,19 +1,23 @@
-const gelaran = ['Bu', 'Mas', 'Mbak', 'Mbah', 'Bang', 'Nduk']
-const nama = ['Marni', 'Tugimin', 'Rejo', 'Sarinem', 'Slamet', 'Warti']
-const identitas = [
-  'Penjual Tempe',
-  'Tukang Sepeda Ontel',
-  'Warga RT 03',
-  'Pemilik Warung',
-  'Penjaga Sawah',
-  'Juragan Bebek',
+const kataBenda = [
+  'Kopi', 'Teh', 'Jalan', 'Hujan', 'Angin', 'Kucing', 'Buku', 'Pukul',
+  'Lampu', 'Surat', 'Awan', 'Senja', 'Ombak', 'Matahari', 'Embun', 'Bintang',
+  'Bunga', 'Daun', 'Roti', 'Kertas', 'Melodi', 'Langkah', 'Rindu', 'Jejak',
+  'Suara', 'Pena', 'Cermin', 'Sepeda', 'Sudut', 'Kaktus', 'Cokelat', 'Karton',
+  'Kipas', 'Pintu', 'Waktu', 'Bantal', 'Jendela'
+]
+
+const kataSifatSuasana = [
+  'Dingin', 'Manis', 'Sore', 'Malam', 'Ribut', 'Tidur', 'Tua', 'Dua',
+  'Hangat', 'Sendu', 'Kelabu', 'Teduh', 'Bisu', 'Tenang', 'Jauh', 'Kecil',
+  'Rahasia', 'Sebentar', 'Terang', 'Singgah', 'Awal', 'Panjang', 'Pagi',
+  'Kuning', 'Tepi', 'Lama', 'Pekat', 'Syahdu', 'Sunyi', 'Pahit', 'Lembut',
+  'Indah', 'Asri', 'Merah', 'Penuh', 'Tipis'
 ]
 
 export function generateAlias(): string {
-  const g = gelaran[Math.floor(Math.random() * gelaran.length)]
-  const n = nama[Math.floor(Math.random() * nama.length)]
-  const i = identitas[Math.floor(Math.random() * identitas.length)]
-  return `${g} ${n} ${i}`
+  const benda = kataBenda[Math.floor(Math.random() * kataBenda.length)]
+  const sifat = kataSifatSuasana[Math.floor(Math.random() * kataSifatSuasana.length)]
+  return `${benda} ${sifat}`
 }
 
 const warnaAvatar = [
