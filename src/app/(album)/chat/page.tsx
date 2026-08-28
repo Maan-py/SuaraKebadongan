@@ -19,11 +19,41 @@ const LIMIT = 50
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(true)
+  const [onlineCount, setOnlineCount] = useState(1)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isAtBottom, setIsAtBottom] = useState(true)
   const [newCount, setNewCount] = useState(0)
   const [ownIds, setOwnIds] = useState<string[]>([])
+
+  // Track online users using Supabase Presence
+  useEffect(() => {
+    let sid = sessionStorage.getItem('chat_session_id')
+    if (!sid) {
+      sid = Math.random().toString(36).substring(2, 9)
+      sessionStorage.setItem('chat_session_id', sid)
+    }
+
+    const room = supabase.channel('chat_room', {
+      config: { presence: { key: sid } },
+    })
+
+    room
+      .on('presence', { event: 'sync' }, () => {
+        const state = room.presenceState()
+        const count = Object.keys(state).length
+        setOnlineCount(count > 0 ? count : 1)
+      })
+      .subscribe(async (status) => {
+        if (status === 'SUBSCRIBED') {
+          await room.track({ online_at: new Date().toISOString() })
+        }
+      })
+
+    return () => {
+      supabase.removeChannel(room)
+    }
+  }, [])
 
   // Load own messages IDs from local storage
   useEffect(() => {
@@ -134,11 +164,24 @@ export default function ChatPage() {
     // md:h-[calc(100dvh-3.5rem)] = dvh dikurangi header desktop (pt-14 = 3.5rem)
     <div className="flex h-[calc(100dvh-5rem)] flex-col md:h-[calc(100dvh-3.5rem)]">
       {/* ── HEADER ── */}
-      <header className="flex-shrink-0 px-4 pb-3 pt-8 md:px-6">
-        <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">Chat</h1>
-        <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
-          Chat anonymously with others!
-        </p>
+      <header className="flex-shrink-0 px-4 pb-3 pt-8 md:px-6 flex items-end justify-between">
+        <div>
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">Chat</h1>
+          <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
+            Chat anonymously with others!
+          </p>
+        </div>
+
+        {/* Indikator Online Users */}
+        <div className="flex items-center gap-2 bg-polaroid border border-garis-kertas/40 px-3 py-1.5 rounded-full shadow-sm mb-1">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span className="font-tulis text-xs font-semibold text-tinta-gelap">
+            {onlineCount} Online
+          </span>
+        </div>
       </header>
 
       {/* ── AREA PESAN ── */}

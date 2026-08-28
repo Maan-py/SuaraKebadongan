@@ -18,13 +18,37 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
   const [isSending, setIsSending] = useState(false)
   const [charWarning, setCharWarning] = useState(false)
   const lastSendTime = useRef(0)
+  const lastTypingTime = useRef(0)
+  const mySessionId = useRef<string>('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    let sid = sessionStorage.getItem('chat_session_id')
+    if (!sid) {
+      sid = Math.random().toString(36).substring(2, 9)
+      sessionStorage.setItem('chat_session_id', sid)
+    }
+    mySessionId.current = sid
+  }, [])
 
   // Counter warning di ambang 50 huruf terakhir
   useEffect(() => {
     const remaining = MAX_CHARS - text.length
     setCharWarning(remaining <= NEAR_LIMIT && remaining > 0)
   }, [text.length])
+
+  // Broadcast typing
+  const emitTyping = useCallback(() => {
+    const now = Date.now()
+    if (now - lastTypingTime.current > 1500) {
+      lastTypingTime.current = now
+      supabase.channel('chat_room').send({
+        type: 'broadcast',
+        event: 'mengetik',
+        payload: { senderId: mySessionId.current },
+      }).catch(() => {})
+    }
+  }, [])
 
   const handleSend = useCallback(async () => {
     const now = Date.now()
@@ -39,7 +63,6 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
     try {
       const alias = generateAlias()
       const avatar = getRandomHewan()
-      const warna = getRandomWarna()
 
       const { data, error } = await supabase.from('messages').insert({
         body: trimmed,
@@ -75,6 +98,9 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
     const newText = e.target.value
     if (newText.length <= MAX_CHARS) {
       setText(newText)
+      if (newText.length > 0) {
+        emitTyping()
+      }
     }
   }
 
