@@ -154,7 +154,7 @@ export default function TimelineSection() {
                 >
                   {/* Polaroid Card */}
                   <motion.div
-                    className="group bg-polaroid p-3 pb-10 shadow-kertas border border-garis-kertas/50 relative mb-6 w-60 md:w-full max-w-[220px] cursor-pointer"
+                    className="group bg-polaroid p-3 pb-10 shadow-kertas border border-garis-kertas/50 relative mb-6 w-60 md:w-full max-w-[220px]"
                     initial={{ rotate: item.rot }}
                     whileHover={{ 
                       scale: 1.05, 

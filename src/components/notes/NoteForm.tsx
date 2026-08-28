@@ -102,10 +102,11 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         </div>
 
         {/* Warna + Tombol */}
-        <div className="mt-3 flex items-center justify-between">
+        <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-1.5">
           {/* Swatch warna */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-md text-tinta-gelap/60 mr-1">Pilih warna:</span>            {COLORS.map((c) => (
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="text-sm md:text-md text-tinta-gelap/60 mr-1">Pilih warna:</span>
+            {COLORS.map((c) => (
               <button
                 key={c.id}
                 onClick={() => setColor(c.id)}
@@ -122,7 +123,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
           <button
             onClick={handleSend}
             disabled={!canSend}
-            className="rounded-radius-pill bg-terracotta px-5 py-1.5 text-md font-medium text-polaroid transition-colors hover:bg-terracotta/90 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto rounded-radius-pill bg-terracotta px-5 py-2 sm:py-1.5 text-sm md:text-md font-medium text-polaroid transition-colors hover:bg-terracotta/90 disabled:opacity-40 disabled:cursor-not-allowed text-center"
           >
             {isSending ? '...' : 'Tempel!'}
           </button>

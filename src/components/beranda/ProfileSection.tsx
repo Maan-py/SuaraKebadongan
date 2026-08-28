@@ -53,7 +53,7 @@ export default function ProfileSection() {
         {profiles.map((profile, i) => (
           <motion.div
             key={profile.id}
-            className="flex flex-col items-center text-center group cursor-pointer"
+            className="flex flex-col items-center text-center group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.06, y: -4 }}

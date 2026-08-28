@@ -94,7 +94,7 @@ export default function HeroSection() {
 
       {/* ── Hero Photo (Polaroid style) ── */}
       <motion.div
-        className="group relative rounded-lg border-[0.5px] border-terracotta border mx-auto w-[90%] max-w-2xl cursor-pointer"
+        className="group relative rounded-lg border-[0.5px] border-terracotta border mx-auto w-[90%] max-w-2xl"
         initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
         animate={{ opacity: 1, scale: 1, rotate: 1 }}
         whileHover={{ 
