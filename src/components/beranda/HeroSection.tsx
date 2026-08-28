@@ -128,7 +128,7 @@ export default function HeroSection() {
             {/* Arrow Left */}
             <button 
               onClick={scrollPrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-kertas/80 text-tinta w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 md:opacity-100"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-kertas/80 text-tinta w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Previous image"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
@@ -137,7 +137,7 @@ export default function HeroSection() {
             {/* Arrow Right */}
             <button 
               onClick={scrollNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-kertas/80 text-tinta w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 md:opacity-100"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-kertas/80 text-tinta w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-terracotta hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Next image"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
