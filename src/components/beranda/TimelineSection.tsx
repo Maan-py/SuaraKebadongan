@@ -152,14 +152,15 @@ export default function TimelineSection() {
                   viewport={{ once: true, margin: "-10%" }}
                   transition={{ duration: 0.5, delay: index * 0.15, ease: "easeOut" }}
                 >
-                  {/* Polaroid Card dengan Animasi Hover (tanpa ubah ukuran) */}
+                  {/* Polaroid Card */}
                   <motion.div
                     className="group bg-polaroid p-3 pb-10 shadow-kertas border border-garis-kertas/50 relative mb-6 w-60 md:w-full max-w-[220px] cursor-pointer"
                     initial={{ rotate: item.rot }}
                     whileHover={{ 
+                      scale: 1.05, 
                       rotate: 0, 
                       zIndex: 30,
-                      boxShadow: "0 15px 20px -5px rgba(0, 0, 0, 0.12), 0 8px 8px -5px rgba(0, 0, 0, 0.04)"
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08)"
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
@@ -170,19 +171,16 @@ export default function TimelineSection() {
                     <img 
                       src="/push-pin.png" 
                       alt="Pin" 
-                      className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 object-contain drop-shadow-sm z-20"
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 object-contain drop-shadow-sm z-20 group-hover:scale-110 transition-transform"
                     />
 
-                    {/* Foto Container dengan Zoom Effect di dalam */}
-                    <div className="w-full aspect-square overflow-hidden bg-karton border border-sepia-terang/20 relative">
-                      {item.imgSrc && (
-                        <img 
-                          src={item.imgSrc}
-                          alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                        />
-                      )}
-                    </div>
+                    {item.imgSrc && (
+                      <img 
+                        src={item.imgSrc}
+                        alt="Foto Jurnal"
+                        className="w-full bg-karton border border-sepia-terang/20 flex items-center justify-center p-4 text-center transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    )}
                     
                     {/* Label */}
                     <p className="absolute bottom-2 left-0 right-0 text-center font-tulis text-lg text-tinta group-hover:text-terracotta transition-colors">
