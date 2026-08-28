@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 interface Photo {
   id: string
@@ -14,6 +14,7 @@ interface Photo {
 const DEBOUNCE_MS = 400
 
 export default function TombolKejutan() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [photo, setPhoto] = useState<Photo | null>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -24,6 +25,11 @@ export default function TombolKejutan() {
   const triggerRef = useRef<HTMLButtonElement>(null)
   const gerakDiizinkan = !useReducedMotion()
   const router = useRouter()
+
+  // Sembunyikan di halaman chat
+  if (pathname === '/chat') {
+    return null
+  }
 
   // Wiggle idle: goyang tiap ±8 detik
   useEffect(() => {
