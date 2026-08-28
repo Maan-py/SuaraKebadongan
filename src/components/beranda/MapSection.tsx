@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 
 export default function MapSection() {
+  const router = useRouter();
   return (
     <>
     <section className="relative w-full mt-24">
@@ -38,6 +40,9 @@ export default function MapSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              onClick={() => {
+                router.push("/galeri");
+              }}
             >
               Lihat Kenangan
             </motion.button>

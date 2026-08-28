@@ -24,17 +24,24 @@ export default function VideoSection() {
       {/* ── Video Polaroid Frame ── */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, rotate: -1 }}
-        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+        whileInView={{ opacity: 1, scale: 1, rotate: -1 }}
+        whileHover={{ 
+          scale: 1.03, 
+          rotate: 0, 
+          y: -4,
+          zIndex: 30,
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+        }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative mx-auto w-full max-w-3xl"
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="group relative mx-auto w-full max-w-3xl cursor-pointer"
       >
         {/* Tapes on top corners */}
-        <div className="absolute -top-3 -left-4 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-12 z-20 border border-garis-kertas/50 pointer-events-none" />
-        <div className="absolute -top-3 -right-4 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-12 z-20 border border-garis-kertas/50 pointer-events-none" />
+        <div className="absolute -top-3 -left-4 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-12 z-20 border border-garis-kertas/50 pointer-events-none group-hover:scale-105 transition-transform" />
+        <div className="absolute -top-3 -right-4 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-12 z-20 border border-garis-kertas/50 pointer-events-none group-hover:scale-105 transition-transform" />
 
         {/* Polaroid Card Wrapper */}
-        <div className="bg-polaroid rounded-xl p-3 md:p-5 pb-8 shadow-kertas border border-garis-kertas/40 relative z-10">
+        <div className="bg-polaroid rounded-xl p-3 md:p-5 pb-8 shadow-kertas border border-garis-kertas/40 relative z-10 transition-shadow duration-300">
           {/* Responsive 16:9 Aspect Ratio Container */}
           <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-garis-kertas/30 bg-black/90 shadow-inner">
             <iframe
@@ -47,7 +54,7 @@ export default function VideoSection() {
           </div>
 
           {/* Caption */}
-          <p className="font-tulis text-center text-lg md:text-xl text-tinta mt-4">
+          <p className="font-tulis text-center text-lg md:text-xl text-tinta group-hover:text-terracotta transition-colors mt-4">
             "Setiap detik kenangan yang tersimpan dalam sinematik"
           </p>
         </div>
