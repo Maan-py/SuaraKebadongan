@@ -84,11 +84,11 @@ export default function TabBar() {
       {/* ── Mobile: tab bar fixed bottom ── */}
       <nav
         aria-label="Navigasi utama"
-        className="fixed bottom-0 left-0 right-0 z-50 bg-terracotta border-t border-terracotta-700 md:hidden"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-karton border-t border-garis-kertas/50 md:hidden shadow-lg"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <div className="relative grid grid-cols-4 h-16 items-center">
-          {/* Indikator sliding — kuning IG */}
+          {/* Indikator sliding */}
           {mounted && (
             <motion.div
               className="absolute top-2 bottom-2 left-0 w-1/4 flex justify-center"
@@ -97,7 +97,7 @@ export default function TabBar() {
               transition={gerakDiizinkan ? { type: 'tween', duration: 0.25, ease: 'easeInOut' } : { duration: 0 }}
               aria-hidden="true"
             >
-              <div className="h-11 w-16 rounded-radius-kartu bg-karton" />
+              <div className="h-11 w-16 rounded-radius-kartu bg-polaroid shadow-sm border border-garis-kertas/40" />
             </motion.div>
           )}
 
@@ -108,7 +108,7 @@ export default function TabBar() {
                 key={tab.href}
                 onClick={() => router.push(tab.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center mx-auto gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-terracotta-900 font-semibold' : 'text-polaroid/70'}`}
+                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center mx-auto gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-terracotta font-semibold' : 'text-tinta/60 hover:text-tinta'}`}
               >
                 {tab.icon(isActive)}
                 <span className={`text-xs font-medium ${isActive ? 'font-semibold' : ''}`}>
