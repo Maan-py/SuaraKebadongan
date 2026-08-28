@@ -47,9 +47,9 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization)
      * - file gambar statis (png, jpg, jpeg, svg, dll)
-     * - api/gate (login endpoint itu sendiri — hindari loop)
+     * - api/* (semua API routes — handle auth sendiri)
      */
-    "/((?!_next/static|_next/image|.*\\.(?:png|jpg|jpeg|svg|webp|ico)|api/gate).*)",
+    "/((?!_next/static|_next/image|.*\\.(?:png|jpg|jpeg|svg|webp|ico)|api/).*)",
   ],
 };
 

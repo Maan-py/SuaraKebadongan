@@ -108,10 +108,10 @@ export default function NotesPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">
-            Cat Tempel
+            Notes
           </h1>
           <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
-            tempel di sini, biar yang lain baca juga
+            Leave notes for us
           </p>
         </div>
 
@@ -124,6 +124,7 @@ export default function NotesPage() {
         {/* Papan catatan */}
         {notes.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">
+            
             {/* Hantu garis putus-putus */}
             <svg
               width="80"

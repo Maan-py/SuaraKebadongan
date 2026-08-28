@@ -24,8 +24,8 @@ const timelineData = [
   },
   {
     id: 3,
-    title: "That 2 Wayangan Days",
-    desc: "A small step today marks the beginning of our great journey",
+    title: "That 2 Days of Wayangan",
+    desc: "A small step today marks the beginning of our great journey. Ceritanya simulasi KKN",
     label: "20 — 21 Juni 2026",
     rot: -1,
     tapeColor: "bg-marker-kuning",

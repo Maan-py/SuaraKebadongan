@@ -62,7 +62,10 @@ export default function TombolKejutan() {
     setIsEmpty(false)
 
     try {
-      const res = await fetch('/api/surprise')
+      const url = lastPhotoId
+        ? `/api/surprise?exclude_id=${lastPhotoId}`
+        : '/api/surprise'
+      const res = await fetch(url)
       const data = await res.json()
 
       if (data.empty) {

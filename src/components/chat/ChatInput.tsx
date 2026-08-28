@@ -41,13 +41,19 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
       const avatar = getRandomHewan()
       const warna = getRandomWarna()
 
-      const { error } = await supabase.from('messages').insert({
+      const { data, error } = await supabase.from('messages').insert({
         body: trimmed,
         alias,
         avatar,
-      })
+      }).select('id').single()
 
       if (error) throw error
+
+      if (data?.id) {
+        const ownMsgs = JSON.parse(localStorage.getItem('own_messages') || '[]')
+        ownMsgs.push(data.id)
+        localStorage.setItem('own_messages', JSON.stringify(ownMsgs))
+      }
 
       setText('')
       onMessageSent()
@@ -76,7 +82,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
   const canSend = text.trim().length > 0 && !isSending
 
   return (
-    <div className="bg-karton p-3 pb-20 md:pb-3 border-t border-tinta/5">
+    <div className="bg-karton p-3 border-t border-tinta/5">
       <div className="mx-auto max-w-2xl">
         {/* Input area */}
         <div className="flex items-end gap-2">

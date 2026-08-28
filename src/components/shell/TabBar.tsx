@@ -28,7 +28,7 @@ const tabs = [
   },
   {
     href: '/chat',
-    label: 'Suara',
+    label: 'Chat',
     icon: (active: boolean) => (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
@@ -37,7 +37,7 @@ const tabs = [
   },
   {
     href: '/notes',
-    label: 'Cat Tempel',
+    label: 'Notes',
     icon: (active: boolean) => (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z" />
@@ -124,7 +124,7 @@ export default function TabBar() {
       <nav
         aria-label="Navigasi utama"
         className={`hidden md:flex fixed top-0 left-0 right-0 z-50 h-14 items-center justify-between px-6 transition-all duration-300 ${
-          scrolled ? 'bg-kertas/95 backdrop-blur-sm border-b border-garis-kertas' : 'bg-transparent border-b border-transparent'
+          scrolled ? 'bg-karton backdrop-blur-sm border-b border-garis-kertas' : 'bg-transparent border-b border-transparent'
         }`}
       >
         <div className="flex items-center gap-2 relative">

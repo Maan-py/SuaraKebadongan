@@ -60,23 +60,13 @@ export default function PolaroidCard({ photo, onSelect, index }: PolaroidCardPro
       style={{ transform: `rotate(${rotation}deg)` }}
     >
       <div className="bingkai-polaroid rounded-radius-kartu bg-polaroid p-2 pb-6 shadow-[2px_3px_8px_rgba(46,33,24,.12)] transition-transform duration-200 hover:!scale-[1.02] hover:shadow-[2px_4px_12px_rgba(46,33,24,.18)]">
-        {/* Tape kecil */}
-        {/* Washi Tape */}
-        <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 shadow-tape -rotate-3 opacity-90`} />
+    
         
         {/* Pin Image */}
         <img 
           src="/push-pin.png" 
           alt="Pin" 
           className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 object-contain drop-shadow-sm z-20 hover:scale-110 transition-transform"
-        />
-        <div
-          className={`absolute -top-2 h-6 w-12 rounded-sm ${tapeColor}`}
-          style={{
-            left: `${tapeLeft}%`,
-            transform: `rotate(${tapeRotate}deg)`,
-          }}
-          aria-hidden="true"
         />
 
         {/* Foto dengan overlay sepia */}

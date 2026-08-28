@@ -73,7 +73,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         className="rounded-radius-kartu bg-polaroid p-4 shadow-sm"
       >
         {/* Label */}
-        <p className="mb-2 text-xs text-tinta-gelap/70">
+        <p className="mb-2 text-md text-tinta-gelap/70">
           Catatan paling baru (milikmu)
         </p>
 
@@ -83,9 +83,9 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
           value={body}
           onChange={(e) => setBody(e.target.value.slice(0, MAX_CHARS))}
           onKeyDown={handleKeyDown}
-          placeholder="Tulis pesan, doa, atau kejadian konyol hari ini…"
+          placeholder="Tulis pesan…"
           rows={3}
-          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta-gelap placeholder:text-tinta-gelap/50 focus:outline-none"
+          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-md text-tinta-gelap placeholder:text-tinta-gelap/50 focus:outline-none"
           style={{ backgroundColor: 'transparent' }}
         />
 
@@ -105,7 +105,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
         <div className="mt-3 flex items-center justify-between">
           {/* Swatch warna */}
           <div className="flex items-center gap-1.5">
-            <span className="text-[10px] text-tinta-gelap/60 mr-1">Pilih warna:</span>            {COLORS.map((c) => (
+            <span className="text-md text-tinta-gelap/60 mr-1">Pilih warna:</span>            {COLORS.map((c) => (
               <button
                 key={c.id}
                 onClick={() => setColor(c.id)}
@@ -122,7 +122,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
           <button
             onClick={handleSend}
             disabled={!canSend}
-            className="rounded-radius-pill bg-terracotta px-5 py-1.5 text-sm font-medium text-polaroid transition-colors hover:bg-terracotta/90 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="rounded-radius-pill bg-terracotta px-5 py-1.5 text-md font-medium text-polaroid transition-colors hover:bg-terracotta/90 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {isSending ? '...' : 'Tempel!'}
           </button>
@@ -130,7 +130,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
       </div>
 
       {/* Petunjuk keyboard */}
-      <p className="mt-2 text-center text-[10px] font-tulis text-tinta/50">
+      <p className="mt-2 text-center text-md font-tulis text-tinta/50">
         Ctrl+Enter untuk tempel cepat
       </p>    </div>
   )

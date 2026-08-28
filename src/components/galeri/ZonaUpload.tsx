@@ -139,7 +139,7 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
         }`}
       >
         <p className="font-tulis text-lg text-terracotta">
-          Seret fotonya ke sini, atau ketuk untuk memilih — boleh banyak sekaligus!
+          Taruh fotonya ke sini, atau klik untuk memilih — boleh banyak sekaligus!
         </p>
         <input
           ref={fileInputRef}

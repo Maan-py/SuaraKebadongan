@@ -23,6 +23,17 @@ export default function ChatPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [isAtBottom, setIsAtBottom] = useState(true)
   const [newCount, setNewCount] = useState(0)
+  const [ownIds, setOwnIds] = useState<string[]>([])
+
+  // Load own messages IDs from local storage
+  useEffect(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('own_messages') || '[]')
+      setOwnIds(stored)
+    } catch {
+      // ignore
+    }
+  }, [messages.length]) // trigger check again when messages array changes
 
   // Load riwayat
   const loadMessages = useCallback(async () => {
@@ -119,12 +130,14 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="flex h-dvh flex-col bg-karton">
+    // h-[calc(100dvh-5rem)] = dvh dikurangi tab bar mobile (pb-20 = 5rem)
+    // md:h-[calc(100dvh-3.5rem)] = dvh dikurangi header desktop (pt-14 = 3.5rem)
+    <div className="flex h-[calc(100dvh-5rem)] flex-col md:h-[calc(100dvh-3.5rem)]">
       {/* ── HEADER ── */}
       <header className="flex-shrink-0 px-4 pb-3 pt-8 md:px-6">
-        <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">Suara</h1>
+        <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">Chat</h1>
         <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
-          kata-kata yang dilempar tanpa nama — biar saja mengambang
+          Chat anonymously with others!
         </p>
       </header>
 
@@ -133,6 +146,7 @@ export default function ChatPage() {
         ref={scrollContainerRef}
         onScroll={handleScroll}
         className="flex-1 overflow-y-auto px-4 md:px-6"
+        data-lenis-prevent
         role="log"
         aria-live="polite"
         aria-label="Riwayat pesan"
@@ -155,25 +169,29 @@ export default function ChatPage() {
               <path d="M32 24v16" />
             </svg>
             <p className="font-tulis text-lg text-tinta/70">
-              Belum ada suara sama sekali. Kasih salam pertama buat yang lain yuk!
+              Belum ada chat sama sekali. Kasih salam pertama buat yang lain yuk!
             </p>
           </div>
         ) : (
           <>
             {/* Teks informatif */}
             <p className="mb-4 text-center font-tulis text-sm text-tinta/50">
-              cuma {LIMIT} suara terakhir yang tersimpan — yang lewat ya sudah lewat
+              cuma {LIMIT} chat terakhir yang tersimpan — yang lewat ya sudah lewat
             </p>
 
             {/* Bubble */}
-            <div className="max-w-2xl mx-auto">
-              {messages.map((msg) => (
-                <ChatBubble
-                  key={msg.id}
-                  message={msg}
-                  isOwn={false}
-                />
-              ))}
+            <div className="max-w-2xl mx-auto flex flex-col">
+              {messages.map((msg) => {
+                const isOwn = ownIds.includes(msg.id)
+                return (
+                  <div key={msg.id} className={isOwn ? "flex justify-end w-full" : "flex justify-start w-full"}>
+                    <ChatBubble
+                      message={msg}
+                      isOwn={isOwn}
+                    />
+                  </div>
+                )
+              })}
             </div>
           </>
         )}

@@ -160,7 +160,7 @@
  * ============================================================ */
 
 body {
-  background-color: var(--kertas);
+  background-color: var(--karton);
   color: var(--tinta);
   font-family: var(--font-body), system-ui, sans-serif;
   /* pendar terracotta + teal halus di kanvas terang */

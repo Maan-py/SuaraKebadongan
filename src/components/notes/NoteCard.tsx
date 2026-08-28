@@ -58,30 +58,24 @@ export default function NoteCard({ note, index, onNoteUpdated, onNoteDeleted }: 
       >
         <button
           onClick={() => setShowPopover(true)}
-          className="relative w-full rounded-radius-kartu p-4 pb-6 text-left shadow-sm transition-shadow hover:shadow-md"
+          className="relative w-full rounded-radius-kartu p-4 pb-6 h-48 text-left shadow-sm transition-shadow hover:shadow-md"
           style={{ backgroundColor: bgColor }}
         >
           {/* Ornamen: pin atau tape */}
-          {isPin ? (
-            <div
-              className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-terracotta shadow-sm"
-              aria-hidden="true"
-            />
-          ) : (
-            <div
-              className="absolute -top-2 left-1/4 h-5 w-10 -translate-x-1/2 rounded-sm bg-terracotta/25"
-              style={{ transform: 'rotate(-5deg)' }}
-              aria-hidden="true"
-            />
-          )}
+          {/* Pin Image */}
+        <img 
+          src="/push-pin.png" 
+          alt="Pin" 
+          className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-12 object-contain drop-shadow-sm z-20 hover:scale-110 transition-transform"
+        />
 
           {/* Isi catatan */}
-          <p className="font-tulis text-sm leading-relaxed text-tinta" style={{ wordBreak: 'break-word' }}>
+          <p className="font-tulis text-lg leading-relaxed text-tinta" style={{ wordBreak: 'break-word' }}>
             {note.body}
           </p>
 
           {/* Waktu */}
-          <p className="mt-2 text-[10px] font-tulis text-tinta-lembut/50">{time}</p>
+          <p className="mt-2 text-md font-tulis text-tinta-lembut/50">{time}</p>
         </button>
       </motion.div>
 

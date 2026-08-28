@@ -119,10 +119,10 @@ export default function GaleriPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">
-            Album Kenangan
+            Photos Dump
           </h1>
           <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
-            ditempel pelan-pelan, biar kenangannya awet
+           Bunch of memories
           </p>
         </div>
 

@@ -3,16 +3,19 @@
 import { motion } from "motion/react";
 
 const profiles = [
-  { id: 1, name: "Audy", role: "Ketua", quote: "gtw, lupa 😭", imgColor: "bg-terracotta/20", imgUrl: "/profile/audy.jpg" },
-  { id: 2, name: "Flo", role: "Sekretaris", quote: "siapa yang belom isi absensii!?", imgColor: "bg-teal/20", imgUrl: "/profile/flo.jpg"  },
+  { id: 1, name: "Audy", role: "Ketua", quote: "wau tu ape tok?", imgColor: "bg-terracotta/20", imgUrl: "/profile/audy.jpg" },
+  { id: 2, name: "Flo", role: "Sekretaris", quote: "anunya tolong dianukan dulu", imgColor: "bg-teal/20", imgUrl: "/profile/flo.jpg"  },
   { id: 3, name: "Bia", role: "Bendahara", quote: "uangnya masih berapa?", imgColor: "bg-teal/20", imgUrl: "/profile/bia.jpg" },
-  { id: 4, name: "Anggie", role: "Humas", quote: "nak tempura", imgColor: "bg-marker-kuning/20", imgUrl: "/profile/anggie.jpg" },
+  { id: 4, name: "Anggie", role: "Humas", quote: "nak pulang", imgColor: "bg-marker-kuning/20", imgUrl: "/profile/anggie.jpg" },
   { id: 5, name: "Chevin", role: "Humas", quote: "kacamataku mana ya?", imgColor: "bg-stiker-pink/20", imgUrl: "/profile/chevin.jpg" },
-  { id: 6, name: "El", role: "PDD", quote: "gtw, lupa 😭", imgColor: "bg-tape-hijau/20", imgUrl: "/profile/el.jpg" },
-  { id: 7, name: "Puput", role: "PDD", quote: "gtw, lupa 😭", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/puput.jpg" },
+  { id: 6, name: "El", role: "PDD", quote: "tolong dokum", imgColor: "bg-tape-hijau/20", imgUrl: "/profile/el.jpg" },
+  { id: 7, name: "Puput", role: "PDD", quote: "nitip tempura", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/puput.jpg" },
   { id: 8, name: "Arya", role: "Logistik", quote: "ooo, i see", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/arya.jpg" },
-  { id: 9, name: "Luqmaan", role: "Logistik", quote: "gtw, ap yh 😭", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/luqmaan.jpg" },
-  { id: 10, name: "Sulthan", role: "Logistik", quote: "gtw, lupa 😭", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/sulthan.jpg" },
+  { id: 9, name: "Luqmaan", role: "Logistik", quote: "bia, minta uang beli galon", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/luqmaan.jpg" },
+  { id: 10, name: "Sulthan", role: "Logistik", quote: "ayam dada 2", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/sulthan.jpg" },
+  { id: 11, name: "Tahu", role: "Curut", quote: "cit cit", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/tahu.jpeg" },
+  { id: 12, name: "Tempe", role: "Curut", quote: "cit cit", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/tempe.jpeg" },
+  { id: 13, name: "Cimoy", role: "Cuking", quote: "meow", imgColor: "bg-spidol-ungu/20", imgUrl: "/profile/cimoy.jpeg" },
 ];
 
 export default function ProfileSection() {
@@ -46,7 +49,7 @@ export default function ProfileSection() {
         Wajah-Wajah Kita
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-12 max-w-20xl mx-auto flex">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-12 max-w-5xl mx-auto [&>*:nth-child(11)]:lg:col-start-2">
         {profiles.map((profile, i) => (
           <motion.div
             key={profile.id}
