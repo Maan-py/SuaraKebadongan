@@ -53,29 +53,30 @@ export default function ProfileSection() {
         {profiles.map((profile, i) => (
           <motion.div
             key={profile.id}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col items-center text-center group cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.06, y: -4 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{ duration: 0.35, delay: i * 0.05, ease: "easeOut" }}
             style={{ willChange: 'opacity, transform' }}
           >
             {/* Avatar Circle */}
-            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-terracotta/80 p-1 mb-4 relative shadow-sm flex-shrink-0">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-terracotta/80 p-1 mb-4 relative shadow-sm flex-shrink-0 group-hover:border-terracotta group-hover:shadow-md transition-all duration-300">
               <div className={`w-full h-full rounded-full ${profile.imgColor} overflow-hidden relative`}>
                  <img 
-                   className="absolute inset-0 w-full h-full rounded-full object-cover object-top"
+                   className="absolute inset-0 w-full h-full rounded-full object-cover object-top group-hover:scale-110 transition-transform duration-500 ease-out"
                    src={profile.imgUrl} 
                    alt={`Foto ${profile.name}`}
                  />
               </div>
               {/* Small decorative dot */}
-              <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-marker-kuning border-2 border-polaroid" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-marker-kuning border-2 border-polaroid group-hover:scale-125 transition-transform duration-300" />
             </div>
 
             {/* Info */}
             <div className="flex flex-col justify-center">
-              <h3 className="font-body font-bold text-lg text-tinta ">
+              <h3 className="font-body font-bold text-lg text-tinta group-hover:text-terracotta transition-colors">
                 {profile.name} 
               </h3>
               <span className="font-bold text-tinta-lembut font-tulis text-lg">{profile.role}</span>
