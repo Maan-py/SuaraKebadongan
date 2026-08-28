@@ -162,6 +162,12 @@ export default function TimelineSection() {
                       zIndex: 30,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08)"
                     }}
+                    whileTap={{ 
+                      scale: 1.05, 
+                      rotate: 0, 
+                      zIndex: 30,
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08)"
+                    }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     {/* Washi Tape */}

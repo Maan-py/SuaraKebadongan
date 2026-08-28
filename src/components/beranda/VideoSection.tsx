@@ -32,6 +32,13 @@ export default function VideoSection() {
           zIndex: 30,
           boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
         }}
+        whileTap={{ 
+          scale: 1.03, 
+          rotate: 0, 
+          y: -4,
+          zIndex: 30,
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+        }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="group relative mx-auto w-full max-w-3xl cursor-pointer"

@@ -57,6 +57,7 @@ export default function ProfileSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.06, y: -4 }}
+            whileTap={{ scale: 1.06, y: -4 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{ duration: 0.35, delay: i * 0.05, ease: "easeOut" }}
             style={{ willChange: 'opacity, transform' }}

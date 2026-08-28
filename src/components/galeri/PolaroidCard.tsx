@@ -59,7 +59,7 @@ export default function PolaroidCard({ photo, onSelect, index }: PolaroidCardPro
       className="group mb-4 break-inside-avoid"
       style={{ transform: `rotate(${rotation}deg)` }}
     >
-      <div className="bingkai-polaroid rounded-radius-kartu bg-polaroid p-2 pb-6 shadow-[2px_3px_8px_rgba(46,33,24,.12)] transition-transform duration-200 hover:!scale-[1.02] hover:shadow-[2px_4px_12px_rgba(46,33,24,.18)]">
+      <div className="bingkai-polaroid rounded-radius-kartu bg-polaroid p-2 pb-6 shadow-[2px_3px_8px_rgba(46,33,24,.12)] transition-transform duration-200 hover:!scale-[1.02] active:scale-[1.02] hover:shadow-[2px_4px_12px_rgba(46,33,24,.18)]">
     
         
         {/* Pin Image */}
