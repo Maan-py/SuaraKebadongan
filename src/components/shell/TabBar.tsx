@@ -87,16 +87,18 @@ export default function TabBar() {
         className="fixed bottom-0 left-0 right-0 z-50 bg-terracotta border-t border-terracotta-700 md:hidden"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
-        <div className="relative flex h-16 items-center justify-around">
+        <div className="relative grid grid-cols-4 h-16 items-center">
           {/* Indikator sliding — kuning IG */}
           {mounted && (
             <motion.div
-              className="absolute top-2 h-10 w-16 rounded-radius-kartu bg-marker-kuning"
+              className="absolute top-2 bottom-2 left-0 w-1/4 flex justify-center"
               initial={false}
-              animate={gerakDiizinkan ? { x: activeIndex * 64 + 16 } : { x: activeIndex * 64 + 16 }}
+              animate={gerakDiizinkan ? { x: `${activeIndex * 100}%` } : { x: `${activeIndex * 100}%` }}
               transition={gerakDiizinkan ? { type: 'tween', duration: 0.25, ease: 'easeInOut' } : { duration: 0 }}
               aria-hidden="true"
-            />
+            >
+              <div className="h-11 w-16 rounded-radius-kartu bg-marker-kuning" />
+            </motion.div>
           )}
 
           {tabs.map((tab) => {
@@ -106,7 +108,7 @@ export default function TabBar() {
                 key={tab.href}
                 onClick={() => router.push(tab.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-terracotta-900 font-semibold' : 'text-polaroid/70'}`}
+                className={`relative z-10 flex h-11 w-16 flex-col items-center justify-center mx-auto gap-0.5 rounded-radius-kartu transition-colors ${isActive ? 'text-terracotta-900 font-semibold' : 'text-polaroid/70'}`}
               >
                 {tab.icon(isActive)}
                 <span className={`text-xs font-medium ${isActive ? 'font-semibold' : ''}`}>

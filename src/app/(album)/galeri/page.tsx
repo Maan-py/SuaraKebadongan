@@ -97,15 +97,15 @@ export default function GaleriPage() {
 
   if (loading) {
     return (
-      <div className="blok-maroon min-h-dvh px-4 py-8 md:px-6">
+      <div className="bg-karton min-h-dvh px-4 py-8 md:px-6">
         <div className="mb-6 space-y-3">
-          <div className="h-8 w-48 animate-pulse rounded bg-polaroid/20" />
-          <div className="h-4 w-64 animate-pulse rounded bg-polaroid/15" />
+          <div className="h-8 w-48 animate-pulse rounded bg-tinta/10" />
+          <div className="h-4 w-64 animate-pulse rounded bg-tinta/5" />
         </div>
-        <div className="mb-6 h-20 animate-pulse rounded-radius-kartu bg-polaroid/15" />
+        <div className="mb-6 h-20 animate-pulse rounded-radius-kartu bg-tinta/5" />
         <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="mb-4 break-inside-avoid animate-pulse rounded bg-polaroid/10" style={{ height: 150 + (i % 3) * 60 }} />
+            <div key={i} className="mb-4 break-inside-avoid animate-pulse rounded bg-tinta/5" style={{ height: 150 + (i % 3) * 60 }} />
           ))}
         </div>
       </div>
@@ -113,15 +113,15 @@ export default function GaleriPage() {
   }
 
   return (
-    <div>
-      {/* ── BLOK 1: MAROON — judul + zona upload ── */}
-      <section className="blok-maroon px-4 pb-10 pt-8 md:px-6">
+    <div className="min-h-dvh bg-karton">
+      {/* ── BLOK 1: KARTON — judul + zona upload ── */}
+      <section className="px-4 pb-10 pt-8 md:px-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="font-display text-xl font-semibold text-marker-kuning">
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">
             Album Kenangan
           </h1>
-          <p className="font-tulis text-base text-marker-kuning/70">
+          <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
             ditempel pelan-pelan, biar kenangannya awet
           </p>
         </div>
@@ -130,8 +130,8 @@ export default function GaleriPage() {
         <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
       </section>
 
-      {/* ── BLOK 2: MAROON — chip album ── */}
-      <section className="blok-maroon px-4 py-5 md:px-6">
+      {/* ── BLOK 2: KARTON — chip album ── */}
+      <section className="px-4 py-5 md:px-6">
         <AlbumChips
           albums={albums}
           selectedAlbumId={selectedAlbumId}
@@ -140,8 +140,8 @@ export default function GaleriPage() {
         />
       </section>
 
-      {/* ── BLOK 3: MAROON — masonry polaroid ── */}
-      <section className="blok-maroon px-4 py-8 md:px-6">
+      {/* ── BLOK 3: KARTON — masonry polaroid ── */}
+      <section className="px-4 py-8 md:px-6">
         {/* Grid masonry polaroid */}
         <MasonryGrid
           photos={filteredPhotos}

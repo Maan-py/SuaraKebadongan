@@ -99,17 +99,17 @@ export default function ChatPage() {
 
   if (loading) {
     return (
-      <div className="min-h-dvh">
-        <div className="blok-maroon px-4 py-4 md:px-6">
-          <div className="mb-1 h-7 w-32 animate-pulse rounded bg-polaroid/20" />
+      <div className="min-h-dvh bg-karton">
+        <div className="px-4 py-4 md:px-6">
+          <div className="mb-1 h-7 w-32 animate-pulse rounded bg-tinta/10" />
         </div>
-        <div className="blok-maroon min-h-dvh space-y-3 px-4 py-6 md:px-6">
+        <div className="min-h-dvh space-y-3 px-4 py-6 md:px-6">
           {[1, 2, 3].map((i) => (
             <div key={i} className="flex gap-2">
-              <div className="h-9 w-9 flex-shrink-0 animate-pulse rounded-full bg-polaroid/20" />
+              <div className="h-9 w-9 flex-shrink-0 animate-pulse rounded-full bg-tinta/10" />
               <div className="flex-1 space-y-1">
-                <div className="h-3 w-24 animate-pulse rounded bg-polaroid/15" />
-                <div className="h-10 w-3/4 animate-pulse rounded-radius-kartu bg-polaroid/15" />
+                <div className="h-3 w-24 animate-pulse rounded bg-tinta/5" />
+                <div className="h-10 w-3/4 animate-pulse rounded-radius-kartu bg-tinta/5" />
               </div>
             </div>
           ))}
@@ -119,20 +119,20 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="flex h-dvh flex-col">
-      {/* ── BLOK MAROON: header ── */}
-      <header className="blok-maroon flex-shrink-0 px-4 pb-3 pt-4 md:px-6">
-        <h1 className="font-display text-xl font-semibold text-marker-kuning">Suara</h1>
-        <p className="font-tulis text-base text-polaroid/70">
+    <div className="flex h-dvh flex-col bg-karton">
+      {/* ── HEADER ── */}
+      <header className="flex-shrink-0 px-4 pb-3 pt-8 md:px-6">
+        <h1 className="font-display text-2xl md:text-3xl font-semibold text-terracotta">Suara</h1>
+        <p className="font-tulis text-lg md:text-xl text-tinta/70 mt-1">
           kata-kata yang dilempar tanpa nama — biar saja mengambang
         </p>
       </header>
 
-      {/* ── BLOK MAROON: area pesan ── */}
+      {/* ── AREA PESAN ── */}
       <div
         ref={scrollContainerRef}
         onScroll={handleScroll}
-        className="blok-maroon flex-1 overflow-y-auto px-4 md:px-6"
+        className="flex-1 overflow-y-auto px-4 md:px-6"
         role="log"
         aria-live="polite"
         aria-label="Riwayat pesan"
@@ -148,20 +148,20 @@ export default function ChatPage() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-4 text-polaroid/30"
+              className="mb-4 text-tinta/20"
             >
               <path d="M12 48c0 4 4 8 8 8h24c4 0 8-4 8-8V24c0-4-4-8-8-8H20c-4 0-8 4-8 8v24z" />
               <path d="M24 32h16" />
               <path d="M32 24v16" />
             </svg>
-            <p className="font-tulis text-lg text-polaroid/80">
+            <p className="font-tulis text-lg text-tinta/70">
               Belum ada suara sama sekali. Kasih salam pertama buat yang lain yuk!
             </p>
           </div>
         ) : (
           <>
             {/* Teks informatif */}
-            <p className="mb-4 text-center text-[10px] text-polaroid/50">
+            <p className="mb-4 text-center font-tulis text-sm text-tinta/50">
               cuma {LIMIT} suara terakhir yang tersimpan — yang lewat ya sudah lewat
             </p>
 
@@ -186,7 +186,7 @@ export default function ChatPage() {
       {newCount > 0 && !isAtBottom && (
         <button
           onClick={scrollToBottom}
-          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-polaroid px-4 py-1.5 text-xs font-semibold text-stiker-merah shadow-lg transition-transform hover:scale-105 md:bottom-20"
+          className="fixed bottom-28 left-1/2 z-40 -translate-x-1/2 rounded-radius-pill bg-terracotta px-4 py-1.5 text-xs font-semibold text-polaroid shadow-lg transition-transform hover:scale-105 md:bottom-20"
         >
           {newCount} pesan baru ↓
         </button>

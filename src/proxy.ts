@@ -46,10 +46,10 @@ export const config = {
      * Match semua path KECUALI:
      * - _next/static (static files)
      * - _next/image (image optimization)
-     * - favicon.ico (browser icon)
+     * - file gambar statis (png, jpg, jpeg, svg, dll)
      * - api/gate (login endpoint itu sendiri — hindari loop)
      */
-    "/((?!_next/static|_next/image|favicon.ico|api/gate).*)",
+    "/((?!_next/static|_next/image|.*\\.(?:png|jpg|jpeg|svg|webp|ico)|api/gate).*)",
   ],
 };
 

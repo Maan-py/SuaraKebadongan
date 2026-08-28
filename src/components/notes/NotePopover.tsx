@@ -145,7 +145,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
         <div className="mt-4 flex justify-between">
           <button
             onClick={() => setShowConfirm(true)}
-            className="rounded-radius-pill border border-stiker-merah px-3 py-1.5 text-xs text-stiker-merah hover:bg-stiker-merah/10 transition-colors"
+            className="rounded-radius-pill border border-terracotta px-3 py-1.5 text-xs text-terracotta hover:bg-terracotta/10 transition-colors"
           >
             Hapus
           </button>
@@ -160,7 +160,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
             <button
               onClick={handleSave}
               disabled={!body.trim() || body.length > MAX_CHARS || isSaving}
-              className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-maroon-700 transition-colors disabled:opacity-50"
+              className="rounded-radius-pill bg-terracotta px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-terracotta/90 transition-colors disabled:opacity-50"
             >
               {isSaving ? '...' : 'Simpan'}
             </button>
@@ -171,7 +171,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
       {/* Konfirmasi hapus */}
       {showConfirm && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-tinta/60 p-4">
-          <div className="w-full max-w-xs rounded-radius-modal bg-kertas p-6 text-center shadow-lg">
+          <div className="w-full max-w-xs rounded-radius-modal bg-karton p-6 text-center shadow-lg">
             <p className="font-tulis text-lg text-tinta">
               Cabut catatan ini dari papan?
             </p>
@@ -184,7 +184,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
               </button>
               <button
                 onClick={handleDelete}
-                className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-700 transition-colors"
+                className="rounded-radius-pill bg-terracotta px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-terracotta/90 transition-colors"
               >
                 Ya, Cabut
               </button>

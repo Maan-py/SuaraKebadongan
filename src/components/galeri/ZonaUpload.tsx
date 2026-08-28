@@ -134,11 +134,11 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
         onDrop={handleDrop}
         className={`w-full rounded-radius-kartu border-2 border-dashed p-8 text-center transition-colors ${
           isDragging
-            ? 'border-marker-kuning bg-marker-kuning/20'
-            : 'border-marker-kuning/50 hover:border-marker-kuning hover:bg-marker-kuning/10'
+            ? 'border-terracotta bg-terracotta/20'
+            : 'border-terracotta/50 hover:border-terracotta hover:bg-terracotta/10'
         }`}
       >
-        <p className="font-tulis text-lg text-marker-kuning">
+        <p className="font-tulis text-lg text-terracotta">
           Seret fotonya ke sini, atau ketuk untuk memilih — boleh banyak sekaligus!
         </p>
         <input
@@ -159,10 +159,10 @@ export default function ZonaUpload({ albumId, onUploadComplete }: ZonaUploadProp
               key={item.id}
               className={`flex items-center gap-2 rounded-radius-pill px-3 py-1.5 text-xs ${
                 item.status === 'done'
-                  ? 'bg-polaroid text-stiker-merah'
+                  ? 'bg-terracotta text-polaroid'
                   : item.status === 'error'
-                  ? 'bg-marker-kuning/30 text-maroon-900'
-                    : 'bg-marker-kuning/15 text-marker-kuning'
+                  ? 'bg-stiker-merah text-polaroid'
+                    : 'bg-terracotta/15 text-terracotta'
               }`}
             >
               <span className="max-w-24 truncate">{item.file.name}</span>

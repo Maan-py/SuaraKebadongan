@@ -64,24 +64,24 @@ export default function NoteCard({ note, index, onNoteUpdated, onNoteDeleted }: 
           {/* Ornamen: pin atau tape */}
           {isPin ? (
             <div
-              className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-stiker-merah shadow-sm"
+              className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-terracotta shadow-sm"
               aria-hidden="true"
             />
           ) : (
             <div
-              className="absolute -top-2 left-1/4 h-5 w-10 -translate-x-1/2 rounded-sm bg-stiker-merah/25"
+              className="absolute -top-2 left-1/4 h-5 w-10 -translate-x-1/2 rounded-sm bg-terracotta/25"
               style={{ transform: 'rotate(-5deg)' }}
               aria-hidden="true"
             />
           )}
 
           {/* Isi catatan */}
-          <p className="text-sm leading-relaxed text-tinta" style={{ wordBreak: 'break-word' }}>
+          <p className="font-tulis text-sm leading-relaxed text-tinta" style={{ wordBreak: 'break-word' }}>
             {note.body}
           </p>
 
           {/* Waktu */}
-          <p className="mt-2 text-[10px] text-tinta-lembut/50">{time}</p>
+          <p className="mt-2 text-[10px] font-tulis text-tinta-lembut/50">{time}</p>
         </button>
       </motion.div>
 

@@ -14,8 +14,8 @@ export default function BerandaPage() {
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       <HeroSection />
-      <TimelineSection />
       <ProfileSection />
+      <TimelineSection />
       <MapSection />
     </div>
   );

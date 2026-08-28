@@ -91,11 +91,11 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
 
         {/* Error / Counter */}
         <div className="flex justify-between px-1">
-          <span className="text-[10px] text-tinta-gelap/50">
+          <span className="font-tulis text-[10px] text-tinta/50">
             {body.length > 0 && `sisa ${remaining} huruf`}
           </span>
           {error && (
-            <span className="text-[10px] text-stiker-merah" aria-live="polite">
+            <span className="font-tulis text-[10px] text-terracotta" aria-live="polite">
               {error}
             </span>
           )}
@@ -122,7 +122,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
           <button
             onClick={handleSend}
             disabled={!canSend}
-            className="rounded-radius-pill bg-stiker-merah px-5 py-1.5 text-sm font-medium text-polaroid transition-colors hover:bg-stiker-merah/90 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="rounded-radius-pill bg-terracotta px-5 py-1.5 text-sm font-medium text-polaroid transition-colors hover:bg-terracotta/90 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {isSending ? '...' : 'Tempel!'}
           </button>
@@ -130,7 +130,7 @@ export default function NoteForm({ onNoteCreated }: NoteFormProps) {
       </div>
 
       {/* Petunjuk keyboard */}
-      <p className="mt-2 text-center text-[10px] text-polaroid/50">
+      <p className="mt-2 text-center text-[10px] font-tulis text-tinta/50">
         Ctrl+Enter untuk tempel cepat
       </p>    </div>
   )

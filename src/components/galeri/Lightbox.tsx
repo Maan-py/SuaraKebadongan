@@ -187,7 +187,7 @@ export default function Lightbox({
 
             <img
               src={fullUrl}
-              alt={photo.caption || 'Foto tanpa takarir'}
+              alt={photo.caption || 'Foto tanpa Caption'}
               className="block h-full w-full object-contain"
             />
 
@@ -223,13 +223,13 @@ export default function Lightbox({
           {/* Panel samping: takarir + tanggal + album */}
           <div className="mt-4 w-full flex-shrink-0 space-y-4 rounded-radius-modal bg-karton p-4 md:mt-0 md:ml-4 md:w-72">
             <div>
-              <label className="mb-1 block font-tulis text-sm text-tinta-lembut">Takarir</label>
+              <label className="mb-1 block font-tulis text-sm text-tinta-lembut">Caption</label>
               <input
                 type="text"
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
                 placeholder="Ketik cerita di sini..."
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-stiker-merah focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 font-tulis text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-terracotta focus:outline-none"
               />
             </div>
 
@@ -239,7 +239,7 @@ export default function Lightbox({
                 type="date"
                 value={takenOn}
                 onChange={(e) => setTakenOn(e.target.value)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-stiker-merah focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-terracotta focus:outline-none"
               />
             </div>
 
@@ -248,7 +248,7 @@ export default function Lightbox({
               <select
                 value={albumId || ''}
                 onChange={(e) => setAlbumId(e.target.value || null)}
-                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-stiker-merah focus:outline-none"
+                className="w-full rounded-radius-tape border border-garis-kertas bg-polaroid px-3 py-2 text-tinta-gelap focus:border-terracotta focus:outline-none"
               >
                 <option value="">Tanpa album</option>
                 {albums.map((a) => (
@@ -263,13 +263,13 @@ export default function Lightbox({
               <button
                 onClick={handleSave}
                 disabled={isSaving}
-                className="flex-1 rounded-radius-pill bg-stiker-merah px-4 py-2 text-sm font-medium text-polaroid hover:bg-maroon-700 transition-colors disabled:opacity-50"
+                className="flex-1 rounded-radius-pill bg-terracotta px-4 py-2 text-sm font-medium text-polaroid hover:bg-terracotta/90 transition-colors disabled:opacity-50"
               >
                 {isSaving ? '...' : 'Simpan'}
               </button>
               <button
                 onClick={() => setShowConfirm(true)}
-                className="rounded-radius-pill border border-stiker-merah px-4 py-2 text-sm text-stiker-merah hover:bg-stiker-merah/10 transition-colors"
+                className="rounded-radius-pill border border-terracotta px-4 py-2 text-sm text-terracotta hover:bg-terracotta/10 transition-colors"
               >
                 Hapus
               </button>
@@ -303,7 +303,7 @@ export default function Lightbox({
                 </button>
                 <button
                   onClick={handleDelete}
-                  className="rounded-radius-pill bg-stiker-merah px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-maroon-700 transition-colors"
+                  className="rounded-radius-pill bg-terracotta px-4 py-1.5 text-sm font-medium text-polaroid hover:bg-terracotta/90 transition-colors"
                 >
                   Ya, Cabut
                 </button>

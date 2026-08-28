@@ -80,7 +80,7 @@ export default function MasonryGrid({ photos, onSelectPhoto }: MasonryGridProps)
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="mb-4 text-marker-kuning/40"
+          className="mb-4 text-terracotta/40"
         >
           <rect x="10" y="22" width="60" height="46" rx="6" />
           <circle cx="40" cy="45" r="14" />
@@ -88,7 +88,7 @@ export default function MasonryGrid({ photos, onSelectPhoto }: MasonryGridProps)
           <path d="M28 22V18a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v4" />
           <circle cx="58" cy="32" r="3" />
         </svg>
-        <p className="font-tulis text-lg text-marker-kuning">
+        <p className="font-tulis text-lg text-terracotta">
           Belum ada satu pun foto. Album kenangan dimulai dari satu jepretan pertama nih.
         </p>
       </div>
@@ -98,7 +98,7 @@ export default function MasonryGrid({ photos, onSelectPhoto }: MasonryGridProps)
   return (
     <div
       ref={gridRef}
-      className="columns-2 gap-3 sm:columns-3 lg:columns-4 max-w-[1100px] mx-auto"
+      className="columns-2 gap-3 sm:columns-3 lg:columns-4 md:grid md:grid-cols-4 max-w-[1100px] mx-auto"
     >
       {photos.map((photo, i) => (
         <PolaroidCard

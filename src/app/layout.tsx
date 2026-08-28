@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   title: "SuaraKebadongan — Kenangan Digital KKN",
   description:
     "Galeri kenangan digital anggota KKN Desa Kebadongan, Kebumen. Seperti buku tahunan sekolah, tapi versi kampung.",
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/logo-suara.png" },
 };
 
 /* ── Root Layout ─────────────────────────────────────────────
