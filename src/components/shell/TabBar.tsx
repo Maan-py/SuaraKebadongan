@@ -97,7 +97,7 @@ export default function TabBar() {
               transition={gerakDiizinkan ? { type: 'tween', duration: 0.25, ease: 'easeInOut' } : { duration: 0 }}
               aria-hidden="true"
             >
-              <div className="h-11 w-16 rounded-radius-kartu bg-marker-kuning" />
+              <div className="h-11 w-16 rounded-radius-kartu bg-karton" />
             </motion.div>
           )}
 
