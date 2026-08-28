@@ -17,7 +17,7 @@ export default function VideoSection() {
           After Movie KKN
         </h2>
         <p className="font-tulis text-xl md:text-2xl text-tinta/70 mt-1">
-          Rangkuman perjalanan & tawa kita selama di Kebadongan 🎬
+          Rangkuman perjalanan & tawa kita selama di Kebadongan
         </p>
       </motion.div>
 

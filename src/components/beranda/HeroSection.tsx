@@ -4,12 +4,15 @@ import { motion } from "motion/react";
 import { useRef, useEffect, useState } from "react";
 
 const carouselItems = [
-  { src: "/lastday1.jpeg", caption: "Last Day di Kebadongan" },
-  { src: "/hero1.jpeg", caption: "Glagah" },
-  { src: "/hero2.jpeg", caption: "DPL Dateng" },
+  { src: "/photoshoot.jpeg", caption: "Photoshoot" },
+  { src: "/wayangan.jpeg", caption: "Wayangan" },
+  { src: "/3r.jpeg", caption: "Prokeran di Sekolah" },
+  { src: "/hero2.jpeg", caption: "Kunjungan DPL" },
   { src: "/hero3.jpeg", caption: "Momen di Balai Desa" },
   { src: "/hero4.jpeg", caption: "Expo KKN" },
+  { src: "/lastday1.jpeg", caption: "Last Day di Kebadongan" },
   { src: "/US.jpg", caption: "Us" },
+  { src: "/camping.jpeg", caption: "Camping Pantai Ngrumput" },
 ];
 
 export default function HeroSection() {
