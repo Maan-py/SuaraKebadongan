@@ -26,11 +26,6 @@ export default function TombolKejutan() {
   const gerakDiizinkan = !useReducedMotion()
   const router = useRouter()
 
-  // Sembunyikan di halaman chat
-  if (pathname === '/chat') {
-    return null
-  }
-
   // Wiggle idle: goyang tiap ±8 detik
   useEffect(() => {
     if (!gerakDiizinkan || isOpen) return
@@ -121,6 +116,11 @@ export default function TombolKejutan() {
   }, [isOpen, handleClose])
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+
+  // Sembunyikan di halaman chat
+  if (pathname === '/chat') {
+    return null
+  }
 
   return (
     <>
