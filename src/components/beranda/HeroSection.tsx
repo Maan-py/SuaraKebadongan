@@ -94,16 +94,23 @@ export default function HeroSection() {
 
       {/* ── Hero Photo (Polaroid style) ── */}
       <motion.div
-        className="relative rounded-lg border-[0.5px] border-terracotta border mx-auto w-[90%] max-w-2xl"
+        className="group relative rounded-lg border-[0.5px] border-terracotta border mx-auto w-[90%] max-w-2xl cursor-pointer"
         initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
         animate={{ opacity: 1, scale: 1, rotate: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        whileHover={{ 
+          scale: 1.03, 
+          rotate: 0, 
+          y: -4,
+          zIndex: 30,
+          boxShadow: "0 25px 30px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
+        }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         {/* ── 4 Tapes at corners ── */}
-        <div className="absolute -top-3 -left-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-45 z-20 border border-garis-kertas/50" />
-        <div className="absolute -top-3 -right-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-45 z-20 border border-garis-kertas/50" />
-        <div className="absolute -bottom-3 -left-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-45 z-20 border border-garis-kertas/50" />
-        <div className="absolute -bottom-3 -right-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-45 z-20 border border-garis-kertas/50" />
+        <div className="absolute -top-3 -left-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-45 z-20 border border-garis-kertas/50 group-hover:scale-105 transition-transform" />
+        <div className="absolute -top-3 -right-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-45 z-20 border border-garis-kertas/50 group-hover:scale-105 transition-transform" />
+        <div className="absolute -bottom-3 -left-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape rotate-45 z-20 border border-garis-kertas/50 group-hover:scale-105 transition-transform" />
+        <div className="absolute -bottom-3 -right-5 w-16 md:w-20 h-6 bg-[#E8DCC8]/90 shadow-tape -rotate-45 z-20 border border-garis-kertas/50 group-hover:scale-105 transition-transform" />
 
         <div className="bg-polaroid rounded-lg p-4 pb-16 md:p-6 md:pb-20 shadow-kertas border border-garis-kertas/30 relative z-10">
           {/* Photo Carousel Container */}
@@ -142,7 +149,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <p className="absolute bottom-5 md:bottom-6 left-0 right-0 text-center font-tulis text-xl md:text-2xl text-tinta transition-all duration-300">
+          <p className="absolute bottom-5 md:bottom-6 left-0 right-0 text-center font-tulis text-xl md:text-2xl text-tinta group-hover:text-terracotta transition-colors duration-300">
             {carouselItems[activeIndex]?.caption}
           </p>
         </div>

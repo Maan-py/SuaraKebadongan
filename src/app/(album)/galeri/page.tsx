@@ -131,11 +131,6 @@ export default function GaleriPage() {
         <ZonaUpload albumId={selectedAlbumId} onUploadComplete={loadData} />
       </section>
 
-      {/* ── BLOK After Movie ── */}
-      <section className="px-4 py-4 md:px-6">
-        <VideoSection />
-      </section>
-
       {/* ── BLOK 2: KARTON — chip album ── */}
       <section className="px-4 py-5 md:px-6">
         <AlbumChips
