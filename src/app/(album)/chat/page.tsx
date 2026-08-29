@@ -160,9 +160,8 @@ export default function ChatPage() {
   }
 
   return (
-    // h-[calc(100dvh-5rem)] = dvh dikurangi tab bar mobile (pb-20 = 5rem)
-    // md:h-[calc(100dvh-3.5rem)] = dvh dikurangi header desktop (pt-14 = 3.5rem)
-    <div className="flex h-[calc(100dvh-5rem)] flex-col md:h-[calc(100dvh-3.5rem)]">
+    // h-[calc(100dvh-4rem)] = dvh dikurangi tinggi tab bar mobile (h-16 = 4rem), -mb-4 memepetkan ke tab bar
+    <div className="flex h-[calc(100dvh-4rem)] -mb-4 flex-col md:mb-0 md:h-[calc(100dvh-3.5rem)]">
       {/* ── HEADER ── */}
       <header className="flex-shrink-0 px-4 pb-3 pt-8 md:px-6 flex items-end justify-between">
         <div>
