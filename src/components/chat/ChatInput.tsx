@@ -42,7 +42,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
     const now = Date.now()
     if (now - lastTypingTime.current > 1500) {
       lastTypingTime.current = now
-      supabase.channel('chat_room').send({
+      supabase.channel('chat_typing').send({
         type: 'broadcast',
         event: 'mengetik',
         payload: { senderId: mySessionId.current },
@@ -117,7 +117,7 @@ export default function ChatInput({ onMessageSent }: ChatInputProps) {
             value={text}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            placeholder="Tulis apa saja… tidak ada yang tahu ini kamu kok"
+            placeholder="Tulis apa saja… anonim kok"
             rows={1}
             className="flex-1 resize-none rounded-radius-tape border border-terracotta/30 bg-polaroid px-4 py-2.5 font-tulis text-base md:text-lg text-tinta-gelap placeholder:text-tinta-gelap/50 focus:border-terracotta focus:outline-none"
             style={{ minHeight: '48px', maxHeight: '120px' }}

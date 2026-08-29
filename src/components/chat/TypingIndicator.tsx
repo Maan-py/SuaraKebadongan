@@ -16,7 +16,7 @@ export default function TypingIndicator() {
     }
     mySessionId.current = sid
 
-    const channel = supabase.channel('chat_room')
+    const channel = supabase.channel('chat_typing')
 
     channel
       .on('broadcast', { event: 'mengetik' }, (payload) => {

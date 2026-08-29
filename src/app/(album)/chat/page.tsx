@@ -26,7 +26,7 @@ export default function ChatPage() {
   const [newCount, setNewCount] = useState(0)
   const [ownIds, setOwnIds] = useState<string[]>([])
 
-  // Track online users using Supabase Presence
+  // Track online users using Supabase Presence (Channel khusus: online_presence)
   useEffect(() => {
     let sid = sessionStorage.getItem('chat_session_id')
     if (!sid) {
@@ -34,24 +34,28 @@ export default function ChatPage() {
       sessionStorage.setItem('chat_session_id', sid)
     }
 
-    const room = supabase.channel('chat_room', {
+    const presenceChannel = supabase.channel('online_presence', {
       config: { presence: { key: sid } },
     })
 
-    room
-      .on('presence', { event: 'sync' }, () => {
-        const state = room.presenceState()
-        const count = Object.keys(state).length
-        setOnlineCount(count > 0 ? count : 1)
-      })
+    const updateCount = () => {
+      const state = presenceChannel.presenceState()
+      const keys = Object.keys(state)
+      setOnlineCount(keys.length > 0 ? keys.length : 1)
+    }
+
+    presenceChannel
+      .on('presence', { event: 'sync' }, updateCount)
+      .on('presence', { event: 'join' }, updateCount)
+      .on('presence', { event: 'leave' }, updateCount)
       .subscribe(async (status) => {
         if (status === 'SUBSCRIBED') {
-          await room.track({ online_at: new Date().toISOString() })
+          await presenceChannel.track({ online_at: new Date().toISOString() })
         }
       })
 
     return () => {
-      supabase.removeChannel(room)
+      supabase.removeChannel(presenceChannel)
     }
   }, [])
 
