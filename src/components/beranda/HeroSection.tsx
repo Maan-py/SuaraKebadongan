@@ -107,13 +107,6 @@ export default function HeroSection() {
           zIndex: 30,
           boxShadow: "0 25px 30px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
         }}
-        whileTap={{ 
-          scale: 1.03, 
-          rotate: 0, 
-          y: -4,
-          zIndex: 30,
-          boxShadow: "0 25px 30px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
-        }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
         {/* ── 4 Tapes at corners ── */}
