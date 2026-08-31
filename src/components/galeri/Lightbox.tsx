@@ -275,15 +275,26 @@ export default function Lightbox({
               </button>
             </div>
 
-            {photo.taken_on && (
-              <p className="text-xs text-tinta-lembut">
-                {new Date(photo.taken_on).toLocaleDateString('id-ID', {
+            <div className="pt-2 border-t border-garis-kertas/40 space-y-1">
+              <p className="text-xs text-tinta-lembut font-tulis">
+                Diupload: {new Date(photo.created_at).toLocaleDateString('id-ID', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
                 })}
               </p>
-            )}
+              {photo.taken_on && (
+                <p className="text-xs text-tinta-lembut font-tulis">
+                  Diambil: {new Date(photo.taken_on).toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 

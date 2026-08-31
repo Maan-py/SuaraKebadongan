@@ -82,12 +82,21 @@ export default function PolaroidCard({ photo, onSelect, index }: PolaroidCardPro
           <div className="absolute inset-0 bg-sepia-terang/10 mix-blend-multiply" />
         </div>
 
-        {/* Caption (jika ada) */}
-        {photo.caption && (
-          <p className="mt-2 text-center font-tulis text-sm text-tinta-gelap/80">
-            {photo.caption}
+        {/* Caption & Tanggal Upload */}
+        <div className="mt-2 text-center font-tulis">
+          {photo.caption && (
+            <p className="text-sm text-tinta-gelap/80 leading-snug">
+              {photo.caption}
+            </p>
+          )}
+          <p className="mt-1 text-[11px] text-tinta-lembut/70 tracking-wide">
+            {new Date(photo.created_at).toLocaleDateString('id-ID', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric',
+            })}
           </p>
-        )}
+        </div>
       </div>
     </button>
   )
