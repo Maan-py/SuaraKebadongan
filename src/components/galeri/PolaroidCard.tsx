@@ -82,12 +82,23 @@ export default function PolaroidCard({ photo, onSelect, index }: PolaroidCardPro
           <div className="absolute inset-0 bg-sepia-terang/10 mix-blend-multiply" />
         </div>
 
-        {/* Caption (jika ada) */}
-        {photo.caption && (
-          <p className="mt-2 text-center font-tulis text-sm text-tinta-gelap/80">
-            {photo.caption}
-          </p>
-        )}
+        {/* Tanggal Diambil (jika ada) & Caption */}
+        <div className="mt-2 text-center font-tulis">
+          {photo.taken_on && (
+            <p className="text-[11px] text-tinta-lembut/70 tracking-wide">
+              {new Date(photo.taken_on).toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+              })}
+            </p>
+          )}
+          {photo.caption && (
+            <p className="text-sm text-tinta-gelap/80 leading-snug mt-0.5">
+              {photo.caption}
+            </p>
+          )}
+        </div>
       </div>
     </button>
   )

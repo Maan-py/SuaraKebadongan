@@ -12,6 +12,7 @@ interface Note {
   color: string
   created_at: string
   updated_at: string
+  deleted_at?: string | null
 }
 
 export default function NotesPage() {
@@ -23,6 +24,7 @@ export default function NotesPage() {
     const { data } = await supabase
       .from('notes')
       .select('*')
+      .is('deleted_at', null)
       .order('created_at', { ascending: false })
 
     if (data) setNotes(data)
@@ -41,8 +43,11 @@ export default function NotesPage() {
         'postgres_changes' as never,
         { event: 'INSERT', schema: 'public', table: 'notes' },
         (payload: { new?: Note }) => {
-          if (payload.new) {
-            setNotes((prev) => [payload.new as Note, ...prev])
+          if (payload.new && !payload.new.deleted_at) {
+            setNotes((prev) => {
+              if (prev.some((n) => n.id === payload.new!.id)) return prev
+              return [payload.new as Note, ...prev]
+            })
           }
         },
       )
@@ -52,9 +57,13 @@ export default function NotesPage() {
         (payload: { new?: Note }) => {
           if (payload.new) {
             const updated = payload.new as Note
-            setNotes((prev) =>
-              prev.map((n) => (n.id === updated.id ? updated : n)),
-            )
+            if (updated.deleted_at) {
+              setNotes((prev) => prev.filter((n) => n.id !== updated.id))
+            } else {
+              setNotes((prev) =>
+                prev.map((n) => (n.id === updated.id ? updated : n)),
+              )
+            }
           }
         },
       )

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, Fragment } from 'react'
 import { supabase } from '@/lib/supabase/client'
 import ChatBubble from '@/components/chat/ChatBubble'
 import ChatInput from '@/components/chat/ChatInput'
@@ -15,6 +15,30 @@ interface Message {
 }
 
 const LIMIT = 50
+
+function getDateLabel(dateStr: string): string {
+  const d = new Date(dateStr)
+  if (isNaN(d.getTime())) return ''
+
+  const now = new Date()
+  const dZero = new Date(d.getFullYear(), d.getMonth(), d.getDate())
+  const nowZero = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+
+  const diffDays = Math.round((nowZero.getTime() - dZero.getTime()) / (1000 * 3600 * 24))
+
+  if (diffDays === 0) {
+    return 'Hari ini'
+  } else if (diffDays === 1) {
+    return 'Kemarin'
+  } else {
+    return d.toLocaleDateString('id-ID', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    })
+  }
+}
 
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -225,19 +249,37 @@ export default function ChatPage() {
               cuma {LIMIT} chat terakhir yang tersimpan — yang lewat ya sudah lewat
             </p>
 
-            {/* Bubble */}
+            {/* Bubble & Pembatas Tanggal */}
             <div className="max-w-2xl mx-auto flex flex-col">
-              {messages.map((msg) => {
-                const isOwn = ownIds.includes(msg.id)
-                return (
-                  <div key={msg.id} className={isOwn ? "flex justify-end w-full" : "flex justify-start w-full"}>
-                    <ChatBubble
-                      message={msg}
-                      isOwn={isOwn}
-                    />
-                  </div>
-                )
-              })}
+              {(() => {
+                let lastDateLabel = ''
+                return messages.map((msg) => {
+                  const isOwn = ownIds.includes(msg.id)
+                  const dateLabel = getDateLabel(msg.created_at)
+                  const showDateHeader = dateLabel !== '' && dateLabel !== lastDateLabel
+                  if (showDateHeader) {
+                    lastDateLabel = dateLabel
+                  }
+
+                  return (
+                    <Fragment key={msg.id}>
+                      {showDateHeader && (
+                        <div className="my-4 flex items-center justify-center">
+                          <span className="rounded-full bg-polaroid/90 px-3 py-1 font-tulis text-xs font-semibold text-tinta-lembut border border-garis-kertas shadow-xs">
+                            {dateLabel}
+                          </span>
+                        </div>
+                      )}
+                      <div className={isOwn ? "flex justify-end w-full" : "flex justify-start w-full"}>
+                        <ChatBubble
+                          message={msg}
+                          isOwn={isOwn}
+                        />
+                      </div>
+                    </Fragment>
+                  )
+                })
+              })()}
             </div>
           </>
         )}

@@ -10,6 +10,7 @@ interface Note {
   color: string
   created_at: string
   updated_at: string
+  deleted_at?: string | null
 }
 
 interface NoteCardProps {
@@ -41,7 +42,14 @@ export default function NoteCard({ note, index, onNoteUpdated, onNoteDeleted }: 
   // Ornamen: pin merah atau tape bergantian
   const isPin = index % 3 === 0
 
-  const time = new Date(note.created_at).toLocaleTimeString('id-ID', {
+  const createdDate = new Date(note.created_at)
+  const formattedDate = createdDate.toLocaleDateString('id-ID', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+  const formattedTime = createdDate.toLocaleTimeString('id-ID', {
     hour: '2-digit',
     minute: '2-digit',
   })
@@ -58,24 +66,27 @@ export default function NoteCard({ note, index, onNoteUpdated, onNoteDeleted }: 
       >
         <button
           onClick={() => setShowPopover(true)}
-          className="relative w-full rounded-radius-kartu p-4 pb-6 h-48 text-left shadow-sm transition-shadow hover:shadow-md"
+          className="relative w-full rounded-radius-kartu p-4 pt-6 pb-4 min-h-[12rem] flex flex-col justify-between text-left shadow-sm transition-shadow hover:shadow-md"
           style={{ backgroundColor: bgColor }}
         >
-          {/* Ornamen: pin atau tape */}
-          {/* Pin Image */}
-        <img 
-          src="/push-pin.png" 
-          alt="Pin" 
-          className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-12 object-contain drop-shadow-sm z-20 hover:scale-110 transition-transform"
-        />
+          {/* Ornamen: pin Image */}
+          <img 
+            src="/push-pin.png" 
+            alt="Pin" 
+            className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-12 object-contain drop-shadow-sm z-20 hover:scale-110 transition-transform"
+          />
 
           {/* Isi catatan */}
-          <p className="font-tulis text-lg leading-relaxed text-tinta" style={{ wordBreak: 'break-word' }}>
-            {note.body}
-          </p>
+          <div>
+            <p className="font-tulis text-lg leading-relaxed text-tinta mt-1" style={{ wordBreak: 'break-word' }}>
+              {note.body}
+            </p>
+          </div>
 
-          {/* Waktu */}
-          <p className="mt-2 text-md font-tulis text-tinta-lembut/50">{time}</p>
+          {/* Hari, Tanggal & Waktu */}
+          <p className="mt-3 text-xs md:text-sm font-tulis text-tinta-lembut/70 border-t border-tinta-lembut/15 pt-2">
+            {formattedDate} • {formattedTime}
+          </p>
         </button>
       </motion.div>
 
