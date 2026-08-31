@@ -9,6 +9,7 @@ interface Note {
   color: string
   created_at: string
   updated_at: string
+  deleted_at?: string | null
 }
 
 interface NotePopoverProps {
@@ -75,7 +76,7 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
     try {
       const { error } = await supabase
         .from('notes')
-        .delete()
+        .update({ deleted_at: new Date().toISOString() })
         .eq('id', note.id)
 
       if (error) throw error
