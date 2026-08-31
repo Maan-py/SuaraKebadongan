@@ -52,21 +52,19 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [onClose])
 
-  const handleSave = async () => {
-    if (!body.trim() || body.length > MAX_CHARS) return
-
+  const handleSaveColor = async () => {
     setIsSaving(true)
     try {
       const { error } = await supabase
         .from('notes')
-        .update({ body: body.trim(), color })
+        .update({ color })
         .eq('id', note.id)
 
       if (error) throw error
       onNoteUpdated()
       onClose()
     } catch {
-      // biarkan terbuka agar user bisa coba lagi
+      // biarkan terbuka
     } finally {
       setIsSaving(false)
     }
@@ -109,10 +107,10 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
         style={{ backgroundColor: selectedColor.bg }}
         role="dialog"
         aria-modal="true"
-        aria-label="Edit catatan"
+        aria-label="Detail catatan"
       >
         {/* Header */}
-        <div className="mb-3 flex items-center justify-between">
+        <div className="mb-3 flex items-center justify-between border-b border-tinta-gelap/10 pb-2">
           <span className="text-xs text-tinta-gelap/70 font-tulis">
             {formattedDate} • {formattedTime}
           </span>
@@ -125,24 +123,16 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
           </button>
         </div>
 
-        {/* Textarea */}
-        <textarea
-          ref={textareaRef}
-          value={body}
-          onChange={(e) => setBody(e.target.value.slice(0, MAX_CHARS))}
-          rows={3}
-          className="w-full resize-none rounded-radius-tape border-none bg-transparent text-sm text-tinta-gelap placeholder:text-tinta-gelap/50 focus:outline-none"
-          style={{ backgroundColor: 'transparent' }}
-        />
+        {/* Isi Catatan (Read-Only) */}
+        <div className="my-3 max-h-56 overflow-y-auto px-1">
+          <p className="font-tulis text-lg leading-relaxed text-tinta-gelap whitespace-pre-wrap" style={{ wordBreak: 'break-word' }}>
+            {note.body}
+          </p>
+        </div>
 
-        {/* Counter */}
-        <p className="mt-1 text-[10px] text-tinta-gelap/50">
-          {body.length}/{MAX_CHARS}
-        </p>
-
-        {/* Warna */}
-        <div className="mt-3 flex items-center gap-1.5">
-          <span className="text-[10px] text-tinta-gelap/70 mr-1">Warna:</span>
+        {/* Ganti Warna Kertas */}
+        <div className="mt-4 flex items-center gap-1.5 border-t border-tinta-gelap/10 pt-3">
+          <span className="text-xs text-tinta-gelap/70 font-tulis mr-1">Ubah Warna:</span>
           {COLORS.map((c) => (
             <button
               key={c.id}
@@ -162,23 +152,26 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
             onClick={() => setShowConfirm(true)}
             className="rounded-radius-pill border border-terracotta px-3 py-1.5 text-xs text-terracotta hover:bg-terracotta/10 transition-colors"
           >
-            Hapus
+            Cabut Catatan
           </button>
 
           <div className="flex gap-2">
-            <button
-              onClick={onClose}
-              className="rounded-radius-pill px-3 py-1.5 text-xs text-tinta-gelap/70 hover:text-tinta-gelap transition-colors"
-            >
-              Batal
-            </button>
-            <button
-              onClick={handleSave}
-              disabled={!body.trim() || body.length > MAX_CHARS || isSaving}
-              className="rounded-radius-pill bg-terracotta px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-terracotta/90 transition-colors disabled:opacity-50"
-            >
-              {isSaving ? '...' : 'Simpan'}
-            </button>
+            {color !== note.color ? (
+              <button
+                onClick={handleSaveColor}
+                disabled={isSaving}
+                className="rounded-radius-pill bg-terracotta px-4 py-1.5 text-xs font-medium text-polaroid hover:bg-terracotta/90 transition-colors disabled:opacity-50"
+              >
+                {isSaving ? '...' : 'Simpan Warna'}
+              </button>
+            ) : (
+              <button
+                onClick={onClose}
+                className="rounded-radius-pill bg-tinta-gelap/10 px-4 py-1.5 text-xs font-medium text-tinta-gelap hover:bg-tinta-gelap/20 transition-colors"
+              >
+                Tutup
+              </button>
+            )}
           </div>
         </div>
       </div>
