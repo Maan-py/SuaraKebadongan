@@ -89,6 +89,18 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
 
   const selectedColor = COLORS.find((c) => c.id === color) || COLORS[0]
 
+  const createdDate = new Date(note.created_at)
+  const formattedDate = createdDate.toLocaleDateString('id-ID', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+  const formattedTime = createdDate.toLocaleTimeString('id-ID', {
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-tinta/40 p-4">
       <div
@@ -101,7 +113,9 @@ export default function NotePopover({ note, onClose, onNoteUpdated, onNoteDelete
       >
         {/* Header */}
         <div className="mb-3 flex items-center justify-between">
-          <span className="text-xs text-tinta-gelap/70">Edit catatan</span>
+          <span className="text-xs text-tinta-gelap/70 font-tulis">
+            {formattedDate} • {formattedTime}
+          </span>
           <button
             onClick={onClose}
             className="h-6 w-6 flex items-center justify-center rounded-full text-tinta-gelap/70 hover:text-tinta-gelap"
