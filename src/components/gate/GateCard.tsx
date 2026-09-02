@@ -243,7 +243,7 @@ export default function GateCard() {
           
           <div className="relative overflow-hidden rounded-sm">
             <img 
-              src="/tahu-tempe.jpeg" 
+              src="/curut.jpeg" 
               alt="Hint Password" 
               className="block w-full h-32 object-cover"
             />
